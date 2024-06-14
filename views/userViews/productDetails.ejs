@@ -1,0 +1,757 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FurnitureHub - Online Furniture Mart</title>
+    <meta name="description"
+        content="Explore FurnitureHub, your ultimate destination for stylish and affordable furniture. Shop now and get exclusive deals!">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Description website">
+    <meta name="author" content="Maksym Blank">
+    <meta name="keywords" content="website, with, meta, tags">
+    <meta name="robots" content="noindex, follow">
+    <meta name="revisit-after" content="5 month">
+    <meta name="image" content="../../../../mywebsite.com/image.html">
+    <meta name="og:title" content="Title website">
+    <meta name="og:description" content="Description website">
+    <meta name="og:image" content="../../../../mywebsite.com/image.html">
+    <meta name="og:site_name" content="My Website">
+    <meta name="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Title website">
+    <meta name="twitter:description" content="Description website">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/fav2.png">
+    <!-- Css -->
+    <link href="assets/css/plugins/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/fonts/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/plugins/magnific-popup.css" rel="stylesheet">
+    <link href="assets/css/plugins/slick.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/responsive.css" rel="stylesheet">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+    <style>
+        #brand-name {
+            font-family: "Bungee Spice", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 30px;
+            background-color: #8a5d2a;
+        }
+
+        .slick-initialized .slick-slide {
+            display: block;
+        }
+
+        details {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .row .assets {
+            display: flex;
+            width: 100%;
+            justify-content: end;
+        }
+
+        .block-specs {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            width: 100%;
+        }
+
+        .product_details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        /* 
+        div .logoa {
+            height: 150px;
+            width: 136px;
+            padding: 0 0 0 0;
+        }
+
+        .inner {
+            height: 19vh;
+        } */
+
+        .image-fit {
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            height: 19vh;
+        }
+
+        /* .slide_item {
+            height: 360px;
+            width: 400px;
+
+            background-position: center;
+            background-size: cover;
+            background-repeat: initial;
+        } */
+
+        /* .product_slider_box {
+            position: relative;
+            margin-bottom: 80px;
+            padding: 0 40px;
+        } */
+    </style>
+</head>
+
+<body>
+    <!-- Preloader Start -->
+    <div class="preloader">
+        <img src="assets/images/preloader.svg" alt="preloader">
+    </div>
+    <!-- Preloader End -->
+    <!-- Header Start -->
+    <header class="header">
+        <!-- Topbar -->
+        <div class="topbar">
+            <div class="container-fluid">
+                <div class="inner">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a href="/">
+                            <div id="brand-name">&nbsp;Y-FURNS</div>
+                            <!-- <img src="assets/images/logo.png" class="image-fi" alt="logo" height="100px" width="100px"> -->
+                        </a>
+                    </div>
+                    <!-- Logo -->
+                    <!-- Search Form -->
+                    <div class="search-form">
+                        <form>
+                            <!-- Location -->
+                            <div class="location">
+                                <label>Your Location</label>
+                                <select>
+                                    <option selected>Select A Location</option>
+                                    <option value="New Delhi">New Delhi</option>
+                                    <option value="Mumbai">Mumbai</option>
+                                    <option value="Kolkata">Kolkata</option>
+                                    <option value="Chennai">Chennai</option>
+                                </select>
+                            </div>
+                            <!-- Location -->
+                            <!-- Search -->
+                            <div class="input-group">
+                                <input type="text" name="#" class="form-control" placeholder="Search for products..."
+                                    autocomplete="off" required>
+                                <div class="input-group-append input-group-text">
+                                    <button type="submit">
+                                        <i class="fal fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Search -->
+                        </form>
+                    </div>
+                    <!-- Search Form -->
+                    <!-- Header Action -->
+                    <div class="header_action">
+                        <ul>
+                            <li>
+                                <a href="/wishListPage">
+                                    <i class="far fa-heart"></i>
+                                </a>
+                            </li>
+                            <li class="cart">
+                                <a href="/cartPage">
+                                    <span class="cart_value">0</span>
+                                    <i class="far fa-shopping-cart"></i>
+                                    <div class="cart_text">
+                                        My Cart
+                                        <!-- <span class="amount">$150.00</span> -->
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="user">
+                                <% if (user) { %>
+                                    <a href="#">
+                                        <img src="assets/images/header/user.png" class="image-fit" alt="img">
+                                        <span>
+                                            <%= user.username %>
+                                        </span>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a href="/userDetails">My Account</a>
+                                        </li>
+                                        <li>
+                                            <a href="/logout">Logout</a>
+                                        </li>
+                                    </ul>
+                                    <% } else { %>
+                                        <a href="#">
+                                            <img src="assets/images/header/user2.png" class="image-fit" alt="img">
+                                            <span>New User</span>
+                                        </a>
+                                        <ul class="sub-menu">
+                                            <li>
+                                                <a href="/logIn">Login</a>
+                                            </li>
+                                            <li>
+                                                <a href="/signUp">SignUp</a>
+                                            </li>
+                                        </ul>
+                                        <% } %>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Header Action -->
+                </div>
+            </div>
+        </div>
+        <!-- Topbar -->
+    </header>
+    <!-- Header End -->
+    <!-- Category Nav Start -->
+    <div class="main_navigation hide_cat">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-6">
+
+                </div>
+                <div class="col-lg-9 col-6">
+                    <div class="nav_inner">
+                        <ul class="main-menu">
+                            <li class="menu-item">
+                                <a href="/" class="active">Home</a>
+                            </li>
+
+                            <li class="menu-item menu-item-has-children"><a href="#">Pages</a>
+                                <ul class="sub-menu custom">
+                                    <li class="menu-item menu-item-has-children"><a href="#">Account</a>
+                                        <ul class="sub-menu custom">
+                                            <li class="menu-item"><a href="/userDetails">My Account</a></li>
+                                            <li class="menu-item"><a href="/logIn">Login</a></li>
+                                            <li class="menu-item"><a href="/signUp">Register</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item menu-item-has-children"><a href="#">Shop</a>
+                                <ul class="sub-menu custom">
+                                    <li class="menu-item">
+                                        <a href="/products">Shop</a>
+                                    </li>
+
+                                    <li class="menu-item">
+                                        <a href="/wishListPage">Wishlist</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="/cartPage">Cart</a>
+                                    </li>
+                                    <li class="menu-item menu-item-has-children"><a href="/myOrdersPage">Orders</a>
+                                        <ul class="sub-menu custom">
+                                            <li class="menu-item"><a href="/myOrdersPage">Order List</a></li>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        </li>
+
+                        </ul>
+                        <div class="hamburger">
+                            <div class="hamburger_btn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Category Nav End -->
+    <!-- Section Start -->
+    <div class="details">
+        <div>
+            <section class="section pb-0 ">
+                <div class="container-fluid">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-8">
+                            <div class="shop_details_box justify-content-center">
+                                <!-- Details -->
+                                <div class="row assets d-flex justify-content-center">
+                                    <div class="col-lg-6" style="height: 500px;width: 500px;">
+                                        <div class="product_slider_box" style="margin: 0px;padding: 0px;">
+                                            <div class="product_slider">
+                                                <% for(let j=0;j<currentProduct.productImage.length;j++){ %>
+                                                    <div id="imgCnt" class="slide_item"
+                                                        style="background: url(assets/uploadimages/uploads/<%=currentProduct.productImage[j]%>) 0% 0% / 460px 460px no-repeat;">
+                                                    </div>
+
+                                                    <% } %>
+                                            </div>
+                                            <div class="product_slider_nav row d-flex justify-content-center"
+                                                style="margin-top: 10px;">
+                                                <% for(let j=0;j<currentProduct.productImage.length;j++){ %>
+                                                    <div class="slide_item px-3">
+                                                        <img src="assets/uploadimages/uploads/<%=currentProduct.productImage[j]%>"
+                                                            class="image-fit-contain" alt="img">
+                                                    </div>
+                                                    <% } %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row assets d-flex justify-content-center" style="margin-top: 100px;">
+                                    <div class="col-lg-6">
+
+                                        <div class="product_details product_block">
+                                            <h2 class="product_title">
+                                                <%= currentProduct.productName%>
+                                            </h2>
+                                            <div class="ratings">
+                                                <i class="fal fa-star active"></i>
+                                                <i class="fal fa-star active"></i>
+                                                <i class="fal fa-star active"></i>
+                                                <i class="fal fa-star active"></i>
+                                                <i class="fal fa-star"></i>
+                                            </div>
+                                            <div class="price">
+                                                <span>₹&nbsp;<%= currentProduct.productPrice %></span>
+                                                <% if (currentProduct.productOfferId) { %>
+                                                    <span class="price-standard text-decoration-line-through">₹&nbsp;<%=
+                                                            currentProduct.priceBeforeOffer %></span>
+
+                                                    </span>
+                                                    <% } %>
+                                            </div>
+                                            <% if (currentProduct.productOfferId) { %>
+                                                <div class="promotion">
+                                                    <span class="product_tag">
+                                                        <%= currentProduct.productOfferPercentage %>% OFF
+                                                    </span>
+                                                </div>
+                                                <% } %>
+                                                    <p class="text">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                        eiusmod
+                                                        tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+                                                        suspendisse ultrices gravida.
+                                                    </p>
+                                                    <% if (currentProduct.productStock===productQtyLimit) { %>
+                                                        <strong>Currently unavailable</strong>
+                                                        <div class="m-3 py-1 rounded text-center bg-danger-subtle">
+                                                            <h4 class="text-danger">
+                                                                Out of Stock!!</h4>
+                                                        </div>
+                                                        <% } else { %>
+
+                                                            <div class="product_action">
+                                                                <div class="quantity">
+                                                                    <button class="btn qty-mins" type="button"><i
+                                                                            class="fal fa-minus"></i></button>
+                                                                    <input type="number" name="quantity" id="quantity"
+                                                                        value=1 autocomplete="off" disabled>
+                                                                    <button class="btn qty-add" type="button"><i
+                                                                            class="fal fa-plus"></i></button>
+                                                                </div>
+                                                                <!-- <button type="button" class="thm-btn btn-rounded thm-bg-color-one">Add To Cart</button> -->
+                                                                <% if (user) { %>
+                                                                    <button id="add-to-cart-btn"
+                                                                        class="thm-btn btn-rounded thm-bg-color-one">Add
+                                                                        To
+                                                                        Cart</button>
+                                                                    <% } else { %>
+                                                                        <a href="/logIn"
+                                                                            class="thm-btn btn-rounded thm-bg-color-one">Add
+                                                                            To
+                                                                            Cart</a>
+                                                                        <% } %>
+                                                            </div>
+                                                            <strong>Category:</strong>
+                                                            <h5><strong>
+                                                                    <%= currentProduct.parentCategory.categoryName%>
+                                                                </strong></h5>
+                                                            <% } %>
+                                                                <ul class="product_meta">
+
+
+
+                                                                    <!-- <a href="shop.html">Sofa</a> -->
+
+                                                                    <li>
+
+
+                                                                    </li>
+                                                                    <!-- <li>
+                                                    <strong>Tags:</strong>
+                                                    <a href="shop.html">Chair</a>
+                                                    <a href="shop.html">Sofa</a>
+                                                    <a href="shop.html">Dining Table</a>
+                                                    <a href="shop.html">Table Lamp</a>
+                                                </li> -->
+                                                                    <li>
+                                                                        <strong>Seller:</strong>
+                                                                        <p>Contrary to popular Private Limited</p>
+                                                                    </li>
+                                                                </ul>
+                                                                <div class="product_social">
+                                                                    <button type="button" class="social_trigger">
+                                                                        <i class="fas fa-share-alt"></i>
+                                                                    </button>
+                                                                    <ul class="social_media">
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <i class="fab fa-facebook-f"></i>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <i class="fab fa-twitter"></i>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <i class="fab fa-linkedin-in"></i>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <i class="fab fa-pinterest-p"></i>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Ratings -->
+
+
+                    </div>
+                </div>
+
+        </div>
+        </section>
+    </div>
+    </div>
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title">Success</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Your Product has been Added To Cart Successfully!.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="okButton">
+                        OK
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Out of Stock Modal -->
+    <div class="modal fade" id="outOfStockModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Out of Stock</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>This Quantity is Reached the Available Limit.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="close-btn">
+                        OK
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Section End -->
+    <!-- Footer Start -->
+    <footer class="footer section-padding border-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-2 col-sm-4">
+                    <div class="ft_widget border-sm-0 pl-sm-0">
+                        <h6 class="ft_title">
+                            Find a Store<br />
+                            Shop Gift Cards
+                        </h6>
+                        <p class="mb-2">Follow Us:</p>
+                        <ul class="ft_social">
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-sm-4">
+                    <div class="ft_widget">
+                        <h6 class="ft_title">Help Center</h6>
+                        <ul class="ft_menu">
+                            <li>
+                                <a href="#">Payments</a>
+                            </li>
+                            <li>
+                                <a href="#">Shipping</a>
+                            </li>
+                            <li>
+                                <a href="#">Product Returns</a>
+                            </li>
+                            <li>
+                                <a href="#">FAQ's</a>
+                            </li>
+                            <li>
+                                <a href="#">Checkout</a>
+                            </li>
+                            <li>
+                                <a href="#">Blog</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-sm-4">
+                    <div class="ft_widget">
+                        <h6 class="ft_title">Useful Links</h6>
+                        <ul class="ft_menu">
+                            <li>
+                                <a href="#">Home</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact</a>
+                            </li>
+                            <li>
+                                <a href="#">About</a>
+                            </li>
+                            <li>
+                                <a href="#">Terms & Conditions</a>
+                            </li>
+                            <li>
+                                <a href="#">Policy</a>
+                            </li>
+                            <li>
+                                <a href="#">My Orders</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl col-sm-8">
+                    <div class="ft_widget">
+                        <h6 class="ft_title">Contact Us</h6>
+                        <p class="mb-3">
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                        </p>
+                        <ul class="ft_contact">
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    14 Prospect Row, Bury St. Edmunds
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-phone"></i>
+                                    000 2583 745 351
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-envelope"></i>
+                                    example@example.com
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-sm-4">
+                    <div class="ft_widget">
+                        <h6 class="ft_title">Categories</h6>
+                        <ul class="ft_menu">
+                            <li>
+                                <a href="#">Chair</a>
+                            </li>
+                            <li>
+                                <a href="#">Sofa</a>
+                            </li>
+                            <li>
+                                <a href="#">Dining Table</a>
+                            </li>
+                            <li>
+                                <a href="#">Table Lamp</a>
+                            </li>
+                            <li>
+                                <a href="#">Desk</a>
+                            </li>
+                            <li>
+                                <a href="#">cabinets</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+    <!-- Copyright Start -->
+    <div class="copyright">
+        <div class="container-fluid">
+            <p class="mb-0">@Copyright 2022. <a href="#" class="thm-color-one">Website.com</a> All Rights Reserved</p>
+        </div>
+    </div>
+    <!-- Copyright End -->
+    <!-- Scripts -->
+    <script>
+        // IMAGE ZOOM
+        // CREDITS : https://www.cssscript.com/image-zoom-pan-hover-detail-view/
+        const addZoom = container => {
+            // (A) GET IMAGE SOURCE
+            let initialBackgroundPosition = container.style.backgroundPosition;
+            let initialBackgroundSize = container.style.backgroundSize;
+            let imgsrc = container.style.backgroundImage.slice(4, -1).replace(/"/g, "");
+
+            // (B) LOAD IMAGE + ATTACH ZOOM
+            let img = new Image();
+            img.src = imgsrc;
+            img.onload = () => {
+                // (B1) SET CONTAINER WIDTH AND HEIGHT
+                container.style.width = "460px";
+                container.style.height = "460px";
+
+                // (B2) ADD CSS TRANSITION
+                container.style.transition = "background-position 0.2s, background-size 0.2s";
+
+                // (B2) ATTACH ZOOM ON MOUSE MOVE
+                container.onmousemove = e => {
+                    let rect = e.target.getBoundingClientRect(),
+                        xPos = e.clientX - rect.left,
+                        yPos = e.clientY - rect.top,
+                        xPercent = xPos / (container.clientWidth / 100) + "%",
+                        yPercent = yPos / ((container.clientHeight) / 100) + "%";
+
+                    Object.assign(container.style, {
+                        backgroundPosition: xPercent + " " + yPercent,
+                        backgroundSize: "920px 920px" // Set zoomed size here
+                    });
+                };
+
+                // (B3) RESET ZOOM ON MOUSE LEAVE
+                container.onmouseleave = e => {
+                    Object.assign(container.style, {
+                        backgroundPosition: initialBackgroundPosition,
+                        backgroundSize: "460px 460px" // Reset to original size
+                    });
+                };
+            }
+        };
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const imageContainers = document.querySelectorAll(".slide_item");
+            imageContainers.forEach(container => {
+                addZoom(container);
+            });
+        });
+
+        // productQtyLimit
+        const quantityInput = document.getElementById('quantity');
+        //plus-button
+        document.querySelectorAll('.qty-add').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                let quantityInputVal = parseInt(quantityInput.value)
+                e.preventDefault();
+                const productStock = '<%= currentProduct.productStock %>'
+                const presentQty = parseInt('<%= productQtyLimit %>');
+                const productStockVal = parseInt(productStock)
+
+                if (quantityInputVal + 1 > productStockVal - presentQty - 1) {
+                    quantityInput.value = productStockVal - presentQty - 1
+                    const outOfStockModal = new bootstrap.Modal(
+                        document.getElementById("outOfStockModal")
+                    )
+                    outOfStockModal.show()
+                    document
+                        .getElementById("close-btn")
+                        .addEventListener("click", () => {
+                            outOfStockModal.hide();
+                        });
+                }
+            });
+        });
+
+        document.getElementById('add-to-cart-btn').addEventListener('click', () => {
+            const productId = '<%= currentProduct._id %>';
+            const productStock = '<%= currentProduct.productStock %>';
+            const productPrice = '<%= currentProduct.productPrice %>';
+            const quantityInput = document.getElementById('quantity').value
+
+
+            fetch(`/addToCart?pid=${productId}&stock=${productStock}&quantity=${quantityInput}&productPrice=${productPrice}`, {
+                method: 'POST',
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        const successModal = new bootstrap.Modal(
+                            document.getElementById("successModal")
+                        );
+                        successModal.show();
+                        document
+                            .getElementById("okButton")
+                            .addEventListener("click", () => {
+                                window.location.reload();
+                            });
+                    } else {
+                        throw new Error('Error adding product to cart.');
+                    }
+                })
+                .catch(error => {
+                    // show error message
+                    alert('Error adding product to cart.');
+                });
+        });
+    </script>
+
+    <script src="assets/js/plugins/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/plugins/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/plugins/slick.min.js"></script>
+    <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/plugins/jquery.counterup.min.js"></script>
+    <script src="assets/js/plugins/jquery.inview.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+</body>
+
+</html>

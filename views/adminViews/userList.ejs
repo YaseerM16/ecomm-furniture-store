@@ -1,0 +1,452 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FurnitureHub - Online Furniture Mart</title>
+    <meta name="description"
+        content="Explore FurnitureHub, your ultimate destination for stylish and affordable furniture. Shop now and get exclusive deals!">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Description website">
+    <meta name="author" content="Maksym Blank">
+    <meta name="keywords" content="website, with, meta, tags">
+    <meta name="robots" content="noindex, follow">
+    <meta name="revisit-after" content="5 month">
+    <meta name="image" content="../../../../mywebsite.com/image.html">
+    <meta name="og:title" content="Title website">
+    <meta name="og:description" content="Description website">
+    <meta name="og:image" content="../../../../mywebsite.com/image.html">
+    <meta name="og:site_name" content="My Website">
+    <meta name="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Title website">
+    <meta name="twitter:description" content="Description website">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/fav2.png">
+    <!-- Css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link href="/assets/css/plugins/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/fonts/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/css/plugins/magnific-popup.css" rel="stylesheet">
+    <link href="/assets/css/plugins/slick.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/responsive.css" rel="stylesheet">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+
+    <style>
+        #brand-name {
+            font-family: "Bungee Spice", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 30px;
+            background-color: #8a5d2a;
+        }
+
+        div .logoa {
+            height: 150px;
+            width: 136px;
+            padding: 0 0 0 0;
+        }
+
+        .inner {
+            height: 19vh;
+        }
+
+        .image-fit {
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            height: 19vh;
+        }
+
+        @media (min-width: 992px) {
+            .navbar-expand-lg .navbar-nav {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+        }
+
+        .h-100 {
+            height: 100%;
+            /* Occupy full height of parent container */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            flex-grow: 1;
+            /* Allow the navbar to grow and occupy available space */
+        }
+
+        .navbar-nav {
+            flex-direction: column;
+            /* Align nav items vertically */
+        }
+
+        #user .iconx {
+            background-color: #604220;
+            color: #ffffff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            margin: 0 auto;
+            /* Center the icon horizontally */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition:
+                background-color 0.7s ease,
+                color 0.7s ease,
+                transform 0.7s ease,
+                width 0.7s ease,
+                height 0.7s ease,
+                font-size 0.7s ease;
+        }
+
+        #user:hover .iconx {
+            background-color: #C7A379;
+            color: #ffffff;
+            transform: scale(1.6);
+            /* No margin change to prevent layout shift */
+        }
+
+        .header .topbar .inner {
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Start -->
+    <header class="header">
+        <!-- Topbar -->
+        <div class="topbar">
+            <div class="container-fluid">
+                <div class="inner">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a href="#">
+                            <div id="brand-name">&nbsp;Y-FURNS</div>
+                            <!-- <img src="assets/images/logo.png" class="image-fi" alt="logo" height="100px" width="100px"> -->
+                        </a>
+                    </div>
+                    <!-- Logo -->
+                    <!-- Search Form -->
+                    <div class="search-form">
+                        <form>
+                            <!-- Location -->
+
+                            <!-- Location -->
+                            <!-- Search -->
+                            <div class="input-group">
+                                <input type="text" name="#" class="form-control" placeholder="Search for products..."
+                                    autocomplete="off" required>
+                                <div class="input-group-append input-group-text">
+                                    <button type="submit">
+                                        <i class="fal fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Search -->
+                        </form>
+                    </div>
+                    <!-- Search Form -->
+                    <!-- Header Action -->
+                    <div class="header_action">
+                        <ul>
+                            <li class="user" style="margin-right: 20px;">
+                                <% if (user) { %>
+                                    <a href="/userDetails">
+                                        <img src="/assets/images/header/user.png" class="image-fit" alt="img">
+                                        <span>
+                                            Admin
+                                            <%= user.username %>
+                                        </span>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a href="/adimDashBoard">Dashboard</a>
+                                        </li>
+                                        <li>
+                                            <a href="/logout">Logout</a>
+                                        </li>
+                                    </ul>
+                                    <% } else { %>
+                                        <a href="account.html">
+                                            <img src="/assets/images/header/user2.png" class="image-fit" alt="img">
+                                            <span>Login as Admin</span>
+                                        </a>
+                                        <ul class="sub-menu">
+                                            <li>
+                                                <a href="/adminLogin">Admin Login</a>
+                                            </li>
+                                        </ul>
+                                        <% } %>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Header Action -->
+                </div>
+            </div>
+        </div>
+        <!-- Topbar -->
+    </header>
+    <!-- Header End -->
+    <!-- Category Nav Start -->
+    <section class="order-list">
+        <div class="container-fluid" style="padding: 0;">
+            <div class="row">
+                <div class="col-xl-3 col-lg-4">
+                    <div class="h-100">
+                        <nav class="navbar navbar-expand-lg navbar-dark justify-content-around"
+                            style="background-color: #604220;align-items: baseline;">
+                            <div class="container-fluid d-flex justify-content-center">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarNav">
+                                    <ul class="navbar-nav w-100 d-flex flex-column">
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+                                                <a class="nav-link" href="/adimDashBoard">Dashboard</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-tachometer-alt"></i>
+                                                </div>
+
+                                            </div>
+                                        </li>
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+                                                <a class="nav-link" href="/admin/userManagement/usersList">User
+                                                    Management</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-users"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+                                                <a class="nav-link" href="/admin/productManagement/productList">Product
+                                                    Management</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-box-open"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+                                                <a class="nav-link"
+                                                    href="/admin/categoryManagement/categoryList">Category
+                                                    Management</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-list"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+
+                                                <a class="nav-link" href="/admin/orderManagement/orderList">Order
+                                                    Management</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-shopping-cart"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+
+                                                <a class="nav-link" href="/admin/couponManagement/coupons">Coupon
+                                                    Management</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-ticket"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+                                                <a class="nav-link" href="/admin/salesReport">Sales Report</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-chart-line"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item my-3 fs-5">
+                                            <a class="nav-link" href="#">Banner Management</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-8">
+                    <section class="section-padding pb-0">
+                        <div class="container-fluid">
+                            <div class="section-header">
+                                <h3 class="title">Users List</h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="table-responsive cart_table">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>User Name</th>
+                                                    <th>Email</th>
+                                                    <th>Phone Number</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <% for(let i=0;i<userDet.length;i++){ %>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            <%= userDet[i].username %>
+                                                        </th>
+                                                        <td>
+                                                            <%= userDet[i].email %>
+                                                        </td>
+                                                        <td>
+                                                            <%= userDet[i].phonenumber %>
+                                                        </td>
+                                                        <% if(userDet[i].isBlocked){ %>
+                                                            <td>
+                                                                <div
+                                                                    class="d-flex justify-content-center align-items-center">
+                                                                    <button id="unblock<%i%>"
+                                                                        onclick="fnBlock('<%=userDet[i]._id %>')"
+                                                                        type="button" class="btn btn-success"><i
+                                                                            class="fas fa-unlock"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </td>
+                                                            <% }else{ %>
+                                                                <td>
+                                                                    <div
+                                                                        class="d-flex justify-content-center align-items-center">
+                                                                        <button id="block<%i%>"
+                                                                            onclick="fnUnBlock('<%=userDet[i]._id %>')"
+                                                                            type="button" class="btn btn-danger"><i
+                                                                                class="fas fa-ban"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                </td>
+                                                                <% } %>
+
+                                                    </tr>
+                                                    <% } %>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Category Nav End -->
+    <!-- Section Start -->
+
+    <div class="row">
+        <div class="col-12">
+
+            <nav>
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="?page=<%= page - 1 %>" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <% for(let i=1; i <=pages; i++){ %>
+                        <li class="page-item <%= page == i? 'active' : '' %>"><a class="page-link"
+                                href="?page=<%= i %>">
+                                <%= i %>
+                            </a></li>
+                        <!-- <% if(i < pages){ %> -->
+                        <!-- <li class="page-item disabled"><a class="page-link"
+                                                                                            href="#">&hellip;</a></li>
+                                                                                    <% } %> -->
+                        <% } %>
+                            <li class="page-item">
+                                <a class="page-link" href="?page=<%= page + 1 %>" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- Section End -->
+    <!-- Section Start -->
+    <!-- Section End -->
+
+    <!-- Footer End -->
+    <!-- Copyright Start -->
+    <div class="copyright">
+        <div class="container-fluid">
+            <p class="mb-0">@Copyright 2022. <a href="#" class="thm-color-one">Website.com</a> All Rights Reserved</p>
+        </div>
+    </div>
+    <!-- Copyright End -->
+    <!-- Scripts -->
+    <script src="assets/js/plugins/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/plugins/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/plugins/slick.min.js"></script>
+    <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/plugins/jquery.counterup.min.js"></script>
+    <script src="assets/js/plugins/jquery.inview.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        async function fnBlock(userId) {
+            let response = await fetch(`/admin/userManagement/blockUser?id=${userId}`, {
+                method: 'GET',
+            })
+            let result = await response.json()
+            if (result.success) {
+                await Swal.fire({
+                    icon: "success",
+                    title: "User unblocked",
+                });
+            }
+            window.location.reload();
+        }
+
+        async function fnUnBlock(userId) {
+            let response = await fetch(`/admin/userManagement/unBlockUser?id=${userId}`, {
+                method: 'GET',
+            })
+            let result = await response.json()
+            if (result.success) {
+                await Swal.fire({
+                    icon: "error",
+                    title: "User blocked",
+                    confirmButtonText: "OK",
+                });
+            }
+            window.location.reload();
+        }
+    </script>
+</body>
+
+</html>

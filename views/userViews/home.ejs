@@ -1,0 +1,838 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FurnitureHub - Online Furniture Mart</title>
+    <meta name="description"
+        content="Explore FurnitureHub, your ultimate destination for stylish and affordable furniture. Shop now and get exclusive deals!">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Description website">
+    <meta name="author" content="Maksym Blank">
+    <meta name="keywords" content="website, with, meta, tags">
+    <meta name="robots" content="noindex, follow">
+    <meta name="revisit-after" content="5 month">
+    <meta name="image" content="../../../../mywebsite.com/image.html">
+    <meta name="og:title" content="Title website">
+    <meta name="og:description" content="Description website">
+    <meta name="og:image" content="../../../../mywebsite.com/image.html">
+    <meta name="og:site_name" content="My Website">
+    <meta name="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Title website">
+    <meta name="twitter:description" content="Description website">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/fav2.png">
+    <!-- Css -->
+    <link href="/assets/css/plugins/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/fonts/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/css/plugins/magnific-popup.css" rel="stylesheet">
+    <link href="/assets/css/plugins/slick.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/responsive.css" rel="stylesheet">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <style>
+        #brand-name {
+            font-family: "Bungee Spice", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 30px;
+            background-color: #8a5d2a;
+        }
+
+        .active {
+            color: var(--thm-color-four);
+        }
+
+        .activei {
+            font-weight: 900;
+            color: var(--thm-color-four);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader Start -->
+    <div class="preloader">
+        <img src="/assets/images/preloader.svg" alt="preloader">
+    </div>
+    <!-- Preloader End -->
+    <!-- Header Start -->
+    <header class="header">
+        <!-- Topbar -->
+        <div class="topbar">
+            <div class="container-fluid">
+                <div class="inner">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a href="#">
+                            <div id="brand-name">&nbsp;Y-FURNS</div>
+                        </a>
+                    </div>
+                    <!-- Logo -->
+                    <!-- Search Form -->
+                    <div class="search-form">
+                        <form>
+
+                            <!-- Search -->
+                            <div class="input-group">
+                                <input type="text" name="#" class="form-control" placeholder="Search for products..."
+                                    autocomplete="off" required>
+                                <div class="input-group-append input-group-text">
+                                    <button type="submit">
+                                        <i class="fal fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Search -->
+                        </form>
+                    </div>
+                    <!-- Search Form -->
+                    <!-- Header Action -->
+                    <div class="header_action">
+                        <ul>
+                            <li>
+                                <a href="/wishListPage">
+                                    <i class="far fa-heart"></i>
+                                </a>
+                            </li>
+                            <li class="cart">
+                                <a href="/cartPage">
+                                    <i class="far fa-shopping-cart"></i>
+                                    <div class="cart_text">
+                                        My Cart
+                                        <!-- <span class="amount">$150.00</span> -->
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="user">
+                                <% if (user) { %>
+                                    <a href="#">
+                                        <img src="/assets/images/header/user.png" class="image-fit"
+                                            alt="FurnitureHub Logo" title="FurnitureHub - Online Furniture Mart">
+                                        <span>
+                                            <%= user.username %>
+                                        </span>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a href="/userDetails">My Account</a>
+                                        </li>
+                                        <li>
+                                            <a href="/logout">Logout</a>
+                                        </li>
+                                    </ul>
+                                    <% } else { %>
+                                        <a href="#">
+                                            <img src="/assets/images/header/user2.png" class="image-fit"
+                                                alt="FurnitureHub Logo" title="FurnitureHub - Online Furniture Mart">
+                                            <span>New User</span>
+                                        </a>
+                                        <ul class="sub-menu">
+                                            <li>
+                                                <a href="/logIn">Login</a>
+                                            </li>
+                                            <li>
+                                                <a href="/signUp">SignUp</a>
+                                            </li>
+                                        </ul>
+                                        <% } %>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Header Action -->
+                </div>
+            </div>
+        </div>
+        <!-- Topbar -->
+    </header>
+    <!-- Header End -->
+    <!-- Banner Start -->
+    <div class="banner">
+        <div class="banner_slider">
+            <!-- Item -->
+            <div class="slide-item" style="background-image: url(assets/images/banner/81.jpg);">
+                <!-- Banner Txt -->
+                <div class="section-padding">
+                    <div class="container-fluid">
+                        <div class="banner_content">
+                            <h1 class="title">Welcome to FurnitureHub - Your Furniture Shopping Hub</h1>
+                            <p>FurnitureHub is a leading online furniture store, offering a wide range of stylish and
+                                affordable furniture for your
+                                home and office.</p>
+                            <p class="text"> Sale Up To<br>
+                                <strong>80%</strong>
+                                Off
+                            </p>
+                            <a href="shop.html" class="thm-btn btn-rounded thm-bg-color-one">Shop Now <i
+                                    class="fal fa-long-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Banner Txt -->
+            </div>
+            <!-- Item -->
+            <div class="slide-item" style="background-image: url(assets/images/banner/12.jpg);">
+                <!-- Banner Txt -->
+                <div class="section-padding">
+                    <div class="container-fluid">
+                        <div class="banner_content">
+                            <h1 class="title">Welcome to FurnitureHub - Your Furniture Shopping Hub</h1>
+                            <p>FurnitureHub is a leading online furniture store, offering a wide range of stylish and
+                                affordable furniture for your
+                                home and office.</p>
+                            <p class="text"> Sale Up To<br>
+                                <strong>80%</strong>
+                                Off
+                            </p>
+                            <a href="shop.html" class="thm-btn btn-rounded thm-bg-color-one">Shop Now <i
+                                    class="fal fa-long-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Banner Txt -->
+            </div>
+            <!-- Item -->
+            <div class="slide-item" style="background-image: url(assets/images/banner/14.jpg);">
+                <!-- Banner Txt -->
+                <div class="section-padding">
+                    <div class="container-fluid">
+                        <div class="banner_content">
+                            <h1 class="title">Welcome to FurnitureHub - Your Furniture Shopping Hub</h1>
+                            <p>FurnitureHub is a leading online furniture store, offering a wide range of stylish and
+                                affordable furniture for your
+                                home and office.</p>
+                            <p class="text"> Sale Up To<br>
+                                <strong>80%</strong>
+                                Off
+                            </p>
+                            <a href="shop.html" class="thm-btn btn-rounded thm-bg-color-one">Shop Now <i
+                                    class="fal fa-long-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Banner Txt -->
+            </div>
+            <!-- Item -->
+            <div class="slide-item" style="background-image: url(assets/images/banner/16.jpg);">
+                <!-- Banner Txt -->
+                <div class="section-padding">
+                    <div class="container-fluid">
+                        <div class="banner_content">
+                            <h1 class="title">Welcome to FurnitureHub - Your Furniture Shopping Hub</h1>
+                            <p>FurnitureHub is a leading online furniture store, offering a wide range of stylish and
+                                affordable furniture for your
+                                home and office.</p>
+                            <p class="text"> Sale Up To<br>
+                                <strong>80%</strong>
+                                Off
+                            </p>
+                            <a href="shop.html" class="thm-btn btn-rounded thm-bg-color-one">Shop Now <i
+                                    class="fal fa-long-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Banner Txt -->
+            </div>
+            <!-- Item -->
+            <div class="slide-item" style="background-image: url(assets/images/banner/13.jpg);">
+                <!-- Banner Txt -->
+                <div class="section-padding">
+                    <div class="container-fluid">
+                        <div class="banner_content">
+                            <h1 class="title">Welcome to FurnitureHub - Your Furniture Shopping Hub</h1>
+                            <p>FurnitureHub is a leading online furniture store, offering a wide range of stylish and
+                                affordable furniture for your
+                                home and office.</p>
+                            <p class="text"> Sale Up To<br>
+                                <strong>80%</strong>
+                                Off
+                            </p>
+                            <a href="shop.html" class="thm-btn btn-rounded thm-bg-color-one">Shop Now <i
+                                    class="fal fa-long-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Banner Txt -->
+            </div>
+            <!-- Item -->
+        </div>
+    </div>
+    <!-- Banner End -->
+    <!-- How To works Start -->
+    <section class="section-padding">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Block -->
+                <div class="col-lg-3 col-sm-6">
+                    <div class="htw-block">
+                        <div class="icon">
+                            <i class="fal fa-truck"></i>
+                        </div>
+                        <div class="text">
+                            <h6 class="title">Free Shipping</h6>
+                            <p class="mb-0">Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Block -->
+                <div class="col-lg-3 col-sm-6">
+                    <div class="htw-block">
+                        <div class="icon">
+                            <i class="fal fa-shopping-bag"></i>
+                        </div>
+                        <div class="text">
+                            <h6 class="title">100% Secure Payment</h6>
+                            <p class="mb-0">Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Block -->
+                <div class="col-lg-3 col-sm-6">
+                    <div class="htw-block">
+                        <div class="icon">
+                            <i class="fal fa-headphones-alt"></i>
+                        </div>
+                        <div class="text">
+                            <h6 class="title">Great Support 24x7</h6>
+                            <p class="mb-0">Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Block -->
+                <div class="col-lg-3 col-sm-6">
+                    <div class="htw-block">
+                        <div class="icon">
+                            <i class="fal fa-cube"></i>
+                        </div>
+                        <div class="text">
+                            <h6 class="title">Money - Returns</h6>
+                            <p class="mb-0">Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Block -->
+            </div>
+        </div>
+    </section>
+    <!-- How To works End -->
+    <!-- Discount Banner Start -->
+    <section class="section-padding pt-0">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="discount_box" style="background-image: url(assets/images/discount_banner/11.jpg);">
+                        <div class="discount_text">
+                            <h6 class="mb-0 subtitle">Discount 50%</h6>
+                            <h4 class="title mb-2">Curabitur Non Sofa</h4>
+                            <p class="mb-3">Lorem ipsum dolor sit amet, consectetur.</p>
+                            <a href="/products" class="thm-btn btn-rounded thm-bg-color-one">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="discount_box" style="background-image: url(assets/images/discount_banner/21.jpg);">
+                        <div class="discount_text">
+                            <h6 class="mb-0 subtitle">Discount 30%</h6>
+                            <h4 class="title mb-2">Crescent ArmChair</h4>
+                            <p class="mb-3">Lorem ipsum dolor sit amet, consectetur.</p>
+                            <a href="/products" class="thm-btn btn-rounded thm-bg-color-one">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="discount_box" style="background-image: url(assets/images/banner/12.jpg);">
+                        <div class="discount_text">
+                            <h6 class="mb-0 subtitle">Discount 25%</h6>
+                            <h4 class="title mb-2">Complete Dining</h4>
+                            <p class="mb-3">Lorem ipsum dolor sit amet, consectetur.</p>
+                            <a href="/products" class="thm-btn btn-rounded thm-bg-color-one">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="discount_box" style="background-image: url(assets/images/banner/13.jpg);">
+                        <div class="discount_text">
+                            <h6 class="mb-0 subtitle">Discount 40%</h6>
+                            <h4 class="title mb-2">Curvature Sofa</h4>
+                            <p class="mb-3">Lorem ipsum dolor sit amet, consectetur.</p>
+                            <a href="/products" class="thm-btn btn-rounded thm-bg-color-one">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Discount Banner End -->
+    <!-- Fruits Start -->
+
+    <section class="section-padding pt-0">
+        <div class="container-fluid">
+            <div class="section-header">
+                <h3 class="title">
+                    Products
+                </h3>
+                <p class="text">Here are some our luxurious collections</p>
+            </div>
+            <div class="fruits-slider row">
+                <% for (var i=0; i < 5; i++) { %>
+                    <!-- Item -->
+                    <div class="slide-item col-12">
+                        <div class="product_block">
+                            <div class="product_top">
+                                <div>
+                                    <% if (products[i].productOfferPercentage ) { %>
+                                        <span class="product_tag">
+                                            <%=products[i].productOfferPercentage%>% Off
+                                        </span>
+                                        <% } else { %>
+                                            <% } %>
+                                </div>
+
+                            </div>
+                            <div class="product_image">
+                                <a href="/singleProduct?id=<%=products[i]._id %>" class="click_img">
+                                    <img src="/assets/uploadimages/uploads/<%=products[i].productImage[0]%>"
+                                        class="image-fit-contain" alt="FurnitureHub Logo"
+                                        title="FurnitureHub - Online Furniture Mart">
+                                </a>
+                            </div>
+                            <div class="product_categories">
+                                <span>
+                                    <%=products[i].parentCategory.categoryName%>
+                                </span>
+                            </div>
+                            <h4 class="title"><a href="#">
+                                    <%=products[i].productName%>
+                                </a></h4>
+                            <div class="price">
+                                <span>
+                                    &#8377
+                                    <%=products[i].productPrice%>
+                                </span>
+                                <% if (products[i].priceBeforeOffer !==products[i].productPrice ) { %>
+                                    <span>&#8377&nbsp;<%=products[i].priceBeforeOffer%></span>
+                                    <% } else { %>
+                                        <% } %>
+                            </div>
+                            <div class="product_action">
+                                <% if (user) { %>
+                                    <button type="button" onclick="addToCart('<%= i %>')" class="product_btn">ADD to
+                                        Cart <i class="fal fa-plus"></i></button>
+                                    <% } else { %>
+                                        <button type="button" onclick="nonUserAddCart()" class="product_btn">ADD to Cart
+                                            <i class="fal fa-plus"></i></button>
+                                        <% } %>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item -->
+                    <% } %>
+            </div>
+            <div class="fruits-slider row my-5">
+                <% for (var i=5; i < 10; i++) { %>
+                    <!-- Item -->
+                    <div class="slide-item col-12">
+                        <div class="product_block">
+                            <div class="product_top">
+                                <div>
+                                    <% if (products[i].productOfferPercentage ) { %>
+                                        <span class="product_tag">
+                                            <%=products[i].productOfferPercentage%>% Off
+                                        </span>
+                                        <% } else { %>
+                                            <% } %>
+                                </div>
+
+                            </div>
+                            <div class="product_image">
+                                <a href="/singleProduct?id=<%=products[i]._id %>" class="click_img">
+                                    <img src="/assets/uploadimages/uploads/<%=products[i].productImage[0]%>"
+                                        class="image-fit-contain" alt="FurnitureHub Logo"
+                                        title="FurnitureHub - Online Furniture Mart">
+                                </a>
+                            </div>
+                            <div class="product_categories">
+                                <span>
+                                    <%=products[i].parentCategory.categoryName%>
+                                </span>
+                            </div>
+                            <h4 class="title"><a href="#">
+                                    <%=products[i].productName%>
+                                </a></h4>
+                            <div class="price">
+                                <span>
+                                    &#8377
+                                    <%=products[i].productPrice%>
+                                </span>
+                                <% if (products[i].priceBeforeOffer !==products[i].productPrice ) { %>
+                                    <span>&#8377&nbsp;<%=products[i].priceBeforeOffer%></span>
+                                    <% } else { %>
+                                        <% } %>
+                            </div>
+                            <div class="product_action">
+                                <% if (user) { %>
+                                    <button type="button" onclick="addToCart('<%= i %>')" class="product_btn">ADD to
+                                        Cart <i class="fal fa-plus"></i></button>
+                                    <% } else { %>
+                                        <button type="button" onclick="nonUserAddCart()" class="product_btn">ADD to Cart
+                                            <i class="fal fa-plus"></i></button>
+                                        <% } %>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item -->
+                    <% } %>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonial Start -->
+
+    <!-- Testimonial End -->
+
+
+    <!-- WishList Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" style="background-color: #2ecc709e;">
+                <div class="modal-header">
+                    <h5 class="modal-title text-white" id="successModalLabel">Success</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="text-white">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-white fs-5">
+                    Your Product is added to the wishlist successfully.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" id="okButton" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ADD to Cart success -->
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title">Success</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Your Product has been Added To Cart Successfully!.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="okButton">
+                        OK
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign Up/Login Modal -->
+    <div class="modal fade" id="signupLoginModal" tabindex="-1" role="dialog" aria-labelledby="signupLoginModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" style="background-color: #8b6d32a8;">
+                <div class="modal-header">
+                    <h5 class="modal-title text-white" id="signupLoginModalLabel">Sign Up/Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="text-white">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-white fs-5">
+                    <p>To add products, please sign up or log in.</p>
+                    <!-- Add your sign up and login forms or buttons here -->
+                    <button type="button" class="btn btn-light" onclick="location.href='/logIn';">Log In</button>
+                    <button type="button" class="btn btn-light" onclick="location.href='/signUp';">Sign Up</button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="closeNonUserModal" class="btn btn-light"
+                        data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Start -->
+    <footer class="footer section-padding border-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-2 col-sm-4">
+                    <div class="ft_widget border-sm-0 pl-sm-0">
+                        <h6 class="ft_title">
+                            Find a Store<br />
+                            Shop Gift Cards
+                        </h6>
+                        <p class="mb-2">Follow Us:</p>
+                        <ul class="ft_social">
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-sm-4">
+                    <div class="ft_widget">
+                        <h6 class="ft_title">Help Center</h6>
+                        <ul class="ft_menu">
+                            <li>
+                                <a href="#">Payments</a>
+                            </li>
+                            <li>
+                                <a href="#">Shipping</a>
+                            </li>
+                            <li>
+                                <a href="#">Product Returns</a>
+                            </li>
+                            <li>
+                                <a href="#">FAQ's</a>
+                            </li>
+                            <li>
+                                <a href="#">Checkout</a>
+                            </li>
+                            <li>
+                                <a href="#">Blog</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-sm-4">
+                    <div class="ft_widget">
+                        <h6 class="ft_title">Useful Links</h6>
+                        <ul class="ft_menu">
+                            <li>
+                                <a href="#">Home</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact</a>
+                            </li>
+                            <li>
+                                <a href="#">About</a>
+                            </li>
+                            <li>
+                                <a href="#">Terms & Conditions</a>
+                            </li>
+                            <li>
+                                <a href="#">Policy</a>
+                            </li>
+                            <li>
+                                <a href="#">My Orders</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl col-sm-8">
+                    <div class="ft_widget">
+                        <h6 class="ft_title">Contact Us</h6>
+                        <p class="mb-3">
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                        </p>
+                        <ul class="ft_contact">
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    14 Prospect Row, Bury St. Edmunds
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-phone"></i>
+                                    000 2583 745 351
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-envelope"></i>
+                                    example@example.com
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-sm-4">
+                    <div class="ft_widget">
+                        <h6 class="ft_title">Categories</h6>
+                        <ul class="ft_menu">
+                            <li>
+                                <a href="#">Chair</a>
+                            </li>
+                            <li>
+                                <a href="#">Sofa</a>
+                            </li>
+                            <li>
+                                <a href="#">Dining Table</a>
+                            </li>
+                            <li>
+                                <a href="#">Table Lamp</a>
+                            </li>
+                            <li>
+                                <a href="#">Desk</a>
+                            </li>
+                            <li>
+                                <a href="#">cabinets</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+    <!-- Copyright Start -->
+    <div class="copyright">
+        <div class="container-fluid">
+            <p class="mb-0">@Copyright 2022. <a href="#" class="thm-color-one">Website.com</a> All
+                Rights
+                Reserved</p>
+        </div>
+    </div>
+    <!-- Copyright End -->
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="/assets/js/plugins/jquery-3.6.0.min.js"></script>
+    <script src="/assets/js/plugins/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/plugins/slick.min.js"></script>
+    <script src="/assets/js/plugins/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/js/plugins/jquery.counterup.min.js"></script>
+    <script src="/assets/js/plugins/jquery.inview.min.js"></script>
+    <script src="/assets/js/custom.js"></script>
+    <script>
+        const productsDet = '<%- JSON.stringify(products) %>'
+        const products = JSON.parse(productsDet)
+
+        const addToCart = async (index) => {
+            console.log(index);
+            console.log("Indexed Product :", products[index]);
+            const product = products[index];
+            const prodId = product._id;
+            const prodStock = product.productStock;
+            const prodQty = 1;
+            const prodPrice = product.productPrice;
+            console.log("Product Qty: ", prodQty);
+            try {
+                const response = await fetch(`/addToCart?pid=${prodId}&stock=${prodStock}&quantity=${prodQty}&productPrice=${prodPrice}`, {
+                    method: 'POST',
+                })
+                const data = await response.json();
+
+                if (data.success) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Product Added to Cart',
+                        text: 'The product has been successfully added to your cart.',
+                        confirmButtonText: 'OK',
+                        confirmButtonColor: '#3085d6',
+                    })
+                } else {
+                    throw new Error('Error adding product to cart.');
+                }
+
+            } catch (error) {
+                console.log("Error while adding the product to the cart :" + error);
+            }
+
+        }
+        const signupLoginModal = new bootstrap.Modal(document.getElementById("signupLoginModal"));
+
+        async function nonUserAddCart() {
+            signupLoginModal.show();
+            document
+                .getElementById("closeNonUserModal")
+                .addEventListener("click", () => {
+                    signupLoginModal.hide()
+                });
+        }
+
+
+        ////WishList Icons
+
+        const wishListSuccess = new bootstrap.Modal(document.getElementById("successModal"));
+
+
+        const whisListIcons = document.querySelectorAll('.whisListIcon')
+
+        whisListIcons.forEach(btn => {
+            btn.addEventListener('click', async (event) => {
+                const productId = event.currentTarget.getAttribute('prod-id')
+                const index = event.currentTarget.getAttribute('index')
+
+                if (btn.classList.contains('active') && btn.querySelector('i').classList.contains('activei')) {
+                    console.log("active wishlist");
+                    try {
+                        const response = await fetch(`/removeWishList?productId=${productId}`)
+                        const data = await response.json()
+                        console.log(data);
+                        if (data.success) {
+                            removeSuccessModal.show();
+                            document
+                                .getElementById("removeOkBtn")
+                                .addEventListener("click", () => {
+                                    removeSuccessModal.hide()
+                                });
+                            btn.classList.toggle('active');
+                            btn.querySelector('i').classList.toggle('activei');
+
+                        }
+                    } catch (error) {
+                        console.log("error while Attemp to remove that product from the wish list page:" + error);
+                    }
+
+
+                } else {
+                    try {
+                        console.log("UnActive WishLIst");
+                        const response = await fetch(`/wishList?productId=${productId}`)
+                        const data = await response.json()
+                        if (data.success) {
+                            wishListSuccess.show();
+                            document
+                                .getElementById("okButton")
+                                .addEventListener("click", () => {
+                                    wishListSuccess.hide()
+                                });
+                            btn.classList.toggle('active');
+                            btn.querySelector('i').classList.toggle('activei');
+                        } if (data.notUser) {
+                            signupLoginModal.show();
+                            document
+                                .getElementById("closeNonUserModal")
+                                .addEventListener("click", () => {
+                                    signupLoginModal.hide()
+                                });
+                        }
+                    } catch (error) {
+                        console.log("Error while sending fetch to adding the product to the wishlist: " + error);
+                    }
+                }
+            });
+        })
+
+    </script>
+
+</body>
+
+</html>

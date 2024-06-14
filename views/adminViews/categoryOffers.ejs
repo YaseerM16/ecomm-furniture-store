@@ -1,0 +1,846 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FurnitureHub - Online Furniture Mart</title>
+    <meta name="description"
+        content="Explore FurnitureHub, your ultimate destination for stylish and affordable furniture. Shop now and get exclusive deals!">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Description website">
+    <meta name="author" content="Maksym Blank">
+    <meta name="keywords" content="website, with, meta, tags">
+    <meta name="robots" content="noindex, follow">
+    <meta name="revisit-after" content="5 month">
+    <meta name="image" content="../../../../mywebsite.com/image.html">
+    <meta name="og:title" content="Title website">
+    <meta name="og:description" content="Description website">
+    <meta name="og:image" content="../../../../mywebsite.com/image.html">
+    <meta name="og:site_name" content="My Website">
+    <meta name="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Title website">
+    <meta name="twitter:description" content="Description website">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/fav2.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Css -->
+    <link href="/assets/css/plugins/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/fonts/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/css/plugins/magnific-popup.css" rel="stylesheet">
+    <link href="/assets/css/plugins/slick.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/responsive.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- jQuery Validation plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+
+    <title>Admin-Category</title>
+    <style>
+        #brand-name {
+            font-family: "Bungee Spice", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 30px;
+            background-color: #8a5d2a;
+        }
+
+        div .logoa {
+            height: 150px;
+            width: 136px;
+            padding: 0 0 0 0;
+        }
+
+        .inner {
+            height: 19vh;
+        }
+
+        .image-fit {
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            height: 19vh;
+        }
+
+        @media (min-width: 992px) {
+            .navbar-expand-lg .navbar-nav {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+        }
+
+        .h-100 {
+            height: 100%;
+            /* Occupy full height of parent container */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            flex-grow: 1;
+            /* Allow the navbar to grow and occupy available space */
+        }
+
+        .navbar-nav {
+            flex-direction: column;
+            /* Align nav items vertically */
+        }
+
+        #user .iconx {
+            background-color: #604220;
+            color: #ffffff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            margin: 0 auto;
+            /* Center the icon horizontally */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition:
+                background-color 0.7s ease,
+                color 0.7s ease,
+                transform 0.7s ease,
+                width 0.7s ease,
+                height 0.7s ease,
+                font-size 0.7s ease;
+        }
+
+        #user:hover .iconx {
+            background-color: #C7A379;
+            color: #ffffff;
+            transform: scale(1.6);
+            /* No margin change to prevent layout shift */
+        }
+
+        .header .topbar .inner {
+            height: 100px;
+        }
+
+        .header .topbar .inner .logo {
+            height: 100px;
+            margin-left: 60px;
+        }
+
+        .header .topbar .inner .logo #brand-name {
+            height: 52px;
+            padding: 2px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Start -->
+    <header class="header">
+        <!-- Topbar -->
+        <div class="topbar">
+            <div class="container-fluid">
+                <div class="inner">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a href="#">
+                            <div id="brand-name">&nbsp;Y-FURNS</div>
+                            <!-- <img src="assets/images/logo.png" class="image-fi" alt="logo" height="100px" width="100px"> -->
+                        </a>
+                    </div>
+                    <!-- Logo -->
+                    <!-- Search Form -->
+                    <div class="search-form">
+                        <form>
+                            <!-- Location -->
+
+                            <!-- Location -->
+                            <!-- Search -->
+                            <div class="input-group">
+                                <input type="text" name="#" class="form-control" placeholder="Search for products..."
+                                    autocomplete="off" required>
+                                <div class="input-group-append input-group-text">
+                                    <button type="submit">
+                                        <i class="fal fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Search -->
+                        </form>
+                    </div>
+                    <!-- Search Form -->
+                    <!-- Header Action -->
+                    <div class="header_action">
+                        <ul>
+                            <li class="user" style="margin-right: 50px;">
+                                <% if (user) { %>
+                                    <a href="#">
+                                        <img src="/assets/images/header/user.png" class="image-fit" alt="img">
+                                        <span>
+                                            Admin
+                                            <%= user.username %>
+                                        </span>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a href="/adimDashBoard">Dashboard</a>
+                                        </li>
+                                        <li>
+                                            <a href="/logout">Logout</a>
+                                        </li>
+                                    </ul>
+                                    <% } else { %>
+                                        <a href="#">
+                                            <img src="/assets/images/header/user2.png" class="image-fit" alt="img">
+                                            <span>Login as Admin</span>
+                                        </a>
+                                        <ul class="sub-menu">
+                                            <li>
+                                                <a href="/adminLogin">Admin Login</a>
+                                            </li>
+                                        </ul>
+                                        <% } %>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Header Action -->
+                </div>
+            </div>
+        </div>
+        <!-- Topbar -->
+    </header>
+
+    <section class="order-list">
+        <div class="container-fluid" style="padding: 0;">
+            <div class="row">
+                <div class="col-xl-3 col-lg-4">
+                    <div class="h-100">
+                        <nav class="navbar navbar-expand-lg navbar-dark justify-content-around"
+                            style="background-color: #604220;align-items: baseline;">
+                            <div class="container-fluid d-flex justify-content-center">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarNav">
+                                    <ul class="navbar-nav w-100 d-flex flex-column">
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+                                                <a class="nav-link" href="/adimDashBoard">Dashboard</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-tachometer-alt"></i>
+                                                </div>
+
+                                            </div>
+                                        </li>
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+                                                <a class="nav-link" href="/admin/userManagement/usersList">User
+                                                    Management</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-users"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+                                                <a class="nav-link" href="/admin/productManagement/productList">Product
+                                                    Management</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-box-open"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+                                                <a class="nav-link"
+                                                    href="/admin/categoryManagement/categoryList">Category
+                                                    Management</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-list"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+
+                                                <a class="nav-link" href="/admin/orderManagement/orderList">Order
+                                                    Management</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-shopping-cart"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+
+                                                <a class="nav-link" href="/admin/couponManagement/coupons">Coupon
+                                                    Management</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-ticket"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+                                                <a class="nav-link" href="/admin/salesReport">Sales Report</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-chart-line"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-8">
+                    <section class="section-padding pb-0">
+                        <div class="d-flex w-100 justify-content-between">
+                            <div class="section-header">
+                                <h3 class="title">Category Offers</h3>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                            data-target="#addCategoryOfferModal" style="margin-bottom: 15px;">
+                            Add new Category Offer
+                        </button>
+
+                        <!--Category Offer Modal -->
+                        <div class="modal fade" id="addCategoryOfferModal" tabindex="-1"
+                            aria-labelledby="addCategoryOfferModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="addCategoryOfferModalLabel">Add Category Offer</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <form id="addCategoryOfferForm" role="form">
+                                        <div class="modal-body">
+
+                                            <div class="input-group mb-3">
+                                                <label class="container">
+                                                    <label for="categoryName" class="mb-2">Category Name: </label>
+                                                    <select name="categoryName" id="categoryName" class="form-select">
+                                                        <% categoryDet.forEach(category=> { %>
+                                                            <option value="<%= category.categoryName %>">
+                                                                <%= category.categoryName %>
+                                                            </option>
+                                                            <% }); %>
+                                                    </select>
+                                                </label>
+                                            </div>
+
+                                            <div class="offerPercentageInput p-2">
+                                                <label for="categoryOfferPercentage" class="mb-2">Category Offer
+                                                    Percentage: </label>
+                                                <div class="input-group">
+                                                    <input id="categoryOfferPercentage" name="categoryOfferPercentage"
+                                                        class="form-control" placeholder="Enter the offer percentage">
+                                                </div>
+                                                <div class="form-text">Choose a percentage to be discounted. Between 5%
+                                                    and 90%.</div>
+                                            </div>
+
+                                            <div class="startDateInput p-2">
+                                                <label for="categoryOfferStartDate">Offer Start Date: </label>
+                                                <div class="input-group">
+                                                    <input id="categoryOfferStartDate" name="categoryOfferStartDate"
+                                                        type="date" class="form-control">
+                                                </div>
+                                                <div class="form-text">Choose a start date for the offer to be
+                                                    considered.</div>
+                                            </div>
+
+                                            <div class="endDateInput p-2">
+                                                <label for="categoryOfferEndDate">Offer Expiry Date : </label>
+                                                <div class="input-group">
+                                                    <input id="categoryOfferEndDate" name="categoryOfferEndDate"
+                                                        type="date" class="form-control">
+                                                </div>
+                                                <div class="form-text">Choose an exipry date for offer to end.</div>
+                                            </div>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                            <button id="addCouponBtn" type="submit" class="btn btn-info">Save
+                                                changes</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <script>
+                            const category = '<%- JSON.stringify(categoryOffersDet) %>'
+                            const parsedData = JSON.parse(category)
+                            console.log(parsedData);
+                            $(document).ready(function () {
+                                $("#addCategoryOfferForm").validate({
+                                    rules: {
+                                        categoryName: "required",
+                                        categoryOfferPercentage: {
+                                            required: true,
+                                            min: 5,
+                                            max: 90
+                                        },
+                                        categoryOfferStartDate: {
+                                            required: true,
+                                        },
+                                        categoryOfferEndDate: {
+                                            required: true,
+                                        }
+                                    },
+                                    submitHandler: async function (form, event) {
+                                        event.preventDefault()
+
+
+
+                                        let formData = {
+                                            categoryName: form.categoryName.value,
+                                            categoryOfferPercentage: form.categoryOfferPercentage.value,
+                                            categoryOfferStartDate: form.categoryOfferStartDate.value,
+                                            categoryOfferEndDate: form.categoryOfferEndDate.value
+                                        }
+
+                                        let response = await fetch('/admin/categoryOfferManagement/addOffer', {
+                                            method: 'POST',
+                                            headers: { "Content-Type": "application/json" },
+                                            body: JSON.stringify(formData)
+                                        })
+
+                                        let result = await response.json()
+
+                                        if (result.success) {
+                                            await Swal.fire({
+                                                icon: "success",
+                                                title: "Category offer succesfully added",
+                                                showConfirmButton: false,
+                                                timer: 3000
+                                            }).then(() => location.reload())
+                                        } else {
+                                            await Swal.fire({
+                                                icon: "error",
+                                                title: "Product Offer Already Exists for This Product",
+                                                text: "Please try editing the offer of this particular product",
+                                            });
+                                        }
+                                    }
+                                });
+                            });
+                        </script>
+
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">
+                                        <div class="d-flex justify-content-center">
+                                            Category
+                                        </div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="d-flex justify-content-center">Offer Percentage</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="d-flex justify-content-center">Start Date</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="d-flex justify-content-center">End Date</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="d-flex justify-content-center">Current Status</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="d-flex justify-content-center">Action</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for(let i=0;i<categoryOffersDet.length;i++){ %>
+                                    <tr>
+                                        <th scope="row">
+                                            <div class="d-flex justify-content-center">
+                                                <%= categoryOffersDet[i].categoryName %>
+                                            </div>
+                                        </th>
+                                        <td>
+                                            <div class="d-flex justify-content-center">
+                                                <%= categoryOffersDet[i].categoryOfferPercentage %>&nbsp;%
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex justify-content-center">
+                                                <%= categoryOffersDet[i].startDate.toLocaleDateString('en-US', {
+                                                    year: 'numeric' , month: '2-digit' , day: '2-digit' }) %>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex justify-content-center">
+                                                <%= categoryOffersDet[i].endDate.toLocaleDateString('en-US', {
+                                                    year: 'numeric' , month: '2-digit' , day: '2-digit' }) %>
+                                            </div>
+                                        </td>
+                                        <td id="currentStatus<%= i %>">
+                                            <div class="d-flex justify-content-center">
+                                                <%= categoryOffersDet[i].currentStatus %>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex justify-content-center">
+                                                <button type="button" class="btn btn-info" data-bs-toggle="modal"
+                                                    data-bs-target="#editModal<%= i %>">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    <% categoryOffersDet.forEach(function(categoryOffer, index) { %>
+                                        <div class="modal fade" id="editModal<%= index %>" tabindex="-1"
+                                            aria-labelledby="modalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="modalLabel">Edit Offer</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <form id="editCategoryOfferForm<%= index %>" role="form">
+                                                        <div class="modal-body">
+                                                            <div class="offerPercentageInput p-2">
+                                                                <label for="categoryOfferPercentage"
+                                                                    class="mb-2">Category Offer
+                                                                    Percentage: </label>
+                                                                <div class="input-group">
+                                                                    <input id="categoryOfferPercentage<%= index %>"
+                                                                        name="categoryOfferPercentage"
+                                                                        class="form-control"
+                                                                        placeholder="Enter the offer percentage"
+                                                                        value="<%= categoryOffer.categoryOfferPercentage %>">
+                                                                </div>
+                                                                <div class="form-text">Choose a percentage to be
+                                                                    discounted.
+                                                                    Between 5% and 90%.</div>
+                                                            </div>
+
+                                                            <div class="startDateInput p-2">
+                                                                <label for="startDate">Offer Start Date: </label>
+                                                                <div class="input-group">
+                                                                    <input id="startDate<%= index %>" name="startDate"
+                                                                        type="date" class="form-control"
+                                                                        value="<%= categoryOffer.startDate.toISOString().substring(0, 10) %>">
+                                                                </div>
+                                                                <div class="form-text">Choose a start date for the offer
+                                                                    to be
+                                                                    considered.</div>
+                                                            </div>
+
+                                                            <div class="endDateInput p-2">
+                                                                <label for="endDate">Offer Expiry Date : </label>
+                                                                <div class="input-group">
+                                                                    <input id="endDate<%= index %>" name="endDate"
+                                                                        type="date" class="form-control"
+                                                                        value="<%= categoryOffer.endDate.toISOString().substring(0, 10) %>">
+                                                                </div>
+                                                                <div class="form-text">Choose an exipry date for offer
+                                                                    to end.
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">Close</button>
+                                                            <button id="editOfferBtn" type="submit"
+                                                                class="btn btn-info">Save
+                                                                changes</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <% }); %>
+                                            <script>
+
+                                                $('#categoryEdit<%=i%>').validate({
+                                                    rules: {
+                                                        'categoryNameEdit<%=i%>': {
+                                                            required: true,
+                                                        },
+                                                        'categorydesEdit<%=i%>': {
+                                                            required: true
+                                                        }
+                                                    },
+                                                    submitHandler: async (form, event) => {
+                                                        event.preventDefault()
+
+                                                        let formData = {
+                                                            categoryName: form.categoryNameEdit.value,
+                                                            categoryDes: form.categorydesEdit.value,
+                                                            categoryId: '<%=categoryOffersDet[i]._id%>'
+                                                        }
+                                                        let response = await fetch('/editCategory', {
+                                                            method: 'POST',
+                                                            headers: { 'Content-Type': 'application/json' },
+                                                            body: JSON.stringify(formData)
+                                                        })
+                                                        let result = await response.json()
+                                                        if (result.success) {
+                                                            await Swal.fire({
+                                                                icon: "success",
+                                                                title: "Category Edited"
+
+                                                            });
+                                                            window.location.reload();
+                                                        } if (result.exists) {
+                                                            await Swal.fire({
+                                                                icon: "error",
+                                                                title: "Category Already Exists"
+
+                                                            });
+                                                            window.location.reload();
+                                                        } if (result.noValue) {
+                                                            await Swal.fire({
+                                                                icon: "error",
+                                                                title: "Give any value"
+
+                                                            });
+                                                            window.location.reload();
+                                                        }
+                                                    }
+                                                })
+                                            </script>
+                                            <% } %>
+
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Category Nav End -->
+    <!-- Section Start -->
+    <script>
+        var today = new Date().toISOString().split('T')[0];
+        const categoryOffersDet = '<%- JSON.stringify(categoryOffersDet) %>';
+        const parsedCatOffer = JSON.parse(categoryOffersDet);
+        console.log(parsedCatOffer);
+
+        $(document).ready(function () {
+            parsedCatOffer.forEach((categoryOffer, index) => {
+                const formId = `#editCategoryOfferForm${index}`;
+                const startDateSelector = `#startDate${index}`;
+                const endDateSelector = `#endDate${index}`;
+                const startDateElement = $(startDateSelector);
+                const endDateElement = $(endDateSelector);
+
+                // startDateElement.attr('min', today);
+                // endDateElement.attr('min', today);
+
+                // startDateElement.on('change', function () {
+                //     let startDateValue = startDateElement.val();
+                //     endDateElement.attr('min', startDateValue);
+                // });
+
+                // endDateElement.on('change', function () {
+                //     let endDateValue = endDateElement.val();
+                //     startDateElement.attr('max', endDateValue);
+                // });
+
+                $(formId).validate({
+                    rules: {
+                        categoryOfferPercentage: {
+                            required: true,
+                            min: 5,
+                            max: 90
+                        },
+                        startDate: "required",
+                        endDate: "required"
+                    },
+
+                    submitHandler: async function (form, event) {
+                        event.preventDefault();
+
+                        const formData = {
+                            categoryName: `${categoryOffer.categoryName}`,
+                            categoryOfferPercentage: $(form.categoryOfferPercentage).val(),
+                            startDate: $(form.startDate).val(),
+                            endDate: $(form.endDate).val()
+                        };
+
+                        try {
+                            const response = await fetch(`/admin/categoryOfferManagement/editOffer/${categoryOffer._id}`, {
+                                method: 'PUT',
+                                headers: { "Content-Type": "application/json" },
+                                body: JSON.stringify(formData)
+                            });
+
+                            const result = await response.json();
+
+                            if (result.success) {
+                                // console.log(result.currentStatus);
+                                // document.querySelector(`#currentStatus${index}`).innerHTML = `${result.currentStatus}`
+                                // console.log(document.querySelector(`#currentStatus${index}`).innerHTML);
+                                // console.log(`${result.currentStatus}`);
+                                Swal.fire({
+                                    icon: "success",
+                                    title: "Your Category Offer has been updated",
+                                    showConfirmButton: true,
+                                }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        window.location.href = "/admin/categoryManagement/category-offers-page" // Reload the page after user confirms
+                                    }
+                                });
+                            } else {
+                                Swal.fire({
+                                    icon: "error",
+                                    title: "Failed to update the product offer",
+                                    text: "Please try again"
+                                });
+                            }
+                        } catch (error) {
+                            console.error(error);
+                            Swal.fire({
+                                icon: "error",
+                                title: "Failed to update the product offer",
+                                text: "Please try again"
+                            });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- Section End -->
+
+    <!-- Footer Start -->
+    <div class="row">
+        <div class="col-12">
+
+            <nav>
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="?page=<%= page - 1 %>" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <% for(let i=1; i <=pages; i++){ %>
+                        <li class="page-item <%= page == i? 'active' : '' %>"><a class="page-link"
+                                href="?page=<%= i %>">
+                                <%= i %>
+                            </a></li>
+                        <!-- <% if(i < pages){ %> -->
+                        <!-- <li class="page-item disabled"><a class="page-link"
+                                                                                                        href="#">&hellip;</a></li>
+                                                                                                <% } %> -->
+                        <% } %>
+                            <li class="page-item">
+                                <a class="page-link" href="?page=<%= page + 1 %>" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- Footer End -->
+    <!-- Copyright Start -->
+    <div class="copyright">
+        <div class="container-fluid">
+            <p class="mb-0">@Copyright 2022. <a href="#" class="thm-color-one">Website.com</a> All Rights Reserved</p>
+        </div>
+    </div>
+    <!-- Copyright End -->
+    <!-- Scripts -->
+    <script src="assets/js/plugins/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/plugins/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/plugins/slick.min.js"></script>
+    <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/plugins/jquery.counterup.min.js"></script>
+    <script src="assets/js/plugins/jquery.inview.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js"
+        integrity="sha512-WMEKGZ7L5LWgaPeJtw9MBM4i5w5OSBlSjTjCtSnvFJGSVD26gE5+Td12qN5pvWXhuWaWcVwF++F7aqu9cvqP0A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/additional-methods.min.js"
+        integrity="sha512-TiQST7x/0aMjgVTcep29gi+q5Lk5gVTUPE9XgN0g96rwtjEjLpod4mlBRKWHeBcvGBAEvJBmfDqh2hfMMmg+5A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+        async function fnList(catName) {
+            let response = await fetch(`/listCategory?id=${catName}`, {
+                method: 'GET',
+            })
+            let result = await response.json()
+            if (result.list) {
+                await Swal.fire({
+                    icon: "error",
+                    title: "Category Unlisted",
+                });
+            }
+            window.location.reload();
+        }
+
+        async function fnUnlist(catName) {
+            let response = await fetch(`/unListCategory?id=${catName}`, {
+                method: 'GET',
+            })
+            let result = await response.json()
+            if (result.unlist) {
+                await Swal.fire({
+                    icon: "success",
+                    title: "Category listed",
+                    confirmButtonText: "OK",
+                });
+            }
+            window.location.reload();
+        }
+
+
+
+    </script>
+</body>
+
+</html>

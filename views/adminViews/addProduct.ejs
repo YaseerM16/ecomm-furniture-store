@@ -1,0 +1,721 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FurnitureHub - Online Furniture Mart</title>
+    <meta name="description"
+        content="Explore FurnitureHub, your ultimate destination for stylish and affordable furniture. Shop now and get exclusive deals!">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Description website">
+    <meta name="author" content="Maksym Blank">
+    <meta name="keywords" content="website, with, meta, tags">
+    <meta name="robots" content="noindex, follow">
+    <meta name="revisit-after" content="5 month">
+    <meta name="image" content="../../../../mywebsite.com/image.html">
+    <meta name="og:title" content="Title website">
+    <meta name="og:description" content="Description website">
+    <meta name="og:image" content="../../../../mywebsite.com/image.html">
+    <meta name="og:site_name" content="My Website">
+    <meta name="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Title website">
+    <meta name="twitter:description" content="Description website">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/genLogo.jpg">
+    <!-- Css -->
+    <link href="/assets/css/plugins/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/fonts/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/css/plugins/magnific-popup.css" rel="stylesheet">
+    <link href="/assets/css/plugins/slick.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/responsive.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.css"
+        integrity="sha512-UtLOu9C7NuThQhuXXrGwx9Jb/z9zPQJctuAgNUBK3Z6kkSYT9wJ+2+dh6klS+TDBCV9kNPBbAxbVD+vCcfGPaA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js"
+        integrity="sha512-WMEKGZ7L5LWgaPeJtw9MBM4i5w5OSBlSjTjCtSnvFJGSVD26gE5+Td12qN5pvWXhuWaWcVwF++F7aqu9cvqP0A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/additional-methods.min.js"
+        integrity="sha512-TiQST7x/0aMjgVTcep29gi+q5Lk5gVTUPE9XgN0g96rwtjEjLpod4mlBRKWHeBcvGBAEvJBmfDqh2hfMMmg+5A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Admin-Category</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+
+    <style>
+        #brand-name {
+            font-family: "Bungee Spice", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 30px;
+            background-color: #8a5d2a;
+        }
+
+        div .logoa {
+            height: 150px;
+            width: 136px;
+            padding: 0 0 0 0;
+        }
+
+        .inner {
+            height: 19vh;
+        }
+
+        .image-fit {
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            height: 19vh;
+        }
+
+        @media (min-width: 992px) {
+            .navbar-expand-lg .navbar-nav {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+        }
+
+        /* Style for the custom button */
+        .custom-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #4caf50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hover effect for the button */
+        .custom-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Additional styles for button focus and active states */
+        .custom-button:focus,
+        .custom-button:active {
+            outline: none;
+            background-color: #388e3c;
+        }
+
+        @media (min-width: 992px) {
+            .navbar-expand-lg .navbar-nav {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+        }
+
+        .h-100 {
+            height: 100%;
+            /* Occupy full height of parent container */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            flex-grow: 1;
+            /* Allow the navbar to grow and occupy available space */
+        }
+
+        .navbar-nav {
+            flex-direction: column;
+            /* Align nav items vertically */
+        }
+
+        #user .iconx {
+            background-color: #604220;
+            color: #ffffff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            margin: 0 auto;
+            /* Center the icon horizontally */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition:
+                background-color 0.7s ease,
+                color 0.7s ease,
+                transform 0.7s ease,
+                width 0.7s ease,
+                height 0.7s ease,
+                font-size 0.7s ease;
+        }
+
+        #user:hover .iconx {
+            background-color: #C7A379;
+            color: #ffffff;
+            transform: scale(1.6);
+            /* No margin change to prevent layout shift */
+        }
+
+        .header .topbar .inner {
+            height: 100px;
+        }
+
+        .header .topbar .inner {
+            height: 100px;
+        }
+
+        .header .topbar .inner .logo {
+            height: 100px;
+            margin-left: 60px;
+        }
+
+        .header .topbar .inner .logo #brand-name {
+            height: 52px;
+            padding: 2px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Preloader End -->
+    <!-- Header Start -->
+    <header class="header">
+        <!-- Topbar -->
+        <div class="topbar">
+            <div class="container-fluid">
+                <div class="inner">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a href="#">
+                            <div id="brand-name">&nbsp;Y-FURNS</div>
+                            <!-- <img src="assets/images/logo.png" class="image-fi" alt="logo" height="100px" width="100px"> -->
+                        </a>
+                    </div>
+                    <!-- Logo -->
+                    <!-- Search Form -->
+                    <div class="search-form">
+                        <form>
+                            <!-- Location -->
+
+                            <!-- Location -->
+                            <!-- Search -->
+                            <div class="input-group">
+                                <input type="text" name="#" class="form-control" placeholder="Search for products..."
+                                    autocomplete="off" required>
+                                <div class="input-group-append input-group-text">
+                                    <button type="submit">
+                                        <i class="fal fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Search -->
+                        </form>
+                    </div>
+                    <!-- Search Form -->
+                    <!-- Header Action -->
+                    <div class="header_action">
+                        <ul>
+                            <li class="user" style="margin-right: 50px;">
+                                <% if (user) { %>
+                                    <a href="#">
+                                        <img src="/assets/images/header/user.png" class="image-fit" alt="img">
+                                        <span>
+                                            Admin
+                                            <%= user.username %>
+                                        </span>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a href="/adimDashBoard">Dashboard</a>
+                                        </li>
+                                        <li>
+                                            <a href="/logout">Logout</a>
+                                        </li>
+                                    </ul>
+                                    <% } else { %>
+                                        <a href="#">
+                                            <img src="/assets/images/header/user2.png" class="image-fit" alt="img">
+                                            <span>Login as Admin</span>
+                                        </a>
+                                        <ul class="sub-menu">
+                                            <li>
+                                                <a href="/adminLogin">Admin Login</a>
+                                            </li>
+                                        </ul>
+                                        <% } %>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Header Action -->
+                </div>
+            </div>
+        </div>
+        <!-- Topbar -->
+    </header>
+    <!-- Header End -->
+    <!-- Category Nav Start -->
+    <section class="order-list">
+        <div class="container-fluid" style="padding: 0;">
+            <div class="row">
+                <div class="col-xl-3 col-lg-4">
+                    <div class="h-100">
+                        <nav class="navbar navbar-expand-lg navbar-dark justify-content-around"
+                            style="background-color: #604220;align-items: baseline;">
+                            <div class="container-fluid d-flex justify-content-center">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarNav">
+                                    <ul class="navbar-nav w-100 d-flex flex-column">
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+                                                <a class="nav-link" href="/adimDashBoard">Dashboard</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-tachometer-alt"></i>
+                                                </div>
+
+                                            </div>
+                                        </li>
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+                                                <a class="nav-link" href="/admin/userManagement/usersList">User
+                                                    Management</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-users"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+                                                <a class="nav-link" href="/admin/productManagement/productList">Product
+                                                    Management</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-box-open"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+                                                <a class="nav-link"
+                                                    href="/admin/categoryManagement/categoryList">Category
+                                                    Management</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-list"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+
+                                                <a class="nav-link" href="/admin/orderManagement/orderList">Order
+                                                    Management</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-shopping-cart"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+
+                                                <a class="nav-link" href="/admin/couponManagement/coupons">Coupon
+                                                    Management</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-ticket"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+                                                <a class="nav-link" href="/admin/salesReport">Sales Report</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-chart-line"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-8">
+                    <div class="container my-5">
+                        <div class="row" style="margin-left: 20px;">
+                            <div class="col-lg-6 col-md-8" style="width:87%;">
+                                <div class="card shadow-lg">
+                                    <div class="card-header text-center text-white" style="background-color: #C7A379;">
+                                        <h4>Add Product</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <form id="addProduct" enctype="multipart/form-data">
+                                            <div class="form-group text-center d-flex justify-content-center">
+                                                <label for="productName" class="my-2">Product Name</label>
+                                                <input type="text" name="productName" class="form-control mx-2"
+                                                    id="productName" placeholder="Enter product name" maxlength="50"
+                                                    style="max-width: 250px;">
+                                            </div>
+                                            <br>
+                                            <div class="form-group text-center">
+                                                <label for="parentCategory" class="my-2">Select Parent Category</label>
+                                                <div class="d-flex justify-content-center">
+                                                    <select name="parentCategory" class="form-control"
+                                                        id="parentCategory" style="max-width: 250px;">
+                                                        <option disabled selected>Select Parent Category</option>
+                                                        <% for(let i=0;i<categoryDet.length;i++){ %>
+                                                            <option value="<%=categoryDet[i]._id%>">
+                                                                <%=categoryDet[i].categoryName%>
+                                                            </option>
+                                                            <% } %>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="form-group text-center">
+                                                <label for="images" class="my-2">Add Image</label>
+                                                <div class="d-flex justify-content-center">
+                                                    <div>
+                                                        <input type="file" id="inputImage" accept="image/*">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="container" id="image-preview-container" style="display: none;">
+                                                <div class="d-flex justify-content-center">
+                                                    <label for="image-preview" class="my-2">Preview</label>
+                                                </div>
+                                                <div id="image-preview" class="d-flex justify-content-center">
+                                                    <div style="height: 500px;width: 800px;margin-bottom: 10px;">
+                                                        <img id="image" src="">
+                                                    </div>
+                                                    <div>
+                                                        <img src="" id="croppedImage" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group text-center">
+                                                <div>
+                                                    <button id="cropButton" class="custom-button">Crop Image</button>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group text-center">
+                                                <div id="imageContainer" class="d-flex justify-content-center"
+                                                    style="flex-wrap: wrap;">
+                                                    <div style="display: flex;flex-direction: column;">
+                                                        <img src="" id="cropperImage" alt="">
+                                                        <!-- Delete button/icon -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" name="croppedImage" id="croppedImageInput">
+
+                                            <div class="form-group text-center">
+                                                <label for="productPrice" class="my-2">Product Price</label>
+                                                <div class="d-flex justify-content-center">
+                                                    <div class="d-flex align-items-center">
+                                                        ₹&nbsp;
+                                                    </div>
+                                                    <input class="form-control" name="productPrice" type="text"
+                                                        id="productPrice" placeholder="Enter product price"
+                                                        maxlength="50" style="max-width: 250px;">
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="form-group text-center">
+                                                <label for="productStock" class="my-2">Product Stock</label>
+                                                <div class="d-flex justify-content-center">
+                                                    <input class="form-control" name="productStock" type="text"
+                                                        id="productStock" placeholder="Enter product stock"
+                                                        maxlength="50" style="max-width: 250px;">
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="text-center">
+                                                <button type="submit" class="btn btn-success">Add</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Nav End -->
+    <!-- Section Start -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.js"
+        integrity="sha512-JyCZjCOZoyeQZSd5+YEAcFgz2fowJ1F1hyJOXgtKu4llIa0KneLcidn5bwfutiehUTiOuK87A986BZJMko0eWQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+
+        var cropperImage = document.getElementById('cropperImage');
+        var croppedImageInput = document.getElementById('croppedImageInput');
+        console.log(document.getElementById('image1'));
+        const croppedImages = [];
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var image = document.getElementById('image');
+            var cropper;
+
+            document.getElementById('inputImage').addEventListener('change', function (e) {
+                const previewDiv = document.getElementById('image-preview-container');
+                previewDiv.style.display = 'block';
+
+                var files = e.target.files;
+                var done = function (url) {
+                    image.src = url;
+                    // Check if cropper is already initialized, destroy it before reinitializing with the new image
+                    if (cropper) {
+                        cropper.destroy();
+                    }
+                    cropper = new Cropper(image, {
+                        aspectRatio: NaN,
+                        viewMode: 2,
+                        autoCropArea: 1,
+                        cropBoxResizable: false,
+                    });
+                };
+                var reader;
+                var file;
+                var url;
+
+                if (files && files.length > 0) {
+                    file = files[0];
+                    if (URL) {
+                        done(URL.createObjectURL(file));
+                    } else if (FileReader) {
+                        reader = new FileReader();
+                        reader.onload = function (e) {
+                            done(reader.result);
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                }
+            });
+
+            //...
+
+
+
+            // Move the crop functionality inside the DOMContentLoaded event
+
+            document.getElementById('cropButton').addEventListener('click', async (event) => {
+                event.preventDefault();
+
+
+                if (typeof cropper !== 'undefined' && cropper !== null) {
+                    const croppedCanvas = cropper.getCroppedCanvas();
+                    if (croppedCanvas !== null) {
+                        const croppedImageBase64 = croppedCanvas.toDataURL('image/jpeg');
+                        const blob = await fetch(croppedImageBase64).then(response => response.blob());
+                        const imageUrl = URL.createObjectURL(blob);
+
+                        const imgElement = document.createElement('img');
+                        imgElement.src = imageUrl;
+
+                        const deleteButton = document.createElement('button');
+                        deleteButton.textContent = 'Drop';
+                        deleteButton.className = 'btn btn-sm btn-danger';
+                        deleteButton.style.marginTop = '10px';
+                        deleteButton.addEventListener('click', () => {
+                            imgElement.parentNode.removeChild(imgElement);
+                            deleteButton.parentNode.removeChild(deleteButton);
+                            const index = croppedImages.indexOf(croppedImageBase64);
+                            console.log(index);
+                            if (index !== -1) {
+                                console.log(index);
+                                croppedImages.splice(index, 1);
+                            }
+                            croppedImageInput.value = JSON.stringify(croppedImages);
+                        });
+
+                        const container = document.createElement('div');
+                        container.style.display = 'flex';
+                        container.style.flexDirection = 'column';
+                        container.style.alignItems = 'center';
+                        // container.style.justifyContent = 'space-between';
+                        container.style.width = '200px';
+                        container.style.height = '200px';
+                        container.appendChild(imgElement);
+                        container.appendChild(deleteButton);
+
+                        document.getElementById('imageContainer').appendChild(container);
+
+                        // Convert blob URL to base64-encoded string
+                        const reader = new FileReader();
+                        reader.readAsDataURL(blob);
+                        reader.onloadend = () => {
+                            const base64String = reader.result;
+                            croppedImages.push(base64String);
+                            croppedImageInput.value = JSON.stringify(croppedImages);
+                        };
+                    } else {
+                        console.error('Error: Cropped canvas is null.');
+                    }
+                } else {
+                    console.error('Error: Cropper is undefined or null.');
+                }
+            });
+
+
+        });
+
+        function dataURLToBlob(dataURL) {
+            if (dataURL) {
+                const base64String = dataURL.split(',')[1];
+                if (base64String) {
+                    const base64StringWithoutWhitespace = base64String.replace(/\s/g, '');
+                    const blob = new Blob([atob(base64StringWithoutWhitespace)], { type: 'image/jpeg' });
+                    return blob;
+                } else {
+                    console.error('base64String is undefined');
+                    return null;
+                }
+            } else {
+                console.error('dataURL is undefined');
+                return null;
+            }
+        }
+
+
+
+
+        $('#addProduct').validate({
+            rules: {
+                productName: {
+                    required: true,
+                },
+                productPrice: {
+                    required: true,
+                    pattern: "[1-9]\\d*"
+                },
+                images: {
+                    required: true,
+                },
+                productStock: {
+                    required: true,
+                    pattern: "0|[1-9][0-9]*"
+                },
+                parentCategory: {
+                    required: true,
+                }
+            },
+
+            submitHandler: async (form, event) => {
+
+                event.preventDefault()
+                // Create a new FormData object
+                const formData = new FormData(form);
+
+                console.log(formData)
+
+                croppedImages.forEach((imageBase64, index) => {
+                    const blob = dataURItoBlob(imageBase64);
+
+                    formData.append(`croppedImage_${index}`, blob, `image_${index}.jpg`);
+                });
+
+                function dataURItoBlob(dataURI) {
+                    const byteString = atob(dataURI.split(',')[1]);
+                    const mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+                    const ab = new ArrayBuffer(byteString.length);
+                    const ia = new Uint8Array(ab);
+                    for (let i = 0; i < byteString.length; i++) {
+                        ia[i] = byteString.charCodeAt(i);
+                    }
+                    return new Blob([ab], { type: mimeString });
+                }
+                console.log("going to the post product")
+
+
+
+                let response = await fetch('/admin/productManagement/addProduct', {
+                    method: 'POST',
+                    body: formData
+                })
+                let result = await response.json()
+                if (result.exists) {
+                    await Swal.fire({
+                        icon: "error",
+                        title: "Product Already exists"
+                    })
+                }
+                if (result.success) {
+                    await Swal.fire({
+                        icon: "success",
+                        title: "Product Added"
+                    })
+                    window.location.href = '/admin/productManagement/productList'
+                }
+                if (result.noValue) {
+                    await Swal.fire({
+                        icon: "error",
+                        title: "No Value in Product Name"
+                    })
+                }
+            }
+        })
+
+
+
+    </script>
+    <!-- Section End -->
+    <!-- Footer Start -->
+
+    <!-- Footer End -->
+
+    </div>
+    <!-- Copyright Start -->
+    <div class="copyright">
+        <div class="container-fluid">
+            <p class="mb-0">@Copyright 2022. <a href="#" class="thm-color-one">Website.com</a> All Rights Reserved</p>
+        </div>
+    </div>
+    <!-- Copyright End -->
+    <!-- Scripts -->
+    <script src="assets/js/plugins/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/plugins/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/plugins/slick.min.js"></script>
+    <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/plugins/jquery.counterup.min.js"></script>
+    <script src="assets/js/plugins/jquery.inview.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+</body>
+
+</html>

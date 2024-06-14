@@ -1,0 +1,774 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FurnitureHub - Online Furniture Mart</title>
+    <meta name="description"
+        content="Explore FurnitureHub, your ultimate destination for stylish and affordable furniture. Shop now and get exclusive deals!">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Description website">
+    <meta name="author" content="Maksym Blank">
+    <meta name="keywords" content="website, with, meta, tags">
+    <meta name="robots" content="noindex, follow">
+    <meta name="revisit-after" content="5 month">
+    <meta name="image" content="../../../../mywebsite.com/image.html">
+    <meta name="og:title" content="Title website">
+    <meta name="og:description" content="Description website">
+    <meta name="og:image" content="../../../../mywebsite.com/image.html">
+    <meta name="og:site_name" content="My Website">
+    <meta name="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Title website">
+    <meta name="twitter:description" content="Description website">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/fav2.png">
+    <!-- Css -->
+    <link href="assets/css/plugins/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/fonts/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/plugins/magnific-popup.css" rel="stylesheet">
+    <link href="assets/css/plugins/slick.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/responsive.css" rel="stylesheet">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+    <style>
+        #brand-name {
+            font-family: "Bungee Spice", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 30px;
+            background-color: #8a5d2a;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader Start -->
+    <div class="preloader">
+        <img src="assets/images/preloader.svg" alt="preloader">
+    </div>
+    <!-- Preloader End -->
+    <!-- Header Start -->
+    <header class="header">
+        <!-- Topbar -->
+        <div class="topbar">
+            <div class="container-fluid">
+                <div class="inner">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a href="/">
+                            <div id="brand-name">&nbsp;Y-FURNS</div>
+                            <!-- <img src="assets/images/logo.png" class="image-fi" alt="logo" height="100px" width="100px"> -->
+                        </a>
+                    </div>
+                    <!-- Logo -->
+                    <!-- Search Form -->
+                    <div class="search-form">
+                        <form>
+                            <!-- Location -->
+                            <div class="location">
+                                <label>Your Location</label>
+                                <select>
+                                    <option selected>Select A Location</option>
+                                    <option value="New Delhi">New Delhi</option>
+                                    <option value="Mumbai">Mumbai</option>
+                                    <option value="Kolkata">Kolkata</option>
+                                    <option value="Chennai">Chennai</option>
+                                </select>
+                            </div>
+                            <!-- Location -->
+                            <!-- Search -->
+                            <div class="input-group">
+                                <input type="text" name="#" class="form-control" placeholder="Search for products..."
+                                    autocomplete="off" required>
+                                <div class="input-group-append input-group-text">
+                                    <button type="submit">
+                                        <i class="fal fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Search -->
+                        </form>
+                    </div>
+                    <!-- Search Form -->
+                    <!-- Header Action -->
+                    <div class="header_action">
+                        <ul>
+                            <li>
+                                <a href="/wishListPage">
+                                    <i class="far fa-heart"></i>
+                                </a>
+                            </li>
+                            <li class="cart">
+                                <a href="/cartPage">
+                                    <span class="cart_value">0</span>
+                                    <i class="far fa-shopping-cart"></i>
+                                    <div class="cart_text">
+                                        My Cart
+                                        <!-- <span class="amount">$150.00</span> -->
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="user">
+                                <% if (user) { %>
+                                    <a href="#">
+                                        <img src="assets/images/header/user.png" class="image-fit" alt="img">
+                                        <span>
+                                            <%= user.username %>
+                                        </span>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a href="/userDetails">My Account</a>
+                                        </li>
+                                        <li>
+                                            <a href="/logout">Logout</a>
+                                        </li>
+                                    </ul>
+                                    <% } else { %>
+                                        <a href="#">
+                                            <img src="assets/images/header/user2.png" class="image-fit" alt="img">
+                                            <span>New User</span>
+                                        </a>
+                                        <ul class="sub-menu">
+                                            <li>
+                                                <a href="/logIn">Login</a>
+                                            </li>
+                                            <li>
+                                                <a href="/signUp">SignUp</a>
+                                            </li>
+                                        </ul>
+                                        <% } %>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Header Action -->
+                </div>
+            </div>
+        </div>
+        <!-- Topbar -->
+    </header>
+    <!-- Header End -->
+    <!-- Category Nav Start -->
+    <div class="main_navigation hide_cat">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-6">
+                    <div class="main-collapse-wrap custom-accordion">
+                        <button type="button">All Category</button>
+                        <div id="cataccordion" class="accordion_wrap accordion">
+                            <div class="card accordion-item">
+                                <div class="card-header accordion-header">
+                                    <button class="btn btn-link accordion-button" data-bs-toggle="collapse"
+                                        data-bs-target="#catOne">
+                                        <i class="fal fa-heart"></i>
+                                        Chair
+                                    </button>
+                                </div>
+                                <div id="catOne" class="accordion-collapse collapse show"
+                                    data-bs-parent="#cataccordion">
+                                    <div class="card-body accordion-body">
+                                        <ul class="sub-category">
+                                            <li>
+                                                <a href="#">Category 1</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Category 2</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Category 3</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Category 4</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Category 5</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Category 6</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card accordion-item">
+                                <div class="card-header accordion-header">
+                                    <button class="btn btn-link accordion-button collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#catTwo">
+                                        <i class="fal fa-heart"></i>
+                                        Sofa
+                                    </button>
+                                </div>
+                                <div id="catTwo" class="accordion-collapse collapse" data-bs-parent="#cataccordion">
+                                    <div class="card-body accordion-body">
+                                        <ul class="sub-category">
+                                            <li>
+                                                <a href="#">Category 1</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Category 2</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Category 3</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Category 4</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Category 5</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Category 6</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card accordion-item">
+                                <div class="card-header accordion-header">
+                                    <button class="btn btn-link accordion-button collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#catThree">
+                                        <i class="fal fa-heart"></i>
+                                        Table Lamp
+                                    </button>
+                                </div>
+                                <div id="catThree" class="accordion-collapse collapse" data-bs-parent="#cataccordion">
+                                    <div class="card-body accordion-body">
+                                        <ul class="sub-category">
+                                            <li>
+                                                <a href="#">Category 1</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Category 2</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Category 3</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Category 4</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Category 5</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Category 6</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card accordion-item">
+                                <div class="card-header accordion-header">
+                                    <button class="btn btn-link accordion-button collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#catFour">
+                                        <i class="fal fa-heart"></i>
+                                        Tables
+                                    </button>
+                                </div>
+                                <div id="catFour" class="accordion-collapse collapse" data-bs-parent="#cataccordion">
+                                    <div class="card-body accordion-body">
+                                        <ul class="sub-category">
+                                            <li>
+                                                <a href="#">Category 1</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Category 2</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Category 3</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Category 4</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Category 5</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Category 6</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card accordion-item">
+                                <div class="card-header accordion-header">
+                                    <button class="btn btn-link accordion-button collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#catFive">
+                                        <i class="fal fa-heart"></i>
+                                        Swing
+                                    </button>
+                                </div>
+                                <div id="catFive" class="accordion-collapse collapse" data-bs-parent="#cataccordion">
+                                    <div class="card-body accordion-body">
+                                        <ul class="sub-category">
+                                            <li>
+                                                <a href="#">Category 1</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Category 2</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Category 3</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Category 4</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Category 5</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Category 6</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card accordion-item">
+                                <div class="card-header accordion-header">
+                                    <button class="btn btn-link accordion-button collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#catSix">
+                                        <i class="fal fa-heart"></i>
+                                        Cabinets
+                                    </button>
+                                </div>
+                                <div id="catSix" class="accordion-collapse collapse" data-bs-parent="#cataccordion">
+                                    <div class="card-body accordion-body">
+                                        <ul class="sub-category">
+                                            <li>
+                                                <a href="#">Category 1</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Category 2</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Category 3</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Category 4</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Category 5</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Category 6</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-6">
+                    <div class="nav_inner">
+                        <ul class="main-menu">
+                            <li class="menu-item">
+                                <a href="index-2.html" class="active">Home</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="about.html">About Us</a>
+                            </li>
+                            <li class="menu-item menu-item-has-children"><a href="#">Blog</a>
+                                <ul class="sub-menu custom">
+                                    <li class="menu-item menu-item-has-children"><a href="#">Blog Grid</a>
+                                        <ul class="sub-menu custom">
+                                            <li class="menu-item"><a href="blog.html">Full Width</a></li>
+                                            <li class="menu-item"><a href="blog-left.html">Left Sidebar</a></li>
+                                            <li class="menu-item"><a href="blog-right.html">Right Sidebar</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="blog-details.html">Blog Details</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item menu-item-has-children"><a href="#">Pages</a>
+                                <ul class="sub-menu custom">
+                                    <li class="menu-item menu-item-has-children"><a href="#">Account</a>
+                                        <ul class="sub-menu custom">
+                                            <li class="menu-item"><a href="account.html">My Account</a></li>
+                                            <li class="menu-item"><a href="login.html">Login</a></li>
+                                            <li class="menu-item"><a href="register.html">Register</a></li>
+                                            <li class="menu-item"><a href="payment.html">Payment</a></li>
+                                            <li class="menu-item"><a href="thankyou.html">Thank You</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="faqs.html">Faq's</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="terms-conditions.html">Terms &amp; Con.</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="privacy.html">Policy</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="error.html">Error 404</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item menu-item-has-children"><a href="#">Shop</a>
+                                <ul class="sub-menu custom">
+                                    <li class="menu-item">
+                                        <a href="shop.html">Shop</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="shop-details.html">Shop Details</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="wishlist.html">Wishlist</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="cart.html">Cart</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="checkout.html">Checkout</a>
+                                    </li>
+                                    <li class="menu-item menu-item-has-children"><a href="#">Orders</a>
+                                        <ul class="sub-menu custom">
+                                            <li class="menu-item"><a href="order-list.html">Order List</a></li>
+                                            <li class="menu-item"><a href="order-details.html">Order Details</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+                        <div class="hamburger">
+                            <div class="hamburger_btn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Category Nav End -->
+    <!-- Section Start -->
+    <section class="section">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="section-header">
+                        <h3 class="title">Payment</h3>
+                        <p class="text">Lorem ipsum dolor sit amet, consectetur.</p>
+                    </div>
+                    <!--<div class="payment_box">
+                        <h5 class="title">Amount</h5>
+                        <ul class="address_list">
+                            <li>
+                                <div class="custom-control custom-radio form-check me-sm-2">
+                                    <input type="radio" class="custom-control-input form-check-input"
+                                        name="customamount" id="amountone" checked="">
+                                    <label class="custom-control-label" for="amountone">
+                                        <span class="top">
+                                            <span class="fw-500 thm-color-two">Enter Amount</span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="payment_value">
+                                    <div class="input-group">
+                                        <span class="input-group-text">$</span>
+                                        <input type="text" name="#" placeholder="0.00" autocomplete="off">
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="custom-control custom-radio form-check me-sm-2">
+                                    <input type="radio" class="custom-control-input form-check-input"
+                                        name="customamount" id="amounttwo">
+                                    <label class="custom-control-label" for="amounttwo">
+                                        <span class="top">
+                                            <span class="fw-500 thm-color-two">Enter Amount</span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="payment_value">$435.00</div>
+                            </li>
+                        </ul>
+                    </div>-->
+                    <div class="payment_box">
+                        <h5 class="title">Payment Method</h5>
+                        <ul class="address_list">
+                            <li>
+                                <div class="custom-control custom-radio form-check me-sm-2">
+                                    <input type="radio" class="custom-control-input form-check-input"
+                                        name="paymentmethod" id="paymentmethod" checked>
+                                    <label class="custom-control-label" for="paymentmethod">
+                                        <span class="top">
+                                            <span class="fw-500 thm-color-two" id="selectedPaymentMethod">Select Payment
+                                                Method</span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="payment_icon">
+                                    <select id="paymentMethodSelect" class="form-select mt-2"
+                                        onchange="selectPaymentMethod()">
+                                        <option value="cod" selected>Cash On Delivery</option>
+                                        <option value="card">Credit/Debit Card</option>
+                                        <option value="wallet">E-Wallet</option>
+                                        <option value="paypal">PayPal</option>
+                                    </select>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <button onclick="selectCOD()" class="thm-btn btn-rectangle thm-bg-color-one w-50">Proceed
+                        Now</button>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Section End -->
+    <!-- Modal -->
+    <div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="paymentModalLabel">Select Payment Method !</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Please select Payment Method to Proceed.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="close-btn" class="modal-btn btn-secondary"
+                        data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Start -->
+    <footer class="footer section-padding border-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-2 col-sm-4">
+                    <div class="ft_widget border-sm-0 pl-sm-0">
+                        <h6 class="ft_title">
+                            Find a Store<br />
+                            Shop Gift Cards
+                        </h6>
+                        <p class="mb-2">Follow Us:</p>
+                        <ul class="ft_social">
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-sm-4">
+                    <div class="ft_widget">
+                        <h6 class="ft_title">Help Center</h6>
+                        <ul class="ft_menu">
+                            <li>
+                                <a href="#">Payments</a>
+                            </li>
+                            <li>
+                                <a href="#">Shipping</a>
+                            </li>
+                            <li>
+                                <a href="#">Product Returns</a>
+                            </li>
+                            <li>
+                                <a href="#">FAQ's</a>
+                            </li>
+                            <li>
+                                <a href="#">Checkout</a>
+                            </li>
+                            <li>
+                                <a href="#">Blog</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-sm-4">
+                    <div class="ft_widget">
+                        <h6 class="ft_title">Useful Links</h6>
+                        <ul class="ft_menu">
+                            <li>
+                                <a href="#">Home</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact</a>
+                            </li>
+                            <li>
+                                <a href="#">About</a>
+                            </li>
+                            <li>
+                                <a href="#">Terms & Conditions</a>
+                            </li>
+                            <li>
+                                <a href="#">Policy</a>
+                            </li>
+                            <li>
+                                <a href="#">My Orders</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl col-sm-8">
+                    <div class="ft_widget">
+                        <h6 class="ft_title">Contact Us</h6>
+                        <p class="mb-3">
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                        </p>
+                        <ul class="ft_contact">
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    14 Prospect Row, Bury St. Edmunds
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-phone"></i>
+                                    000 2583 745 351
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-envelope"></i>
+                                    example@example.com
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-sm-4">
+                    <div class="ft_widget">
+                        <h6 class="ft_title">Categories</h6>
+                        <ul class="ft_menu">
+                            <li>
+                                <a href="#">Chair</a>
+                            </li>
+                            <li>
+                                <a href="#">Sofa</a>
+                            </li>
+                            <li>
+                                <a href="#">Dining Table</a>
+                            </li>
+                            <li>
+                                <a href="#">Table Lamp</a>
+                            </li>
+                            <li>
+                                <a href="#">Desk</a>
+                            </li>
+                            <li>
+                                <a href="#">cabinets</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+    <!-- Copyright Start -->
+    <div class="copyright">
+        <div class="container-fluid">
+            <p class="mb-0">@Copyright 2022. <a href="#" class="thm-color-one">Website.com</a> All Rights Reserved</p>
+        </div>
+    </div>
+    <!-- Copyright End -->
+    <!-- Scripts -->
+    <script>
+        function selectPaymentMethod() {
+            var paymentMethodSelect = document.getElementById("paymentMethodSelect");
+            var selectedPaymentMethod = paymentMethodSelect.options[paymentMethodSelect.selectedIndex].value;
+            document.getElementById("selectedPaymentMethod").innerHTML = selectedPaymentMethod;
+        }
+
+
+        // Set the initial selected payment method
+        selectPaymentMethod();
+
+        function selectCOD() {
+            var paymentMethodSelect = document.getElementById("paymentMethodSelect");
+            var selectedPaymentMethod = paymentMethodSelect.options[paymentMethodSelect.selectedIndex].value;
+
+            // Check if a payment method has been selected
+            if (selectedPaymentMethod === "") {
+                alert("Pleaseselect a payment method.");
+                return;
+            }
+
+            // Check if the Cash On Delivery radio button is checked
+            console.log(selectedPaymentMethod);
+            window.location.href = `/checkoutPage?paymentmethod=${selectedPaymentMethod}`
+
+
+            // If the Cash On Delivery radio button is checked, proceed with the form submission
+            // console.log("Payment method is Cash On Delivery." + selectedPaymentMethod);
+            // const form = document.createElement('form');
+            // form.method = 'get';
+            // form.action = '/checkoutPage';
+
+            // const input = document.createElement('input');
+            // input.type = 'hidden';
+            // input.name = 'paymentmethod';
+            // input.value = selectedPaymentMethod;
+            // form.appendChild(input);
+
+            // document.body.appendChild(form);
+            // form.submit();
+            // if (isChecked) {
+            //     // If not, show the modal
+            //     const form = document.createElement('form');
+            //     form.method = 'get';
+            //     form.action = '/checkoutPage';
+
+            //     const input = document.createElement('input');
+            //     input.type = 'hidden';
+            //     input.name = 'paymentmethod';
+            //     input.value = document.querySelector('input[name="paymentmethod"]:checked').value;
+            //     form.appendChild(input);
+
+            //     document.body.appendChild(form);
+            //     form.submit();
+            // } else {
+            //     // If it is, select the radio button
+            //     const paymentModal = new bootstrap.Modal(
+            //         document.getElementById("paymentModal")
+            //     )
+            //     paymentModal.show()
+            //     document
+            //         .getElementById("close-btn")
+            //         .addEventListener("click", () => {
+            //             paymentModal.hide();
+            //         });
+            // }
+        }
+    </script>
+    <script src="assets/js/plugins/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/plugins/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/plugins/slick.min.js"></script>
+    <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/plugins/jquery.counterup.min.js"></script>
+    <script src="assets/js/plugins/jquery.inview.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+</body>
+
+</html>

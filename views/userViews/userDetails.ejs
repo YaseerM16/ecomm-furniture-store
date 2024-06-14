@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>FurnitureHub - Online Furniture Mart</title>
+  <meta name="description"
+    content="Explore FurnitureHub, your ultimate destination for stylish and affordable furniture. Shop now and get exclusive deals!">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Description website" />
+  <meta name="author" content="Maksym Blank" />
+  <meta name="keywords" content="website, with, meta, tags" />
+  <meta name="robots" content="noindex, follow" />
+  <meta name="revisit-after" content="5 month" />
+  <meta name="image" content="../../../../mywebsite.com/image.html" />
+  <meta name="og:title" content="Title website" />
+  <meta name="og:description" content="Description website" />
+  <meta name="og:image" content="../../../../mywebsite.com/image.html" />
+  <meta name="og:site_name" content="My Website" />
+  <meta name="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Title website" />
+  <meta name="twitter:description" content="Description website" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/fav2.png" />
+  <!-- Css -->
+  <link href="assets/css/plugins/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/fonts/font-awesome.min.css" rel="stylesheet" />
+  <link href="assets/css/plugins/magnific-popup.css" rel="stylesheet" />
+  <link href="assets/css/plugins/slick.css" rel="stylesheet" />
+  <link href="assets/css/style.css" rel="stylesheet" />
+  <link href="assets/css/responsive.css" rel="stylesheet" />
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+
+  <style>
+    #brand-name {
+      font-family: "Bungee Spice", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 30px;
+      background-color: #8a5d2a;
+    }
+    .save_changes_btn {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Preloader Start -->
+  <div class="preloader">
+    <img src="assets/images/preloader.svg" alt="preloader" />
+  </div>
+  <!-- Preloader End -->
+  <!-- Header Start -->
+  <header class="header">
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="container-fluid">
+        <div class="inner">
+          <!-- Logo -->
+          <div class="logo">
+            <a href="/">
+              <div id="brand-name">&nbsp;Y-FURNS</div>
+              <!-- <img src="assets/images/logo.png" class="image-fi" alt="logo" height="100px" width="100px"> -->
+            </a>
+          </div>
+          <!-- Logo -->
+          <!-- Search Form -->
+          <div class="search-form">
+            <form>
+              <!-- Location -->
+              <div class="location">
+                <label>Your Location</label>
+                <select>
+                  <option selected>Select A Location</option>
+                  <option value="New Delhi">New Delhi</option>
+                  <option value="Mumbai">Mumbai</option>
+                  <option value="Kolkata">Kolkata</option>
+                  <option value="Chennai">Chennai</option>
+                </select>
+              </div>
+              <!-- Location -->
+              <!-- Search -->
+              <div class="input-group">
+                <input type="text" name="#" class="form-control" placeholder="Search for products..." autocomplete="off"
+                  required>
+                <div class="input-group-append input-group-text">
+                  <button type="submit">
+                    <i class="fal fa-search"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- Search -->
+            </form>
+          </div>
+          <!-- Search Form -->
+          <!-- Header Action -->
+          <div class="header_action">
+            <ul>
+              <li>
+                <a href="/wishListPage">
+                  <i class="far fa-heart"></i>
+                </a>
+              </li>
+              <li class="cart">
+                <a href="/cartPage">
+                  <span class="cart_value">0</span>
+                  <i class="far fa-shopping-cart"></i>
+                  <div class="cart_text">
+                    My Cart
+                    <!-- <span class="amount">$150.00</span> -->
+                  </div>
+                </a>
+              </li>
+              <li class="user">
+                <% if (user) { %>
+                  <a href="#">
+                    <img src="assets/images/header/user.png" class="image-fit" alt="img">
+                    <span>
+                      <%= user.username %>
+                    </span>
+                  </a>
+                  <ul class="sub-menu">
+                    <li>
+                      <a href="/userDetails">My Account</a>
+                    </li>
+                    <li>
+                      <a href="/logout">Logout</a>
+                    </li>
+                  </ul>
+                  <% } else { %>
+                    <a href="#">
+                      <img src="assets/images/header/user.png" class="image-fit" alt="img">
+                      <span>New User</span>
+                    </a>
+                    <ul class="sub-menu">
+                      <li>
+                        <a href="/logIn">Login</a>
+                      </li>
+                      <li>
+                        <a href="/signUp">SignUp</a>
+                      </li>
+                    </ul>
+                    <% } %>
+              </li>
+            </ul>
+          </div>
+          <!-- Header Action -->
+        </div>
+      </div>
+    </div>
+    <!-- Topbar -->
+  </header>
+  <!-- Header End -->
+  <!-- Category Nav Start -->
+  <div class="main_navigation hide_cat">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-3 col-6">
+  
+        </div>
+        <div class="col-lg-9 col-6">
+          <div class="nav_inner">
+            <ul class="main-menu">
+              <li class="menu-item">
+                <a href="/" class="active">Home</a>
+              </li>
+  
+              <li class="menu-item menu-item-has-children"><a href="#">Pages</a>
+                <ul class="sub-menu custom">
+                  <li class="menu-item menu-item-has-children"><a href="#">Account</a>
+                    <ul class="sub-menu custom">
+                      <li class="menu-item"><a href="/userDetails">My Account</a></li>
+                      <li class="menu-item"><a href="/logIn">Login</a></li>
+                      <li class="menu-item"><a href="/signUp">Register</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-item menu-item-has-children"><a href="#">Shop</a>
+                <ul class="sub-menu custom">
+                  <li class="menu-item">
+                    <a href="/products">Shop</a>
+                  </li>
+  
+                  <li class="menu-item">
+                    <a href="/wishListPage">Wishlist</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="/cartPage">Cart</a>
+                  </li>
+                  <li class="menu-item menu-item-has-children"><a href="/myOrdersPage">Orders</a>
+                    <ul class="sub-menu custom">
+                      <li class="menu-item"><a href="/myOrdersPage">Order List</a></li>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            </li>
+  
+            </ul>
+            <div class="hamburger">
+              <div class="hamburger_btn">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Category Nav End -->
+  <!-- Section Start -->
+  <section class="user_account">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-3 col-lg-4">
+          <div class="account_sidebar section pb-0 h-100">
+            <h4 class="title">My Account</h4>
+            <ul>
+              <li class="active">
+                <a href="/userDetails">
+                  <i class="fal fa-user"></i>
+                  User Info
+                </a>
+              </li>
+              <li>
+                <a href="/addressPage">
+                  <i class="fal fa-book"></i>
+                  Address
+                </a>
+              </li>
+              <li>
+                <a href="/myOrdersPage">
+                  <i class="fal fa-luggage-cart"></i>
+                  Order
+                </a>
+              </li>
+              <li>
+                <a href="/walletPage">
+                  <i class="fas fa-wallet"></i>
+                  Wallet
+                </a>
+              </li>
+              <li>
+                <a href="/wishListPage">
+                  <i class="fal fa-star"></i>
+                  Wishlist
+                </a>
+              </li>
+              
+              <li>
+
+                <div class="row mt-3">
+                  <input type="hidden" id="ReferalCode" value="http://localhost:3000/signUp?referral=<%= user.referralCode %>"
+                    readonly>
+                  <a onclick="copyReferralCode()"
+                    style=" cursor: pointer; box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; padding: 25px 50px;width: 280px;">
+                    <b class="text-success fw-700">Click here to get the referral link</b>
+                </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xl-9 col-lg-8">
+          <div class="section">
+            <div class="user_info_box">
+              <!-- User -->
+              <div class="user_box">
+                <div class="image">
+                  <img src="assets/images/header/user.png" class="image-fit" alt="img" />
+                </div>
+                <div class="user_text">
+                  <h6 class="name mb-0">
+                    <%= user.username %>
+                  </h6>
+                </div>
+              </div>
+              <!-- User Details -->
+              <div class="user_details">
+                <form class="user_form" id="my-form">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label><strong>User Name</strong></label>
+                        <input type="text" name="username" id="username"
+                          class="field-name form-control form-control-custom" placeholder="First Name"
+                          autocomplete="off" value="<%= user.username %>" required disabled="true" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label><strong>Email Address</strong></label>
+                        <input type="email" name="email" id="email" class="field-email form-control form-control-custom"
+                          placeholder="Email I'd" autocomplete="off" value="<%= user.email %>" required disabled="true"
+                          readonly />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <!-- <div class="form-group"> -->
+                      <label><strong>Phone No.</strong></label>
+                      <input type="number" name="phone" id="phone" class="field-phone form-control form-control-custom"
+                        placeholder="Phone No." autocomplete="off" value="<%= user.phonenumber %>" required min="10"
+                        disabled="true" />
+                    </div>
+                    <!-- </div> -->
+                  </div>
+                  <div class="text-center">
+                    <button type="button" class="thm-btn btn-rectangle thm-bg-color-one lh-normal btn-small"
+                      id="edit_profile_btn">
+                      Edit Profile
+                    </button>
+                    <button type="button" class="thm-btn btn-rectangle thm-bg-color-three save_changes_btn"
+                      style="display: none">
+                      Save Changes
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section End -->
+  <!-- Success Modal -->
+  <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title" id="successModalLabel">Success</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          The Details has been successfully updated.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" id="btn-success" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Errror Modal -->
+  <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title" id="successModalLabel">Failed !</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          There is some Issue to continue. User not Found!!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" id="btn-error" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap Modal for Custom Alert -->
+  <div class="modal fade" id="customAlertModal" tabindex="-1" aria-labelledby="customAlertModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="customAlertModalLabel">Alert</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Please correct the validation errors before saving changes.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="alert-ok" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Your Save Changes Button -->
+  <button class="btn btn-primary save_changes_btn">Save Changes</button>
+
+  <!-- Script to Handle Save Changes Button Click -->
+  <!-- <script>
+    document.querySelector(".save_changes_btn").addEventListener("click", function () {
+      // Trigger form submission when the "Save Changes" button is clicked
+      if ($('#my-form').valid()) {
+        // Trigger form submission when the form is valid
+        $('#my-form').submit();
+      } else {
+        // Show the custom alert modal
+        var myModal = new bootstrap.Modal(document.getElementById('customAlertModal'));
+        myModal.show();
+      }
+    });
+  </script> -->
+
+  <!-- Footer Start -->
+  <footer class="footer section-padding border-top">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-2 col-sm-4">
+          <div class="ft_widget border-sm-0 pl-sm-0">
+            <h6 class="ft_title">
+              Find a Store<br />
+              Shop Gift Cards
+            </h6>
+            <p class="mb-2">Follow Us:</p>
+            <ul class="ft_social">
+              <li>
+                <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xl-2 col-sm-4">
+          <div class="ft_widget">
+            <h6 class="ft_title">Help Center</h6>
+            <ul class="ft_menu">
+              <li>
+                <a href="#">Payments</a>
+              </li>
+              <li>
+                <a href="#">Shipping</a>
+              </li>
+              <li>
+                <a href="#">Product Returns</a>
+              </li>
+              <li>
+                <a href="#">FAQ's</a>
+              </li>
+              <li>
+                <a href="#">Checkout</a>
+              </li>
+              <li>
+                <a href="#">Blog</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xl-2 col-sm-4">
+          <div class="ft_widget">
+            <h6 class="ft_title">Useful Links</h6>
+            <ul class="ft_menu">
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#">Terms & Conditions</a>
+              </li>
+              <li>
+                <a href="#">Policy</a>
+              </li>
+              <li>
+                <a href="#">My Orders</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xl col-sm-8">
+          <div class="ft_widget">
+            <h6 class="ft_title">Contact Us</h6>
+            <p class="mb-3">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            </p>
+            <ul class="ft_contact">
+              <li>
+                <a href="#">
+                  <i class="fas fa-map-marker-alt"></i>
+                  14 Prospect Row, Bury St. Edmunds
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fas fa-phone"></i>
+                  000 2583 745 351
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fas fa-envelope"></i>
+                  example@example.com
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xl-2 col-sm-4">
+          <div class="ft_widget">
+            <h6 class="ft_title">Categories</h6>
+            <ul class="ft_menu">
+              <li>
+                <a href="#">Chair</a>
+              </li>
+              <li>
+                <a href="#">Sofa</a>
+              </li>
+              <li>
+                <a href="#">Dining Table</a>
+              </li>
+              <li>
+                <a href="#">Table Lamp</a>
+              </li>
+              <li>
+                <a href="#">Desk</a>
+              </li>
+              <li>
+                <a href="#">cabinets</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer End -->
+  <!-- Copyright Start -->
+  <div class="copyright">
+    <div class="container-fluid">
+      <p class="mb-0">
+        @Copyright 2022. <a href="#" class="thm-color-one">Website.com</a> All
+        Rights Reserved
+      </p>
+    </div>
+  </div>
+  <!-- Copyright End -->
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="assets/js/plugins/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/plugins/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/plugins/slick.min.js"></script>
+  <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
+  <script src="assets/js/plugins/jquery.counterup.min.js"></script>
+  <script src="assets/js/plugins/jquery.inview.min.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js"
+    integrity="sha512-WMEKGZ7L5LWgaPeJtw9MBM4i5w5OSBlSjTjCtSnvFJGSVD26gE5+Td12qN5pvWXhuWaWcVwF++F7aqu9cvqP0A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/additional-methods.min.js"
+    integrity="sha512-TiQST7x/0aMjgVTcep29gi+q5Lk5gVTUPE9XgN0g96rwtjEjLpod4mlBRKWHeBcvGBAEvJBmfDqh2hfMMmg+5A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    function copyReferralCode() {
+        const referralCodeValue = document.getElementById('ReferalCode').value;
+
+        const tempInput = document.createElement('input');
+        document.body.appendChild(tempInput);
+        tempInput.value = referralCodeValue;
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+
+        // Show a notification to indicate the code has been copied
+        Swal.fire('Referral link copied to clipboard!');
+      }
+
+    const successModal = new bootstrap.Modal(document.getElementById("successModal"));
+    const errorModal = new bootstrap.Modal(document.getElementById("errorModal"));
+    $(document).ready(function () {
+      $('#my-form').validate({
+        rules: {
+          username: {
+            required: true,
+            pattern: /^[a-zA-Z]+(?: [a-zA-Z]+)*$/,
+          },
+          phone: {
+            required: true,
+            pattern: /^\+?[1-9][0-9]{9}$/,
+          },
+        },
+        messages: {
+          username: {
+            required: "Please enter your username.",
+            pattern: "Username should only contain letters and spaces.",
+          },
+          phone: {
+            required: "Please enter your phone number.",
+            pattern: "Invalid phone number format.",
+          },
+        },
+        submitHandler: function (form) {
+          // Handle form submission if validation passes
+          const name = document.querySelector(".field-name").value.trim();
+          const phone = document.querySelector(".field-phone").value.trim();
+          const email = "<%= user.email %>";
+
+          const obj = {
+            username: name,
+            email: email,
+            phone: phone,
+          };
+
+          fetch('/editProfile', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(obj),
+          })
+            .then(response => response.json())
+            .then(data => {
+              if (data.success) {
+                successModal.show();
+                document.getElementById("btn-success").addEventListener("click", function () {
+                  successModal.hide();
+                  console.log(data.name);
+                  console.log(data.phone);
+                  document.querySelector(".field-name").value = data.name;
+                  document.querySelector(".field-phone").value = data.phone;
+                  document.querySelector(".field-name").disabled = true;
+                  document.querySelector(".field-phone").disabled = true;
+                  document.querySelector("#edit_profile_btn").style.display = "block";
+                  document.querySelector(".save_changes_btn").style.display = "none";
+                  // Optionally, you can redirect the user to another page here
+                  // window.location.href = "/userDetails";
+                });
+                console.log("Profile updated successfully.");
+              } else if (data.error) {
+                errorModal.show();
+                console.error("Failed to update profile:", data.error);
+              }
+            })
+            .catch(error => {
+              console.error('Error:', error);
+            });
+        },
+      });
+
+      document.getElementById("edit_profile_btn").addEventListener("click", function () {
+        let inputs = document.querySelectorAll(".user_form input");
+        for (let i = 0; i < inputs.length; i++) {
+          inputs[i].disabled = false;
+        }
+        document.querySelector("#edit_profile_btn").style.display = "none";
+        document.querySelector(".save_changes_btn").style.display = "block";
+      });
+
+      document.querySelector(".save_changes_btn").addEventListener("click", function () {
+        // Trigger form submission when the "Save Changes" button is clicked
+        if ($('#my-form').valid()) {
+          // Trigger form submission when the form is valid
+          $('#my-form').submit();
+        } else {
+          // Handle validation errors or show a message to the user
+          // For example, you can display an alert or error message
+          var myModal = new bootstrap.Modal(document.getElementById('customAlertModal'));
+          myModal.show();
+
+          document.getElementById("alert-ok").addEventListener("click", function (event) {
+            // Prevent the default action (form submission)
+            event.preventDefault();
+          });
+        }
+      });
+    });
+
+
+    // const form = document.getElementById("my-form");
+    // form.addEventListener("submit", (event) => {
+    //     event.preventDefault();
+    //     const formData = new FormData(form);
+    //     const data = Object.fromEntries(formData.entries());
+    //     const jsonData = JSON.stringify(data);
+    //     fetch("/editProfile""/editProfile", {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         },
+    //         body: jsonData
+    //     })
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             console.log("Success:", data);
+    //         })
+    //         .catch((error) => {
+    //             console.error("Error:", error);
+    //         });
+    // });
+
+
+    // const form = document.querySelector('.user_form');
+    // form.addEventListener('submit', async (event) => {
+    //   event.preventDefault(); // Prevent the default form submission
+
+    //   // Get the form data
+    //   const formData = new FormData(form);
+    //   console.log(formData);
+    //   try {
+    //     const response = await fetch('/editProfile', {
+    //       method: 'POST',
+    //       body: formData,
+    //     });
+
+    //     const data = await response.json();
+    //     if (data.success) {
+    //       successModal.show()
+    //       document.getElementById("btn-success").addEventListener("click", function () {
+    //         successModal.hide()
+    //         window.location.reload();
+    //       })
+    //       console.log("Item was Removed from the Cart ::");
+    //     } if (data.error) {
+    //       errorModal.show()
+    //       document.getElementById("btn-error").addEventListener("click", function () {
+    //         successModal.hide()
+    //         window.location.reload();
+    //       })
+    //       console.log("THe Opeeration was Unsuccessfull:: success is not true");
+    //     }
+    //   } catch (error) {
+    //     console.error('Error:', error);
+    //   }
+    // });
+
+
+    
+    
+    
+    
+    
+    
+    ///////     MY    TRY //////////////////////
+    
+    // document
+    // document
+    //   .getElementById("edit_profile_btn")
+    //   .addEventListener("click", function () {
+    //     let inputs = document.querySelectorAll(".user_form input");
+    //     for (let i = 0; i < inputs.length; i++) {
+    //       inputs[i].disabled = false;
+    //     }
+    //     console.log(document.querySelector(".field-name").value)
+    //     document.querySelector("#edit_profile_btn").style.display = "none";
+    //     document.querySelector(".save_changes_btn").style.display = "block";
+    //   });
+    //   .querySelector(".save_changes_btn")
+    //   .addEventListener("click", async function () {
+    //     // Handle form submission and save changes
+    //     // Disable inputs and show "Edit Profile" button
+
+    //     const name = document.querySelector(".field-name").value
+    //     const phone = document.querySelector(".field-phone").value
+    //     const email = "<%= user.email %>"
+
+    //     const obj = {
+    //       username: name,
+    //       email: email,
+    //       phone: phone
+    //     }
+    //     try {
+    //       const response = await fetch('/editProfile', {
+    //         method: 'POST',
+    //         headers: {
+    //           'Content-Type': 'application/json' // Specify the content type as JSON
+    //         },
+    //         body: JSON.stringify(obj)
+    //       });
+
+    //       const data = await response.json();
+    //       if (data.success) {
+    //         successModal.show();
+    //         document.getElementById("btn-success").addEventListener("click", function () {
+    //           successModal.hide();
+    //           console.log(data.name);
+    //           console.log(data.phone);
+    //           document.querySelector(".field-name").value = data.name
+    //           document.querySelector(".field-phone").value = data.phone
+    //           document.querySelector(".field-name").disabled = true
+    //           document.querySelector(".field-phone").disabled = true
+
+
+    //           // window.location.href = "/userDetails"
+
+    //         });
+    //         console.log("REloafinhh");
+    //         console.log("Profile updated successfully.");
+    //       } else if (data.error) {
+    //         errorModal.show();
+    //         document.getElementById("btn-error").addEventListener("click", function () {
+    //           errorModal.hide();
+    //           // window.location.reload();
+    //           // window.location.href = "/userDetails"
+    //         });
+    //         console.error("Failed to update profile:", data.error);
+    //       }
+    //     } catch (error) {
+    //       console.error('Error:', error);
+    //     }
+
+
+    //     document.querySelector("#edit_profile_btn").style.display = "block";
+    //     document.querySelector(".save_changes_btn").style.display = "none";
+    //   });
+  </script>
+</body>
+
+</html>

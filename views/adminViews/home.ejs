@@ -1,0 +1,787 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FurnitureHub - Online Furniture Mart</title>
+    <meta name="description"
+        content="Explore FurnitureHub, your ultimate destination for stylish and affordable furniture. Shop now and get exclusive deals!">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Description website">
+    <meta name="author" content="Maksym Blank">
+    <meta name="keywords" content="website, with, meta, tags">
+    <meta name="robots" content="noindex, follow">
+    <meta name="revisit-after" content="5 month">
+    <meta name="image" content="../../../../mywebsite.com/image.html">
+    <meta name="og:title" content="Title website">
+    <meta name="og:description" content="Description website">
+    <meta name="og:image" content="../../../../mywebsite.com/image.html">
+    <meta name="og:site_name" content="My Website">
+    <meta name="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Title website">
+    <meta name="twitter:description" content="Description website">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/fav2.png">
+    <!-- Css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- <link href="assets/css/plugins/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="assets/fonts/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/plugins/magnific-popup.css" rel="stylesheet">
+    <link href="assets/css/plugins/slick.css" rel="stylesheet">
+    <!-- Style -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/responsive.css" rel="stylesheet">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+    <!-- Include Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <!-- Include Chart.js Waterfall Plugin -->
+
+    <!-- <script
+        src="https://cdn.jsdelivr.net/npm/chartjs-chart-waterfall@1.0.0/dist/chartjs-chart-waterfall.min.js"></script> -->
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script> -->
+    <!-- Include Leaflet.js -->
+
+
+
+    <style>
+        .container {
+            margin: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        #salesLineChart,
+        #salesDoughnutChart {
+            max-width: 100%;
+            height: auto;
+        }
+
+        #map {
+            height: 400px;
+        }
+
+        canvas {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* .container,
+        .map-container {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+
+        .map-container {
+            height: 400px;
+        }
+
+        #map {
+            height: 100%; 
+        }*/
+
+        #brand-name {
+            font-family: "Bungee Spice", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 30px;
+            background-color: #8a5d2a;
+        }
+
+        .header .topbar .logo>a {
+            display: block;
+            height: 100px;
+            width: auto;
+        }
+
+        div .logoa {
+            height: 150px;
+            width: 136px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        .image-fit {
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            height: 100%;
+        }
+
+        @media (min-width: 992px) {
+            .navbar-expand-lg .navbar-nav {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+        }
+
+        /* bodytr */
+        .custom-card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            height: 300px;
+            /* Set a fixed height for the cards */
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .custom-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .custom-card .icon {
+            background-color: #C7A379;
+            color: #ffffff;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            font-size: 32px;
+            margin: 0 auto;
+            /* Center the icon horizontally */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            /* Add space between icon and text */
+        }
+
+        /* .iconx {
+            background-color: #C7A379;
+            color: #ffffff;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            font-size: 32px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }*/
+
+        #user .iconx {
+            background-color: #604220;
+            color: #ffffff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            margin: 0 auto;
+            /* Center the icon horizontally */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition:
+                background-color 0.7s ease,
+                color 0.7s ease,
+                transform 0.7s ease,
+                width 0.7s ease,
+                height 0.7s ease,
+                font-size 0.7s ease;
+        }
+
+        #user:hover .iconx {
+            background-color: #C7A379;
+            color: #ffffff;
+            transform: scale(1.6);
+            /* No margin change to prevent layout shift */
+        }
+
+
+
+        .custom-card:hover .icon {
+            background-color: #a8874d;
+        }
+
+        .custom-card .text {
+            font-size: 18px;
+            color: #333333;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .h-100 {
+            height: 100%;
+            /* Occupy full height of parent container */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            flex-grow: 1;
+            /* Allow the navbar to grow and occupy available space */
+        }
+
+        .navbar-nav {
+            flex-direction: column;
+            /* Align nav items vertically */
+        }
+
+        .header .topbar .inner {
+            height: 100px;
+        }
+
+        .product-offers-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: large;
+            background-color: #8a5d2a;
+            color: #ffffff;
+            padding: 8px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .product-offers-button:hover {
+            background-color: #ff564e;
+        }
+
+        .hover-button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .hover-button::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease;
+            z-index: 0;
+            opacity: 0;
+        }
+
+        .hover-button:hover {
+            background-color: #c0392b;
+            color: #fff;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .hover-button:hover::before {
+            opacity: 1;
+        }
+
+        .hover-button span {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader Start -->
+    <div class="preloader">
+        <img src="assets/images/preloader.svg" alt="preloader">
+    </div>
+    <!-- Preloader End -->
+    <!-- Header Start -->
+    <header class="header">
+        <!-- Topbar -->
+        <div class="topbar d-flex align-items-center">
+            <div class="container-fluid">
+                <div class="inner">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a href="#">
+                            <div id="brand-name">&nbsp;Y-FURNS</div>
+                            <!-- <img src="assets/images/logo.png" class="image-fi" alt="logo" height="100px" width="100px"> -->
+                        </a>
+                    </div>
+                    <!-- Logo -->
+                    <!-- Search Form -->
+                    <div class="search-form" style="padding-bottom: 50px;">
+                        <form>
+                            <!-- Location -->
+
+                            <!-- Location -->
+                            <!-- Search -->
+                            <div class="input-group">
+                                <input type="text" name="#" class="form-control" placeholder="Search for products..."
+                                    autocomplete="off" required>
+                                <div class="input-group-append input-group-text">
+                                    <button type="submit">
+                                        <i class="fal fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Search -->
+                        </form>
+                    </div>
+                    <!-- Search Form -->
+                    <!-- Header Action -->
+                    <div class="header_action" style="padding-bottom: 50px;">
+                        <ul>
+
+                            <li class="user">
+                                <% if (user) { %>
+                                    <a href="#">
+                                        <img src="assets/images/header/user.png" class="image-fit" alt="img">
+                                        <div class="cart_text">
+                                            ADMIN
+                                        </div>
+                                        <span>
+                                            <%= user.username %>
+                                        </span>
+                                    </a>
+                                    <ul class="sub-menu">
+
+                                        <li>
+                                            <a href="/adminLogout">Logout</a>
+                                        </li>
+                                    </ul>
+                                    <% } else { %>
+                                        <a href="account.html">
+                                            <img src="assets/images/header/user2.png" class="image-fit" alt="img">
+                                            <span>New User</span>
+                                        </a>
+                                        <ul class="sub-menu">
+                                            <li>
+                                                <a href="/adminLogin">Login</a>
+                                            </li>
+
+                                        </ul>
+                                        <% } %>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Header Action -->
+                </div>
+            </div>
+        </div>
+        <!-- Topbar -->
+    </header>
+    <!-- Header End -->
+    <section class="order-list">
+        <div class="container-fluid" style="padding: 0;">
+            <div class="row">
+                <div class="col-xl-3 col-lg-4">
+                    <div class="h-100">
+                        <!-- Category Nav Start -->
+                        <nav class="navbar navbar-expand-lg navbar-dark justify-content-around"
+                            style="background-color: #604220;align-items: baseline;">
+                            <div class="container-fluid d-flex justify-content-center">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarNav">
+                                    <ul class="navbar-nav w-100 d-flex flex-column">
+                                        <li class="nav-item my-3 fs-5">
+                                            <a class="nav-link" href="/adimDashBoard">Home</a>
+                                        </li>
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+                                                <a class="nav-link" href="/admin/userManagement/usersList">User
+                                                    Management</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-users"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+                                                <a class="nav-link" href="/admin/productManagement/productList">Product
+                                                    Management</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-box-open"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+                                                <a class="nav-link"
+                                                    href="/admin/categoryManagement/categoryList">Category
+                                                    Management</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-list"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+
+                                                <a class="nav-link" href="/admin/orderManagement/orderList">Order
+                                                    Management</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-shopping-cart"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+
+                                                <a class="nav-link" href="/admin/couponManagement/coupons">Coupon
+                                                    Management</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-ticket"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+                                                <a class="nav-link" href="/admin/salesReport">Sales Report</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-chart-line"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                        <!-- Category Nav End -->
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-8" style="transform: translateZ(0);">
+                    <section class="content-main">
+                        <div class="content-header">
+                            <div>
+                                <h2 class="content-title card-title">Dashboard</h2>
+                                <p>Whole data about your business here</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="card card-body mb-4">
+                                    <article class="icontext">
+                                        <span class="icon icon-sm rounded-circle bg-primary-light">
+                                            <i class="text-primary material-icons md-monetization_on"></i>
+                                        </span>
+                                        <div class="text">
+                                            <h6 class="mb-1 card-title">Today's Revenue</h6>
+                                            <h5 id="currentDayRevenue" class="card-title"></h5>
+                                            <span class="text-sm"> Shipping fees are not included </span>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="card card-body mb-4" style="padding-bottom: 40px;">
+                                    <article class="icontext">
+                                        <span class="icon icon-sm rounded-circle bg-success-light">
+                                            <i class="text-success material-icons md-local_shipping"></i>
+                                        </span>
+                                        <div class="text">
+                                            <h6 class="mb-1 card-title">Delivered products</h6>
+                                            <h5 id="completedOrdersCount" class="card-title">
+                                            </h5>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="card card-body mb-4">
+                                    <article class="icontext">
+                                        <span class="icon icon-sm rounded-circle bg-warning-light">
+                                            <i class="text-warning material-icons md-qr_code"></i>
+                                        </span>
+                                        <div class="text">
+                                            <h6 class="mb-1 card-title">Products</h6>
+                                            <h5 id="productsCount" class="card-title">
+                                            </h5>
+                                            <h6 id="categoryCount" style="margin-left: 10px;">In 19 Categories</h6>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="card card-body mb-4">
+                                    <article class="icontext">
+                                        <span class="icon icon-sm rounded-circle bg-info-light">
+                                            <i class="text-info material-icons md-shopping_basket"></i>
+                                        </span>
+                                        <div class="text">
+                                            <h6 class="mb-1 card-title">One Month Earning</h6>
+                                            <h5 id="MonthlyRevenue" class="card-title"></h5>
+                                            <span class="text-sm"> Based on your local time. </span>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row d-flex justify-content-around">
+                            <div class="container text-center d-flex">
+                                <div>
+                                    <section class="row d-flex justify-content-between"
+                                        style="display: flex; align-items: center; margin-top: 20px;">
+                                        <select style="width: 200px;padding: 10px;margin-left: 20px;" id="timeRange">
+                                            <option value="week">This Week</option>
+                                            <option value="2week">Last 2 Weeks</option>
+                                            <option value="month">Last Month</option>
+                                            <option value="year">Last Year</option>
+                                        </select>
+
+                                        <button class="hover-button"
+                                            style="width: 120px;margin-left: 10px;height: 55px; background-color: #2f5630; color: white; border: none; border-radius: 4px; cursor: pointer; margin-right: auto;"
+                                            type="button" onclick="updateRevenue()">
+                                            Apply Filter
+                                        </button>
+                                    </section>
+                                </div>
+                                <div style="padding-top: 30px;padding-left: 50px;">
+                                    <h5 id="heading">Two Weeks Sales Report</h5>
+                                </div>
+                            </div>
+
+                            <hr />
+                            <div class="col-lg-4">
+                                <canvas id="categoryWiseRevenueChart"></canvas>
+                            </div>
+                            <div class="col-lg-6" style="margin-top: 20px;">
+                                <canvas id="twoWeeksSalesChart"></canvas>
+                            </div>
+
+                        </div>
+                    </section>
+                    <div class="d-flex w-100 my-3 mx-3">
+                        <div class="my-3 mx-3">
+                            <a href="/admin/dashBoard/topProducts">
+                                <h3 class="title product-offers-button" style="width: 250px; height: 50px;">
+                                    Best Selling Products</h3>
+                            </a>
+                        </div>
+                        <div class="my-3 mx-3">
+                            <a href="/admin/dashBoard/topCategories">
+                                <h3 class="title product-offers-button" style="width: 250px; height: 50px;">
+                                    Best Selling Categories</h3>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@1.0.0/dist/chartjs-adapter-date-fns.min.js"></script>
+    <script>
+        let twoWeeksSalesChart; // Declare a variable to store the chart instance
+        let categoryWiseRevenueChart; // Declare a variable to store the chart instance
+
+        async function chartAndGraph(range) {
+            try {
+                const response = await fetch(`/admin/adminDashBoardData?filter=${range}`, { method: 'GET' });
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                console.log(data);
+
+                const {
+                    getProductsCount,
+                    getCategoryCount,
+                    pendingOrdersCount,
+                    deliveredOrdersCount,
+                    currentDayRevenue,
+                    fourteenDaysRevenue,
+                    categoryWiseRevenue,
+                    revenue,
+                    monthlyRevenue,
+                    activeUser
+                } = data;
+
+                console.log("Product Count: ", getProductsCount);
+                console.log("Category Count: ", getCategoryCount);
+                console.log("Pending Order :", pendingOrdersCount);
+                console.log("Delivered Orders: ", deliveredOrdersCount);
+                console.log("Current Revenue: ", currentDayRevenue);
+                console.log("Fourteen Day Revenue: ", fourteenDaysRevenue);
+                console.log("Category Revenue: ", categoryWiseRevenue);
+                console.log("Revenue: ", revenue);
+                console.log("Monthly Revenue: ", monthlyRevenue);
+                console.log("Active User: ", activeUser);
+                if (range) {
+                    document.getElementById('heading').innerHTML = range + " sales";
+                } else {
+                    document.getElementById('heading')
+                }
+                document.getElementById('productsCount').innerHTML = getProductsCount;
+                document.getElementById('categoryCount').innerHTML = `In ${getCategoryCount} Categories`;
+                document.getElementById('completedOrdersCount').innerHTML = deliveredOrdersCount;
+                document.getElementById('MonthlyRevenue').innerHTML = `&#8377&nbsp; ${monthlyRevenue}`;
+                document.getElementById('currentDayRevenue').innerHTML = `&#8377&nbsp; ${currentDayRevenue}`;
+
+                const twoWeekDates = fourteenDaysRevenue.date;
+                const dateRevenues = fourteenDaysRevenue.revenue;
+                console.log(twoWeekDates);
+
+                const categoryNames = categoryWiseRevenue.categoryName;
+                const categoryRevenue = categoryWiseRevenue.revenuePerCategory;
+
+                const twoWeeksSalesData = {
+                    labels: twoWeekDates,
+                    datasets: [{
+                        label: 'Sales',
+                        data: dateRevenues,
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1,
+                    }]
+                };
+
+                // Destroy the existing chart instance if it exists
+                if (twoWeeksSalesChart) {
+                    twoWeeksSalesChart.destroy();
+                }
+
+                // Config for Two Weeks Sales Report
+                const twoWeeksSalesConfig = {
+                    type: 'polarArea',
+                    data: twoWeeksSalesData,
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                };
+
+                // Render Two Weeks Sales Report
+                twoWeeksSalesChart = new Chart(
+                    document.getElementById('twoWeeksSalesChart'),
+                    twoWeeksSalesConfig
+                );
+
+                // Data for Categorywise Revenue Chart
+                const categoryWiseRevenueData = {
+                    labels: categoryNames,
+                    datasets: [{
+                        label: 'Revenue',
+                        data: categoryRevenue,
+                        backgroundColor: [
+                            'rgba(139, 0, 0, 0.7)', // Dark red
+                            'rgba(255, 206, 86, 0.7)', // Yellow
+                            'rgba(0, 0, 139, 0.7)' // Dark blue
+                        ],
+                        borderColor: [
+                            'rgba(139, 0, 0, 1)', // Dark red
+                            'rgba(255, 206, 86, 1)', // Yellow
+                            'rgba(0, 0, 139, 1)' // Dark blue
+                        ],
+                        borderWidth: 1
+                    }]
+                };
+
+                // Destroy the existing chart instance if it exists
+                if (categoryWiseRevenueChart) {
+                    categoryWiseRevenueChart.destroy();
+                }
+
+                const categoryWiseRevenueConfig = {
+                    type: 'polarArea', // Change the type to 'radar'
+                    data: categoryWiseRevenueData,
+                    options: {
+                        scales: {
+                            r: {
+                                beginAtZero: true,
+                                grid: {
+                                    circular: true
+                                }
+                            }
+                        },
+                        plugins: {
+                            tooltip: {
+                                callbacks: {
+                                    label: function (tooltipItem) {
+                                        return `₹ ${tooltipItem.raw}`;
+                                    }
+                                }
+                            },
+                            legend: {
+                                display: true,
+                                position: 'bottom',
+                            }
+                        }
+                    }
+                };
+
+                // Render Categorywise Revenue Chart
+                categoryWiseRevenueChart = new Chart(
+                    document.getElementById('categoryWiseRevenueChart'),
+                    categoryWiseRevenueConfig
+                );
+
+            } catch (error) {
+                console.error("Error while generating the data: ", error);
+            }
+        }
+
+        function updateRevenue() {
+            const range = document.getElementById("timeRange").value;
+            chartAndGraph(range);
+        }
+
+        // Call this function after defining it
+        chartAndGraph('Two Week');
+
+    </script>
+
+
+
+
+
+    <!-- Section End -->
+
+    <!-- Contact Form Start -->
+
+    <!-- Contact Form End -->
+
+    <!-- Copyright Start -->
+    <div class="copyright">
+        <div class="container-fluid">
+            <p class="mb-0">@Copyright 2022. <a href="#" class="thm-color-one">Website.com</a> All Rights Reserved</p>
+        </div>
+    </div>
+    <!-- Copyright End -->
+    <!-- Scripts -->
+
+    <script src="assets/js/plugins/jquery-3.6.0.min.js"></script>
+    <!-- <script src="assets/js/plugins/bootstrap.bundle.min.js"></script> -->
+    <script src="assets/js/plugins/slick.min.js"></script>
+    <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/plugins/jquery.counterup.min.js"></script>
+    <script src="assets/js/plugins/jquery.inview.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <!-- Maps -->
+</body>
+
+</html>

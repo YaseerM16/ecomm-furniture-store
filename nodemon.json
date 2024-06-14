@@ -1,0 +1,14 @@
+{
+    "ignore": [
+        "public/assets/*"
+    ],
+    "watch": [
+        "app.js",
+        "routes/*"
+    ],
+    "ext": "js,json",
+    "exec": "node app.js",
+    "env": {
+        "NODE_ENV": "development"
+    }
+}

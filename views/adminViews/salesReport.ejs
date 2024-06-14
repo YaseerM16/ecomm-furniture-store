@@ -1,0 +1,782 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FurnitureHub - Online Furniture Mart</title>
+    <meta name="description"
+        content="Explore FurnitureHub, your ultimate destination for stylish and affordable furniture. Shop now and get exclusive deals!">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Description website">
+    <meta name="author" content="Maksym Blank">
+    <meta name="keywords" content="website, with, meta, tags">
+    <meta name="robots" content="noindex, follow">
+    <meta name="revisit-after" content="5 month">
+    <meta name="image" content="../../../../mywebsite.com/image.html">
+    <meta name="og:title" content="Title website">
+    <meta name="og:description" content="Description website">
+    <meta name="og:image" content="../../../../mywebsite.com/image.html">
+    <meta name="og:site_name" content="My Website">
+    <meta name="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Title website">
+    <meta name="twitter:description" content="Description website">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/fav2.png">
+    <!-- Css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link href="/assets/css/plugins/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/fonts/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/css/plugins/magnific-popup.css" rel="stylesheet">
+    <link href="/assets/css/plugins/slick.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/responsive.css" rel="stylesheet">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+
+    <style>
+        #brand-name {
+            font-family: "Bungee Spice", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 30px;
+            background-color: #8a5d2a;
+        }
+
+        div .logoa {
+            height: 150px;
+            width: 136px;
+            padding: 0 0 0 0;
+        }
+
+        .inner {
+            height: 19vh;
+        }
+
+        .image-fit {
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            height: 19vh;
+        }
+
+        .order_info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Default styles for all viewport widths */
+        .order_list_block {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+
+        }
+
+        @media (min-width: 992px) {
+            .navbar-expand-lg .navbar-nav {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+        }
+
+
+        /* .order_list_block .image_info_box {
+            width: 30%;
+        }
+
+        .order_list_block .order_info {
+            width: 20%;
+        } */
+
+        /* Styles for viewport widths less than 768px */
+        @media (max-width: 767.98px) {
+            .order_list_block .image_info_box {
+                width: 100%;
+            }
+
+            .order_list_block .order_info {
+                width: 50%;
+            }
+
+            .order_list_block .price {
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        /* Styles for viewport widths less than 576px */
+        @media (max-width: 575.98px) {
+            .order_list_block .order_info {
+                width: 100%;
+            }
+        }
+
+        .h-100 {
+            height: 100%;
+            /* Occupy full height of parent container */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            flex-grow: 1;
+            /* Allow the navbar to grow and occupy available space */
+        }
+
+        .navbar-nav {
+            flex-direction: column;
+
+            /* Align nav items vertically */
+            .btn-custom {
+                height: 38px;
+                padding: 10px 20px;
+                font-size: 16px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            /* Ensuring button margin consistency */
+            .btn-custom+.btn-custom {
+                margin-left: 10px;
+            }
+        }
+
+        #user .iconx {
+            background-color: #604220;
+            color: #ffffff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            margin: 0 auto;
+            /* Center the icon horizontally */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition:
+                background-color 0.7s ease,
+                color 0.7s ease,
+                transform 0.7s ease,
+                width 0.7s ease,
+                height 0.7s ease,
+                font-size 0.7s ease;
+        }
+
+        #user:hover .iconx {
+            background-color: #C7A379;
+            color: #ffffff;
+            transform: scale(1.6);
+            /* No margin change to prevent layout shift */
+        }
+
+        .header .topbar .inner {
+            height: 100px;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        .table-responsive table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table-responsive th,
+        .table-responsive td {
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+
+            .table-responsive th,
+            .table-responsive td {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .table-responsive th,
+            .table-responsive td {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader Start -->
+
+    <!-- Header Start -->
+    <header class="header">
+        <!-- Topbar -->
+        <div class="topbar">
+            <div class="container-fluid">
+                <div class="inner">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a href="#">
+                            <div id="brand-name">&nbsp;Y-FURNS</div>
+                            <!-- <img src="assets/images/logo.png" class="image-fi" alt="logo" height="100px" width="100px"> -->
+                        </a>
+                    </div>
+                    <!-- Logo -->
+                    <!-- Search Form -->
+                    <div class="search-form">
+                        <form>
+                            <!-- Location -->
+
+                            <!-- Location -->
+                            <!-- Search -->
+                            <div class="input-group">
+                                <input type="text" name="#" class="form-control" placeholder="Search for products..."
+                                    autocomplete="off" required>
+                                <div class="input-group-append input-group-text">
+                                    <button type="submit">
+                                        <i class="fal fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Search -->
+                        </form>
+                    </div>
+                    <!-- Search Form -->
+                    <!-- Header Action -->
+                    <div class="header_action">
+                        <ul>
+
+                            <li class="user">
+                                <% if (user) { %>
+                                    <a href="#">
+                                        <img src="/assets/images/header/user.png" class="image-fit" alt="img">
+                                        <div class="cart_text">
+                                            ADMIN
+                                        </div>
+                                        <span>
+                                            <%= user.username %>
+                                        </span>
+                                    </a>
+                                    <ul class="sub-menu">
+
+                                        <li>
+                                            <a href="/logout">Logout</a>
+                                        </li>
+                                    </ul>
+                                    <% } else { %>
+                                        <a href="#">
+                                            <img src="/assets/images/header/user2.png" class="image-fit" alt="img">
+                                            <span>New User</span>
+                                        </a>
+                                        <ul class="sub-menu">
+                                            <li>
+                                                <a href="/logIn">Login</a>
+                                            </li>
+                                            <li>
+                                                <a href="/signUp">SignUp</a>
+                                            </li>
+                                        </ul>
+                                        <% } %>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Header Action -->
+                </div>
+            </div>
+        </div>
+        <!-- Topbar -->
+    </header>
+    <!-- Header End -->
+    <!-- Category Nav Start -->
+    <section class="order-list">
+        <div class="container-fluid" style="padding: 0;">
+            <div class="row">
+                <div class="col-xl-3 col-lg-4">
+                    <div class="h-100">
+                        <nav class="navbar navbar-expand-lg navbar-dark justify-content-around"
+                            style="background-color: #604220;align-items: baseline;">
+                            <div class="container-fluid d-flex justify-content-center">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarNav">
+                                    <ul class="navbar-nav w-100 d-flex flex-column">
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+                                                <a class="nav-link" href="/adimDashBoard">Dashboard</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-tachometer-alt"></i>
+                                                </div>
+
+                                            </div>
+                                        </li>
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+                                                <a class="nav-link" href="/admin/userManagement/usersList">User
+                                                    Management</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-users"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+                                                <a class="nav-link" href="/admin/productManagement/productList">Product
+                                                    Management</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-box-open"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+                                                <a class="nav-link"
+                                                    href="/admin/categoryManagement/categoryList">Category
+                                                    Management</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-list"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+
+                                                <a class="nav-link" href="/admin/orderManagement/orderList">Order
+                                                    Management</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-shopping-cart"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+
+                                                <a class="nav-link" href="/admin/couponManagement/coupons">Coupon
+                                                    Management</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-ticket"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item my-3 fs-5">
+                                            <div class="d-flex" id="user">
+                                                <a class="nav-link" href="/admin/salesReport">Sales Report</a>
+                                                <div class="iconx d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-chart-line"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-8">
+                    <div class="order_list_box sidebar">
+                        <div class="row justify-content-center">
+                            <!-- Item -->
+                            <div class="container">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+
+                                        <h3>Sales Report</h3>
+                                    </div>
+                                    <div style="margin-right: 25px;">
+
+                                        <a href="/salesReport/download/xlsx">
+                                            <button id="downloadExcel" class="btn btn-success btn-custom">
+                                                <i style="color: aliceblue;" class="fas fa-file-excel"></i> Download
+                                                Excel
+                                            </button>
+                                        </a>
+                                        <button id="downloadPdf" class="btn btn-danger btn-custom ms-3">
+                                            <i class="fas fa-file-pdf"></i> Download PDF
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="container mt-1 d-flex" style="padding: 0px 0px;margin: 0px 0px 0px;">
+                                    <% if(startDate2 && endDate2) { %>
+
+                                        <form id="filtersForm" class="form-inline d-flex mx-3">
+                                            <div class="d-flex flex-column" style="margin-right: 30px;">
+                                                <label for="filterDateFrom"
+                                                    class="mr-2 d-flex align-items-center me-3">Date
+                                                    From</label>
+                                                <input style="max-width: fit-content; height: 40px;" type="date"
+                                                    id="filterDateFrom" class="form-control form-control-sm datepicker"
+                                                    value="<%= startDate2.toISOString().substring(0, 10) %>">
+                                                <div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex flex-column" style="margin-left: 0px;">
+                                                <label for="filterDateTo"
+                                                    class="mr-2 ms-3 d-flex align-items-center me-3">Date
+                                                    To</label>
+                                                <input style="max-width: fit-content;height: 40px" type="date"
+                                                    id="filterDateTo" class="form-control form-control-sm datepicker"
+                                                    value="<%= endDate2.toISOString().substring(0, 10) %>">
+                                                <div>
+                                                </div>
+
+                                            </div>
+                                            <div class="d-flex my-3 mx-3" style="margin-top: 0px;">
+                                                <div>
+
+                                                    <button type="button" class="btn btn-primary btn-sm ms-3 btn-custom"
+                                                        id="applyFilters">Apply
+                                                        Filters</button>
+                                                </div>
+                                                <div>
+
+                                                    <a href="/removefilter">
+                                                        <button type="button"
+                                                            class="btn btn-secondary btn-sm ms-3 btn-custom">Remove
+                                                            Filters</button>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                        </form>
+                                        <% } else { %>
+                                            <form id="filtersForm" class="form-inline d-flex mx-3 flex-column">
+                                                <div class="d-flex">
+                                                    <div class="d-flex flex-column" style="margin-right: 5px;">
+
+                                                        <label for="filterDateFrom"
+                                                            class="mr-2 d-flex align-items-center me-3">Date
+                                                            From</label>
+                                                        <input style="max-width: fit-content; height: 40px;" type="date"
+                                                            id="filterDateFrom"
+                                                            class="form-control form-control-sm datepicker">
+                                                    </div>
+                                                    <div class="d-flex flex-column" style="margin-left: 0px;">
+                                                        <label for="filterDateTo"
+                                                            class="mr-2 ms-3 d-flex align-items-center me-3">Date
+                                                            To</label>
+                                                        <input style="max-width: fit-content;height: 40px" type="date"
+                                                            id="filterDateTo"
+                                                            class="form-control form-control-sm datepicker">
+
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex my-3 mx-3" style="margin-top: 0px;">
+                                                    <div>
+
+                                                        <button type="button"
+                                                            class="btn btn-primary btn-sm ms-3 btn-custom"
+                                                            id="applyFilters">Apply
+                                                            Filters</button>
+                                                    </div>
+                                                    <div>
+
+                                                        <a href="/removefilter">
+                                                            <button type="button"
+                                                                class="btn btn-secondary btn-sm ms-3 btn-custom">Remove
+                                                                Filters</button>
+                                                        </a>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+
+                                            <% } %>
+                                                <div style="padding-top: 25px;">
+
+                                                    <select id="filterOption" class="ms-5"
+                                                        style="width: 100px; height: 40px; padding: 5px; font-size: 16px; border: 2px solid #ccc; border-radius: 5px;">
+                                                        <option value="month">Month</option>
+                                                        <option value="week">Week</option>
+                                                        <option value="year">Year</option>
+                                                    </select>
+                                                    <button id="applyOptionFilter"
+                                                        class="btn btn-success ms-3 btn-custom"
+                                                        style="height: 50px;width: 70px;">Filter</button>
+                                                </div>
+                                                <br />
+                                                <br />
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Order Number</th>
+                                            <th>UserName</th>
+                                            <th>Order Date</th>
+                                            <th>Products</th>
+                                            <th>Product Offer</th>
+                                            <th>Quantity</th>
+                                            <th>Before Offer</th>
+                                            <th>Total Cost</th>
+                                            <th>Payment Method</th>
+                                            <th>Status</th>
+                                            <th>Coupons</th>
+                                            <th>Before Coupon</th>
+                                            <th>Ordered Price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% for (let i=0; i < Sreports.length; i++) { %>
+                                            <% let order=Sreports[i]; %>
+                                                <% let j=0; %>
+                                                    <tr>
+                                                        <td rowspan="<%= order.cartData.length %>"
+                                                            style="text-align: center;">
+                                                            <%= order.orderId %>
+                                                        </td>
+                                                        <td rowspan="<%= order.cartData.length %>"
+                                                            style="text-align: center;">
+                                                            <%= order.userId.username %>
+                                                        </td>
+                                                        <td rowspan="<%= order.cartData.length %>"
+                                                            style="text-align: center;">
+                                                            <%= new Date(order.orderDate).toLocaleDateString('en-GB', {
+                                                                day: '2-digit' , month: '2-digit' , year: 'numeric'
+                                                                }).replace(/\//g, '-' ) %>
+                                                        </td>
+                                                        <% for (let cartItem of order.cartData) { %>
+                                                            <td style="text-align: center;">
+                                                                <%= cartItem.productId.productName %>
+                                                            </td>
+                                                            <td style="text-align: center;">
+                                                                <% if (cartItem.productId.productOfferPercentage) { %>
+                                                                    <%= `${cartItem.productId.productOfferPercentage}%`
+                                                                        %>
+                                                                        <% } else { %>
+                                                                            Nil
+                                                                            <% } %>
+                                                            </td>
+                                                            <td style="text-align: center;">
+                                                                <%= cartItem.productQuantity %>
+                                                            </td>
+                                                            <td style="text-align: center;">
+                                                                <span>
+                                                                    Rs.<%= cartItem.productId.priceBeforeOffer *
+                                                                        cartItem.productQuantity %>
+                                                                </span>
+                                                            </td>
+                                                            <td style="text-align: center;">
+                                                                <span>
+                                                                    Rs.<%= cartItem.totalCostPerProduct %>
+                                                                </span>
+                                                            </td>
+                                                            <% if (j===0) { %>
+                                                                <td rowspan="<%= order.cartData.length %>"
+                                                                    style="text-align: center;">
+                                                                    <%= order.paymentType %>
+                                                                </td>
+                                                                <td rowspan="<%= order.cartData.length %>"
+                                                                    style="text-align: center;">
+                                                                    <%= order.orderStatus %>
+                                                                </td>
+                                                                <td rowspan="<%= order.cartData.length %>"
+                                                                    style="text-align: center;">
+                                                                    <% if (order.couponApplied) { %>
+                                                                        <%= `${order.couponApplied.discountPercentage}%`
+                                                                            %>
+                                                                            <% } else { %>
+                                                                                Nil
+                                                                                <% } %>
+                                                                </td>
+                                                                <td rowspan="<%= order.cartData.length %>"
+                                                                    style="text-align: center;">
+                                                                    <% if (order.couponApplied) { %>
+                                                                        <span>
+                                                                            Rs.<%= Math.round(order.grandTotalCost / (1
+                                                                                - order.couponApplied.discountPercentage
+                                                                                / 100)) %>
+                                                                        </span>
+                                                                        <% } else { %>
+                                                                            <span>
+                                                                                Rs.<%= order.grandTotalCost %>
+                                                                            </span>
+                                                                            <% } %>
+                                                                </td>
+                                                                <td rowspan="<%= order.cartData.length %>"
+                                                                    style="text-align: center;">
+                                                                    <span>
+                                                                        Rs.<%= order.grandTotalCost %>
+                                                                    </span>
+                                                                </td>
+                                                                <% } %>
+                                                    </tr>
+                                                    <% j++; %>
+                                                        <% } %>
+                                                            <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h5>
+                            Overall sales Count : <%= Sreports.length %>
+                        </h5>
+                    </div>
+                    <!-- Section End -->
+                    <!-- Footer Start -->
+                    <div class="row">
+
+                        <nav aria-label="Page navigation example" class="d-flex justify-content-center">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <%for(i=0;i<totalPages;i++){%>
+                                    <li class="page-item"><a class="page-link" href="/Sales?pages=<%=i+1%>">
+                                            <%=i+1%>
+                                        </a></li>
+                                    <%}%>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Category Nav End -->
+    <!-- Section Start -->
+
+
+
+
+    <!-- Footer End -->
+    <!-- Copyright Start -->
+    <div class="copyright">
+        <div class="container-fluid">
+            <p class="mb-0">@Copyright 2022. <a href="#" class="thm-color-one">Website.com</a> All Rights Reserved</p>
+        </div>
+    </div>
+    <!-- Copyright End -->
+    <!-- Scripts -->
+    <script src="assets/js/plugins/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/plugins/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/plugins/slick.min.js"></script>
+    <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/plugins/jquery.counterup.min.js"></script>
+    <script src="assets/js/plugins/jquery.inview.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        const orderDet = '<%- JSON.stringify(Sreports) %>'
+        const salesDet = '<%- JSON.stringify(products) %>'
+
+        const orders = JSON.parse(orderDet)
+        const delivsDet = JSON.parse(salesDet)
+
+        console.log(orders);
+        console.log(delivsDet);
+
+    </script>
+    <script>
+        let filterBtn2 = document.getElementById('filterBtn')
+        document.getElementById('applyOptionFilter').addEventListener('click', async (e) => {
+            e.preventDefault();
+            let filterOption = document.getElementById('filterOption').value;
+            let formData = { filterOption };
+            console.log(formData)
+            let response = await fetch('/admin/salesReport/filterOptions', {
+                method: 'POST',
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData)
+            });
+            let result = await response.json();
+
+            if (result.success) {
+                window.location.reload();
+            }
+        });
+
+        document.getElementById('applyFilters').addEventListener("click", async (e) => {
+            // Get values from date inputs
+            e.preventDefault()
+            const filterDateFrom = document.getElementById('filterDateFrom').value;
+            const filterDateTo = document.getElementById('filterDateTo').value;
+
+            // Construct the data object to send
+            const formData = {
+                filterDateFrom,
+                filterDateTo
+            };
+
+            try {
+                // Send the data using fetch
+                const response = await fetch('/filterdate', {
+                    method: 'POST', // Use 'POST' to send data to the server
+                    headers: {
+                        'Content-Type': 'application/json' // Specify the content type as JSON
+                    },
+                    body: JSON.stringify(formData) // Convert the data object to a JSON string
+                });
+
+                let data = await response.json();
+
+
+                if (data.success) {
+                    window.location.reload()
+                    // Check if the response is successful
+                }
+                if (data.dateInvalid) {
+                    await Swal.fire({
+                        icon: "error",
+                        title: "Invalid Date Filters",
+                    });
+                }
+                // Handle the response data
+
+                // Log the data to the console
+                // Do something with the data, e.g., update the UI
+            } catch (error) {
+                console.error('There was a problem with the fetch operation:', error); // Log any errors to the console
+            }
+        });
+
+    </script>
+    <script>
+        document.getElementById('downloadPdf').addEventListener('click', async () => {
+            console.log('hai')
+            const filterDateFrom = document.getElementById('filterDateFrom').value;
+            const filterDateTo = document.getElementById('filterDateTo').value;
+            try {
+                const response = await fetch(`/salesReport/download/pdf?startDate=${filterDateFrom}&endDate=${filterDateTo}`, {
+                    method: 'GET'
+                });
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'salesReport.pdf';
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+            } catch (error) {
+                console.error('Error downloading PDF:', error);
+            }
+        });
+    </script>
+</body>
+
+
+</html>

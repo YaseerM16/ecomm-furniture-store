@@ -1,0 +1,980 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FurnitureHub - Online Furniture Mart</title>
+    <meta name="description"
+        content="Explore FurnitureHub, your ultimate destination for stylish and affordable furniture. Shop now and get exclusive deals!">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Description website">
+    <meta name="author" content="Maksym Blank">
+    <meta name="keywords" content="website, with, meta, tags">
+    <meta name="robots" content="noindex, follow">
+    <meta name="revisit-after" content="5 month">
+    <meta name="image" content="http://mywebsite.com/image.jpg">
+    <meta name="og:title" content="Title website">
+    <meta name="og:description" content="Description website">
+    <meta name="og:image" content="http://mywebsite.com/image.jpg">
+    <meta name="og:site_name" content="My Website">
+    <meta name="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Title website">
+    <meta name="twitter:description" content="Description website">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/fav2.png">
+    <!-- Css -->
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap JavaScript (popper.js and bootstrap.js are required for dropdowns) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+    <link href="assets/css/plugins/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/fonts/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/plugins/magnific-popup.css" rel="stylesheet">
+    <link href="assets/css/plugins/slick.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/responsive.css" rel="stylesheet">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+    <style>
+        #brand-name {
+            font-family: "Bungee Spice", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 30px;
+            background-color: #8a5d2a;
+        }
+
+        @media (max-width: 380px) {
+            .order_list_block .price {
+                margin-left: 0;
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .navbar-expand-lg .navbar-nav {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader Start -->
+    <div class="preloader">
+        <img src="assets/images/preloader.svg" alt="preloader">
+    </div>
+    <!-- Preloader End -->
+    <!-- Header Start -->
+    <header class="header">
+        <!-- Topbar -->
+        <div class="topbar">
+            <div class="container-fluid">
+                <div class="inner">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a href="/">
+                            <div id="brand-name">&nbsp;Y-FURNS</div>
+                            <!-- <img src="assets/images/logo.png" class="image-fi" alt="logo" height="100px" width="100px"> -->
+                        </a>
+                    </div>
+                    <!-- Logo -->
+                    <!-- Search Form -->
+                    <div class="search-form">
+                        <form>
+                            <!-- Location -->
+                            <div class="location">
+                                <label>Your Location</label>
+                                <select>
+                                    <option selected>Select A Location</option>
+                                    <option value="New Delhi">New Delhi</option>
+                                    <option value="Mumbai">Mumbai</option>
+                                    <option value="Kolkata">Kolkata</option>
+                                    <option value="Chennai">Chennai</option>
+                                </select>
+                            </div>
+                            <!-- Location -->
+                            <!-- Search -->
+                            <div class="input-group">
+                                <input type="text" name="#" class="form-control" placeholder="Search for products..."
+                                    autocomplete="off" required>
+                                <div class="input-group-append input-group-text">
+                                    <button type="submit">
+                                        <i class="fal fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Search -->
+                        </form>
+                    </div>
+                    <!-- Search Form -->
+                    <!-- Header Action -->
+                    <div class="header_action">
+                        <ul>
+                            <li>
+                                <a href="wishlist.html">
+                                    <i class="far fa-heart"></i>
+                                </a>
+                            </li>
+                            <li class="cart">
+                                <a href="/cartPage">
+                                    <span class="cart_value">0</span>
+                                    <i class="far fa-shopping-cart"></i>
+                                    <div class="cart_text">
+                                        My Cart
+                                        <!-- <span class="amount">$150.00</span> -->
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="user">
+                                <% if (user) { %>
+                                    <a href="#">
+                                        <img src="assets/images/header/user.png" class="image-fit" alt="img">
+                                        <span>
+                                            <%= user.username %>
+                                        </span>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a href="/userDetails">My Account</a>
+                                        </li>
+                                        <li>
+                                            <a href="/logout">Logout</a>
+                                        </li>
+                                    </ul>
+                                    <% } else { %>
+                                        <a href="#">
+                                            <img src="assets/images/header/user2.png" class="image-fit" alt="img">
+                                            <span>New User</span>
+                                        </a>
+                                        <ul class="sub-menu">
+                                            <li>
+                                                <a href="/logIn">Login</a>
+                                            </li>
+                                            <li>
+                                                <a href="/signUp">SignUp</a>
+                                            </li>
+                                        </ul>
+                                        <% } %>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Header Action -->
+                </div>
+            </div>
+        </div>
+        <!-- Topbar -->
+    </header>
+    <!-- Header End -->
+    <div class="main_navigation hide_cat">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-6">
+
+                </div>
+                <div class="col-lg-9 col-6">
+                    <div class="nav_inner">
+                        <ul class="main-menu">
+                            <li class="menu-item">
+                                <a href="/" class="active">Home</a>
+                            </li>
+
+                            <li class="menu-item menu-item-has-children"><a href="#">Pages</a>
+                                <ul class="sub-menu custom">
+                                    <li class="menu-item menu-item-has-children"><a href="#">Account</a>
+                                        <ul class="sub-menu custom">
+                                            <li class="menu-item"><a href="/userDetails">My Account</a></li>
+                                            <li class="menu-item"><a href="/logIn">Login</a></li>
+                                            <li class="menu-item"><a href="/signUp">Register</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item menu-item-has-children"><a href="#">Shop</a>
+                                <ul class="sub-menu custom">
+                                    <li class="menu-item">
+                                        <a href="/products">Shop</a>
+                                    </li>
+
+                                    <li class="menu-item">
+                                        <a href="/wishListPage">Wishlist</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="/cartPage">Cart</a>
+                                    </li>
+                                    <li class="menu-item menu-item-has-children"><a href="/myOrdersPage">Orders</a>
+                                        <ul class="sub-menu custom">
+                                            <li class="menu-item"><a href="/myOrdersPage">Order List</a></li>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        </li>
+
+                        </ul>
+                        <div class="hamburger">
+                            <div class="hamburger_btn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Category Nav End -->
+    <!-- Section Start -->
+    <section class="order-list">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-3 col-lg-4">
+                    <div class="account_sidebar section pb-0 h-100">
+                        <h4 class="title">My Account</h4>
+                        <ul>
+                            <li class="active">
+                                <a href="/userDetails">
+                                    <i class="fal fa-user"></i>
+                                    User Info
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/addressPage">
+                                    <i class="fal fa-book"></i>
+                                    Address
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/myOrdersPage">
+                                    <i class="fal fa-luggage-cart"></i>
+                                    Order
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/walletPage">
+                                    <i class="fas fa-wallet"></i>
+                                    Wallet
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/wishListPage">
+                                    <i class="fal fa-star"></i>
+                                    Wishlist
+                                </a>
+                            </li>
+
+                            <li>
+
+                                <div class="row mt-3">
+                                    <input type="hidden" id="ReferalCode"
+                                        value="http://localhost:3000/signUp?referral=<%= user.referralCode %>" readonly>
+                                    <a onclick="copyReferralCode()"
+                                        style=" cursor: pointer; box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; padding: 25px 50px;width: 280px;">
+                                        <b class="text-success fw-700">Click here to get the referral link</b>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-8">
+                    <section class="section-padding">
+                        <div class="container-fluid">
+                            <div class="section-header">
+                                <h3 class="title">Order Details</h3>
+                                <p class="text">Lorem ipsum dolor sit amet, consectetur.</p>
+                            </div>
+                            <div class="order_user_details">
+                                <div class="row no-gutters">
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="details_box delivery_add">
+                                            <h4 class="title">Delivery Address</h4>
+                                            <p class="mb-2 thm-color-two">
+                                                <%= orders[0].addressDetails.firstName%>&nbsp;<%=
+                                                        orders[0].addressDetails.lastName%>
+                                            </p>
+                                            <p>
+                                                <%= orders[0].addressDetails.addressLine1%><br>
+
+                                                    <%= orders[0].addressDetails.addressLine2%>
+                                            </p>
+                                            <h4 class="title">Phone Number</h4>
+                                            <p>
+                                                <%= orders[0].addressDetails.phone%>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="details_box delivery_add">
+                                            <h4 class="title">Shipping Address</h4>
+                                            <p class="mb-2 thm-color-two">Yaseer M</p>
+                                            <p>Unit 1, Wilkes Head Farm, Wilkes Head Square, Llandysul, SA44 4AA</p>
+                                            <h4 class="title">Payment Method</h4>
+                                            <p>
+                                                <%= orders[0].paymentType%>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="details_box">
+                                            <h4 class="title">Order ID:</h4>
+                                            <div class="name">
+                                                <%= orders[0].orderId%>
+                                            </div>
+
+
+                                            <ul class="d-flex justify-content-between my-3 flex-column">
+                                                <div>
+
+                                                    <li style="margin-top: 10px;">
+                                                        <i class="fas fa-download"></i>
+                                                        <div class="text">
+                                                            <p class="thm-color-two fw-500">Download Invoice</p>
+                                                        </div>
+                                                    </li>
+                                                </div>
+                                                <div>
+
+                                                    <a href="/user/account/myOrders/orderDetails/downloadInvoice?orderId=<%= orders[0]._id %>"
+                                                        type="button" class="thm-btn btn-rectangle thm-bg-color-one">
+                                                        Download</a>
+                                                </div>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="order_list_box sidebar">
+                        <div class="row justify-content-center">
+                            <!-- Item -->
+                            <div class="col-12 d-flex flex-column"
+                                style="margin-left: 100px; margin-bottom: 50px;column-gap: 25px;flex-wrap: wrap;">
+                                <div class="col-2">
+                                    <div
+                                        style="font-weight: 900;margin-top: 3px; margin-top: 18px;;display: flex; justify-content: center; align-items: center;color: black;">
+                                        <h4>
+                                            Order&nbsp;Status&nbsp;:&nbsp;
+                                        </h4>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <% if (orders[0].paymentType==="Payment Pending" ) { %>
+                                        <div class="d-flex flex-column">
+
+                                            <div class="order_list_block"
+                                                style="background-color: #f9e7d1;border-radius: 24px;width: 300px;">
+                                                <div class="price"
+                                                    style="font-size: 24px;width: 200px;color: rgb(176, 0, 0);">
+                                                    Payment Pending
+                                                </div>
+                                                <div class="price">
+                                                    Your Payment for this Order is Failed
+                                                </div>
+
+                                            </div>
+                                            <div class="order_list_block"
+                                                style="background-color: #f9e7d1;border-radius: 24px;width: 300px;height: 80px;">
+                                                <div>
+                                                    <p class="mb-0 d-flex justify-content-center mx-3">Retry Payment</p>
+                                                    <a
+                                                        href="/payPalPaymentPage?orderID=<%= orders[0].orderId%>&grandTot=<%= grandTotal%>">
+                                                        <div class="price mb-0"
+                                                            style="font-size: 24px;width: 200px;color: forestgreen;cursor: pointer;margin-bottom: 10px;">
+
+                                                            Continue Payment
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <% } else { %>
+
+                                            <div class="order_list_block"
+                                                style="font-weight: 900;margin-top: 3px; display: flex; justify-content: center; align-items: center;color: black; background-color: #f9e7d1;">
+                                                <div>
+                                                    <% if (orderStatus) { %>
+                                                        <div class="price" style="font-size: 24px;">
+                                                            &nbsp;<%=orderStatus%>
+                                                        </div>
+                                                        <% } else { %>
+                                                            <div class="price" style="font-size: 24px;">
+                                                                &nbsp;<%= orders[0].orderStatus%>
+                                                            </div>
+                                                            <% } %>
+                                                </div>
+                                            </div>
+                                            <% } %>
+                                </div>
+
+                            </div>
+                            <div class="col-10">
+                                <div class="section-header">
+                                    <h3 class="title">Products Ordered</h3>
+                                </div>
+                                <% for(let i=0;i<orders.length;i++){ %>
+                                    <% if (orders[i].paymentType==="Payment Pending" ) { %>
+                                        <div class="col-12">
+                                            <div class="order_list_block">
+                                                <div class="image_info_box d-flex flex-column justify-content-center">
+                                                    <a href="#">
+                                                        <img src="assets/uploadimages/uploads/<%=orders[i].productDetails.productImage[0]%>"
+                                                            class="image-fit-contain" alt="img" style="margin-right: 0">
+                                                    </a>
+                                                    <div class="info">
+                                                        <h6 class="mb-0 name"><a href="order-details.html">
+                                                                <%= orders[i].productDetails.productName%>
+                                                            </a></h6>
+                                                    </div>
+                                                </div>
+                                                <div class="order_info">
+                                                    <p class="mb-0 d-flex justify-content-center"">Price</p>
+                                                                            <div class=" price">&#8377&nbsp;<%=
+                                                            orders[i].productDetails.productPrice%>
+                                                </div>
+                                            </div>
+                                            <div class="order_info">
+                                                <p class="mb-0 d-flex justify-content-center">Quantity</p>
+                                                <div class="price">
+                                                    <%= orders[i].cartData.productQuantity%>
+                                                </div>
+                                            </div>
+                                            <div class="order_info" style="margin-bottom: 32px;">
+                                                <p class="mb-0 d-flex justify-content-center">Date</p>
+                                                <div class="name" id="date"
+                                                    style="font-weight: 900;margin-top: 3px; display: flex; justify-content: center;">
+                                                    <%= orders[i].orderDate.toLocaleDateString('en-US', {
+                                                        year: 'numeric' , month: '2-digit' , day: '2-digit' }) %>
+                                                </div>
+                                                <!-- <p class="mb-0">Your Item has been delivered</p> -->
+                                            </div>
+                                            <div class="order_info">
+                                                <p class="mb-0 d-flex justify-content-center">Total</p>
+                                                <div class="price">&#8377&nbsp;<%=
+                                                        orders[i].cartData.totalCostPerProduct%>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <% } else { %>
+
+                                            <div class="col-12">
+                                                <div class="order_list_block">
+                                                    <div
+                                                        class="image_info_box d-flex flex-column justify-content-center">
+                                                        <a href="#">
+                                                            <img src="assets/uploadimages/uploads/<%=orders[i].productDetails.productImage[0]%>"
+                                                                class="image-fit-contain" alt="img"
+                                                                style="margin-right: 0">
+                                                        </a>
+                                                        <div class="info">
+                                                            <h6 class="mb-0 name"><a href="order-details.html">
+                                                                    <%= orders[i].productDetails.productName%>
+                                                                </a></h6>
+                                                        </div>
+                                                    </div>
+                                                    <div class="order_info">
+                                                        <p class="mb-0 d-flex justify-content-center"">Price</p>
+                                                    <div class=" price">&#8377&nbsp;<%=
+                                                                orders[i].productDetails.productPrice%>
+                                                    </div>
+                                                </div>
+                                                <div class="order_info">
+                                                    <p class="mb-0 d-flex justify-content-center">Quantity</p>
+                                                    <div class="price">
+                                                        <%= orders[i].cartData.productQuantity%>
+                                                    </div>
+                                                </div>
+                                                <div class="order_info">
+                                                    <p class="mb-0 d-flex justify-content-center">Status</p>
+                                                    <div class="price">
+                                                        <%= orders[i].cartData.productStatus %>
+                                                    </div>
+                                                </div>
+                                                <div class="order_info" style="margin-bottom: 32px;">
+                                                    <p class="mb-0 d-flex justify-content-center">Date</p>
+                                                    <div class="name" id="date"
+                                                        style="font-weight: 900;margin-top: 3px; display: flex; justify-content: center;">
+                                                        <%= orders[i].orderDate.toLocaleDateString('en-US', {
+                                                            year: 'numeric' , month: '2-digit' , day: '2-digit' }) %>
+                                                    </div>
+                                                    <!-- <p class="mb-0">Your Item has been delivered</p> -->
+                                                </div>
+                                                <div class="order_info">
+                                                    <p class="mb-0 d-flex justify-content-center">Total</p>
+                                                    <div class="price">&#8377&nbsp;<%=
+                                                            orders[i].cartData.totalCostPerProduct%>
+                                                    </div>
+                                                </div>
+                                                <div class="order_info">
+                                                    <% if (orders[i].cartData.productStatus==="Delivered" ) { %>
+                                                        <button type="button" id="singleProReturn"
+                                                            data-order-date="<%= orders[i].orderDate %>"
+                                                            class="returnBtn thm-btn btn-rectangle thm-bg-color-one bg-success"
+                                                            onclick="returnOrder('<%=orders[i].cartData._id%>','<%=orders[i]._id%>')">Return
+                                                            Order</button>
+                                                        <% } else if (orders[i].cartData.productStatus==="Cancelled" ) {
+                                                            %>
+                                                            <div class="order_info d-flex justify-content-center">
+                                                                <div class="price"
+                                                                    style="color: red; margin-top: 39px;margin-right: 60px;">
+                                                                    Cancelled</div>
+                                                            </div>
+                                                            <% } else if
+                                                                (orders[i].cartData.productStatus==="Requested Return" )
+                                                                { %>
+                                                                <div class="order_info d-flex justify-content-center">
+                                                                    <div class="price"
+                                                                        style="color: rgb(46, 12, 84); margin-top: 39px;margin-right: 60px;">
+                                                                        Requested for Return</div>
+                                                                </div>
+                                                                <% } else if
+                                                                    (orders[i].cartData.productStatus==="Approve Return"
+                                                                    ) { %>
+                                                                    <div
+                                                                        class="order_info d-flex justify-content-center">
+                                                                        <div class="price"
+                                                                            style="color: rgb(46, 12, 84); margin-top: 39px;margin-right: 60px;">
+                                                                            Request Approved</div>
+                                                                    </div>
+                                                                    <% } else if
+                                                                        (orders[i].cartData.productStatus==="Reject Return"
+                                                                        ) { %>
+                                                                        <div
+                                                                            class="order_info d-flex justify-content-center">
+                                                                            <div class="price"
+                                                                                style="color: rgb(181, 33, 3); margin-top: 39px;margin-right: 60px;">
+                                                                                Request Rejected</div>
+                                                                        </div>
+                                                                        <% } else if
+                                                                            (orders[i].cartData.productStatus==="Returned"
+                                                                            ) { %>
+                                                                            <div
+                                                                                class="order_info d-flex justify-content-center">
+                                                                                <div class="price"
+                                                                                    style="color: rgb(55, 70, 69); margin-top: 39px;margin-right: 60px;">
+                                                                                    Returned</div>
+                                                                            </div>
+
+                                                                            <% } else { %>
+                                                                                <button type="button"
+                                                                                    id="singleProCancel"
+                                                                                    data-pid="<%=orders[i].cartData._id%>"
+                                                                                    data-rid="<%=orders[i]._id%>"
+                                                                                    class="thm-btn btn-rectangle thm-bg-color-one bg-danger">Cancel
+                                                                                    Order</button>
+                                                                                <% } %>
+                                                </div>
+
+                                            </div>
+                                            <% } %>
+                                                <% } %>
+                                                    <% if (orders[0]?.couponApplied ) { %>
+                                                        <div class="col-12 d-flex justify-content-end">
+                                                            <div class="col-2">
+                                                                <div
+                                                                    style="font-weight: 900;margin-top: 3px; margin-top: 18px;;display: flex; justify-content: center; align-items: center;color: black;">
+                                                                    <div style="margin-bottom: 12px;">
+                                                                        Coupon Applied
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <div class="order_list_block"
+                                                                    style="font-weight: 900;margin-top: 3px; display: flex; justify-content: center; align-items: center;color: black;">
+                                                                    <div style="margin-bottom: 12px;">
+                                                                        <div class="price">
+                                                                            &#8377&nbsp;<%= Math.round(grandTotal / (1 -
+                                                                                orders[0]?.couponDetails.discountPercentage
+                                                                                / 100)) %>
+                                                                                ~ </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <% } %>
+                                                            <div class="col-12 d-flex justify-content-end">
+                                                                <div class="col-2">
+                                                                    <div
+                                                                        style="font-weight: 900;margin-top: 3px; margin-top: 18px;;display: flex; justify-content: center; align-items: center;color: black;">
+                                                                        <div style="margin-bottom: 12px;">
+                                                                            Grand Total
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <div class="order_list_block"
+                                                                        style="font-weight: 900;margin-top: 3px; display: flex; justify-content: center; align-items: center;color: black;">
+                                                                        <div style="margin-bottom: 12px;">
+                                                                            <div class="price">
+
+                                                                                &#8377&nbsp;<%= grandTotal%>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Section End -->
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="successModalLabel">Success</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    The item has been successfully deleted.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" id="success-btn" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Button to trigger the modal -->
+
+    <!-- Confirmation Modal -->
+    <div class="modal fade" id="cancelOrderModal" tabindex="-1" role="dialog" aria-labelledby="cancelOrderModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="cancelOrderModalLabel">Confirm Order Cancellation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <p>Are you sure you want to cancel this order?</p>
+                </div>
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="dismissConfirm"
+                        data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" id="cancelConfirm">Confirm Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer Start -->
+    <footer class="footer section-padding border-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-2 col-sm-4">
+                    <div class="ft_widget border-sm-0 pl-sm-0">
+                        <h6 class="ft_title">
+                            Find a Store<br />
+                            Shop Gift Cards
+                        </h6>
+                        <p class="mb-2">Follow Us:</p>
+                        <ul class="ft_social">
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-sm-4">
+                    <div class="ft_widget">
+                        <h6 class="ft_title">Help Center</h6>
+                        <ul class="ft_menu">
+                            <li>
+                                <a href="#">Payments</a>
+                            </li>
+                            <li>
+                                <a href="#">Shipping</a>
+                            </li>
+                            <li>
+                                <a href="#">Product Returns</a>
+                            </li>
+                            <li>
+                                <a href="#">FAQ's</a>
+                            </li>
+                            <li>
+                                <a href="#">Checkout</a>
+                            </li>
+                            <li>
+                                <a href="#">Blog</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-sm-4">
+                    <div class="ft_widget">
+                        <h6 class="ft_title">Useful Links</h6>
+                        <ul class="ft_menu">
+                            <li>
+                                <a href="#">Home</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact</a>
+                            </li>
+                            <li>
+                                <a href="#">About</a>
+                            </li>
+                            <li>
+                                <a href="#">Terms & Conditions</a>
+                            </li>
+                            <li>
+                                <a href="#">Policy</a>
+                            </li>
+                            <li>
+                                <a href="#">My Orders</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl col-sm-8">
+                    <div class="ft_widget">
+                        <h6 class="ft_title">Contact Us</h6>
+                        <p class="mb-3">
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                        </p>
+                        <ul class="ft_contact">
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    14 Prospect Row, Bury St. Edmunds
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-phone"></i>
+                                    000 2583 745 351
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-envelope"></i>
+                                    example@example.com
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-sm-4">
+                    <div class="ft_widget">
+                        <h6 class="ft_title">Categories</h6>
+                        <ul class="ft_menu">
+                            <li>
+                                <a href="#">Chair</a>
+                            </li>
+                            <li>
+                                <a href="#">Sofa</a>
+                            </li>
+                            <li>
+                                <a href="#">Dining Table</a>
+                            </li>
+                            <li>
+                                <a href="#">Table Lamp</a>
+                            </li>
+                            <li>
+                                <a href="#">Desk</a>
+                            </li>
+                            <li>
+                                <a href="#">cabinets</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+    <!-- Copyright Start -->
+    <div class="copyright">
+        <div class="container-fluid">
+            <p class="mb-0">@Copyright 2022. <a href="#" class="thm-color-one">Website.com</a> All Rights Reserved</p>
+        </div>
+    </div>
+    <!-- Copyright End -->
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script>
+
+        const ordersID = '<%- JSON.stringify(orders) %>'
+        const orderId = JSON.parse(ordersID)
+        const orderStatus = '<%- JSON.stringify(orderStatus) %>'
+        console.log(orderStatus);
+        // const orderID = orderId[0]._id;
+        // console.log(orderID);
+        console.log(orderId);
+        const cancelOrderModal = new bootstrap.Modal(document.getElementById("cancelOrderModal"));
+        const successModal = new bootstrap.Modal(document.getElementById("successModal"));
+        document.getElementById('dismissConfirm').addEventListener("click", () => {
+            cancelOrderModal.hide()
+        })
+        // document.getElementById('cancelOrder').addEventListener("click", () => {
+        //     cancelOrderModal.show()
+        //     document.getElementById('cancelConfirm').addEventListener("click", async () => {
+        //         cancelOrderModal.hide()
+        //         const response = await fetch(`/cancelOrder?orderID=${orderID}`, {
+        //             method: "GET",
+        //         });
+
+        //         const data = await response.json();
+        //         if (data.success) {
+        //             successModal.show()
+        //             document.getElementById('success-btn').addEventListener("click", () => {
+        //                 successModal.hide();
+        //                 window.location.reload()
+        //             })
+        //         }
+
+        //     })
+
+        // })
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const returnBtns = document.querySelectorAll('.returnBtn');
+            returnBtns.forEach(btn => {
+
+                const orderDateStr = btn.getAttribute('data-order-date');
+                console.log(orderDateStr);
+                const orderDate = new Date(orderDateStr);
+                const currentDate = new Date();
+                console.log(currentDate)
+                console.log(orderDate)
+                const timeDiff = currentDate - orderDate;
+                // Convert to days
+                const dayDiff = timeDiff / (1000 * 3600 * 24);
+                if (dayDiff > 14) {
+                    btn.style.display = 'none';
+                }
+            })
+            // Calculate the difference in milliseconds
+
+            // Hide the button if more than 14 days have passed
+        });
+
+        document.querySelectorAll('#singleProCancel').forEach(btn => {
+            btn.addEventListener("click", (event) => {
+                const prodId = event.target.getAttribute("data-pid")
+                const orderId = event.target.getAttribute("data-rid")
+                console.log(prodId);
+                cancelOrderModal.show();
+                document.getElementById('cancelConfirm').addEventListener("click", async () => {
+                    cancelOrderModal.hide()
+                    const response = await fetch(`/singleProdCancel?cartProdId=${prodId}&orderId=${orderId}`, {
+                        method: "DELETE",
+                    });
+
+                    const data = await response.json();
+                    if (data.success) {
+                        successModal.show()
+                        document.getElementById('success-btn').addEventListener("click", () => {
+                            successModal.hide();
+                            window.location.reload()
+                        })
+                    }
+                    if (data.failed) {
+                        console.log("There is Failed to cancel that product form user side: ");
+                    }
+
+                })
+
+
+            })
+        })
+        async function returnOrder(cartId, orderId) {
+            const { value: returnReason } = await Swal.fire({
+                title: 'Return Reason',
+                input: 'text',
+                inputLabel: 'Please provide a reason for returning',
+                inputPlaceholder: 'Enter your reason here...',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                cancelButtonText: 'Cancel',
+                confirmButtonText: 'Submit'
+            });
+
+            if (returnReason) {
+
+                Swal.fire({
+                    title: "Are you sure?",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, Return this order!"
+                }).then(async (result) => {
+                    if (result.isConfirmed) {
+                        let response = await fetch(`/user/returnOrder?cartId=${cartId}&orderId=${orderId}&reason=${returnReason}`, {
+                            method: 'POST'
+                        })
+                        let result = await response.json()
+                        await Swal.fire({
+
+                            icon: "success",
+                            title: "Order Returned",
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+
+                        if (result.success) {
+                            window.location.reload()
+                        }
+                    }
+                });
+            }
+        }
+
+    </script>
+    <script src="assets/js/plugins/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/plugins/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/plugins/slick.min.js"></script>
+    <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/plugins/jquery.counterup.min.js"></script>
+    <script src="assets/js/plugins/jquery.inview.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+</body>
+
+</html>

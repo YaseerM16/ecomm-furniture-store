@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>FurnitureHub - Online Furniture Mart</title>
+  <meta name="description"
+    content="Explore FurnitureHub, your ultimate destination for stylish and affordable furniture. Shop now and get exclusive deals!">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Description website" />
+  <meta name="author" content="Maksym Blank" />
+  <meta name="keywords" content="website, with, meta, tags" />
+  <meta name="robots" content="noindex, follow" />
+  <meta name="revisit-after" content="5 month" />
+  <meta name="image" content="../../../../mywebsite.com/image.html" />
+  <meta name="og:title" content="Title website" />
+  <meta name="og:description" content="Description website" />
+  <meta name="og:image" content="../../../../mywebsite.com/image.html" />
+  <meta name="og:site_name" content="My Website" />
+  <meta name="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Title website" />
+  <meta name="twitter:description" content="Description website" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/fav2.png" />
+  <!-- Css -->
+  <link href="assets/css/plugins/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/fonts/font-awesome.min.css" rel="stylesheet" />
+  <link href="assets/css/plugins/magnific-popup.css" rel="stylesheet" />
+  <link href="assets/css/plugins/slick.css" rel="stylesheet" />
+  <link href="assets/css/style.css" rel="stylesheet" />
+  <link href="assets/css/responsive.css" rel="stylesheet" />
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+  <style>
+    #brand-name {
+      font-family: "Bungee Spice", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 30px;
+      background-color: #8a5d2a;
+    }
+
+    .save_changes_btn {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Preloader Start -->
+  <div class="preloader">
+    <img src="assets/images/preloader.svg" alt="preloader" />
+  </div>
+  <!-- Preloader End -->
+  <!-- Header Start -->
+  <header class="header">
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="container-fluid">
+        <div class="inner">
+          <!-- Logo -->
+          <div class="logo">
+            <a href="/">
+              <div id="brand-name">&nbsp;Y-FURNS</div>
+              <!-- <img src="assets/images/logo.png" class="image-fi" alt="logo" height="100px" width="100px"> -->
+            </a>
+          </div>
+          <!-- Logo -->
+          <!-- Search Form -->
+          <div class="search-form">
+            <form>
+              <!-- Location -->
+              <div class="location">
+                <label>Your Location</label>
+                <select>
+                  <option selected>Select A Location</option>
+                  <option value="New Delhi">New Delhi</option>
+                  <option value="Mumbai">Mumbai</option>
+                  <option value="Kolkata">Kolkata</option>
+                  <option value="Chennai">Chennai</option>
+                </select>
+              </div>
+              <!-- Location -->
+              <!-- Search -->
+              <div class="input-group">
+                <input type="text" name="#" class="form-control" placeholder="Search for products..." autocomplete="off"
+                  required>
+                <div class="input-group-append input-group-text">
+                  <button type="submit">
+                    <i class="fal fa-search"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- Search -->
+            </form>
+          </div>
+          <!-- Search Form -->
+          <!-- Header Action -->
+          <div class="header_action">
+            <ul>
+              <li>
+                <a href="wishlist.html">
+                  <i class="far fa-heart"></i>
+                </a>
+              </li>
+              <li class="cart">
+                <a href="/cartPage">
+                  <span class="cart_value">0</span>
+                  <i class="far fa-shopping-cart"></i>
+                  <div class="cart_text">
+                    My Cart
+                    <!-- <span class="amount">$150.00</span> -->
+                  </div>
+                </a>
+              </li>
+              <li class="user">
+                <% if (user) { %>
+                  <a href="#">
+                    <img src="assets/images/header/user.png" class="image-fit" alt="img">
+                    <span>
+                      <%= user.username %>
+                    </span>
+                  </a>
+                  <ul class="sub-menu">
+                    <li>
+                      <a href="/userDetails">My Account</a>
+                    </li>
+                    <li>
+                      <a href="/logout">Logout</a>
+                    </li>
+                  </ul>
+                  <% } else { %>
+                    <a href="#">
+                      <img src="assets/images/header/user.png" class="image-fit" alt="img">
+                      <span>New User</span>
+                    </a>
+                    <ul class="sub-menu">
+                      <li>
+                        <a href="/logIn">Login</a>
+                      </li>
+                      <li>
+                        <a href="/signUp">SignUp</a>
+                      </li>
+                    </ul>
+                    <% } %>
+              </li>
+            </ul>
+          </div>
+          <!-- Header Action -->
+        </div>
+      </div>
+    </div>
+    <!-- Topbar -->
+  </header>
+  <!-- Header End -->
+  <!-- Category Nav Start -->
+  <div class="main_navigation hide_cat">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-3 col-6">
+
+        </div>
+        <div class="col-lg-9 col-6">
+          <div class="nav_inner">
+            <ul class="main-menu">
+              <li class="menu-item">
+                <a href="/" class="active">Home</a>
+              </li>
+
+              <li class="menu-item menu-item-has-children"><a href="#">Pages</a>
+                <ul class="sub-menu custom">
+                  <li class="menu-item menu-item-has-children"><a href="#">Account</a>
+                    <ul class="sub-menu custom">
+                      <li class="menu-item"><a href="/userDetails">My Account</a></li>
+                      <li class="menu-item"><a href="/logIn">Login</a></li>
+                      <li class="menu-item"><a href="/signUp">Register</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-item menu-item-has-children"><a href="#">Shop</a>
+                <ul class="sub-menu custom">
+                  <li class="menu-item">
+                    <a href="/products">Shop</a>
+                  </li>
+
+                  <li class="menu-item">
+                    <a href="/wishListPage">Wishlist</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="/cartPage">Cart</a>
+                  </li>
+                  <li class="menu-item menu-item-has-children"><a href="/myOrdersPage">Orders</a>
+                    <ul class="sub-menu custom">
+                      <li class="menu-item"><a href="/myOrdersPage">Order List</a></li>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            </li>
+
+            </ul>
+            <div class="hamburger">
+              <div class="hamburger_btn">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Category Nav End -->
+  <!-- Section Start -->
+  <section class="user_account">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-3 col-lg-4">
+          <div class="account_sidebar section pb-0 h-100">
+            <h4 class="title">My Account</h4>
+            <ul>
+              <li class="active">
+                <a href="/userDetails">
+                  <i class="fal fa-user"></i>
+                  User Info
+                </a>
+              </li>
+              <li>
+                <a href="/addressPage">
+                  <i class="fal fa-book"></i>
+                  Address
+                </a>
+              </li>
+              <li>
+                <a href="/myOrdersPage">
+                  <i class="fal fa-luggage-cart"></i>
+                  Order
+                </a>
+              </li>
+              <li>
+                <a href="/walletPage">
+                  <i class="fas fa-wallet"></i>
+                  Wallet
+                </a>
+              </li>
+              <li>
+                <a href="/wishListPage">
+                  <i class="fal fa-star"></i>
+                  Wishlist
+                </a>
+              </li>
+
+              <li>
+
+                <div class="row mt-3">
+                  <input type="hidden" id="ReferalCode"
+                    value="http://localhost:3000/signUp?referral=<%= user.referralCode %>" readonly>
+                  <a onclick="copyReferralCode()"
+                    style=" cursor: pointer; box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; padding: 25px 50px;width: 280px;">
+                    <b class="text-success fw-700">Click here to get the referral link</b>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xl-9 col-lg-8">
+          <div class="section">
+            <div class="user_info_box">
+              <!-- User -->
+              <div class="user_box">
+                <div class="image">
+                  <img src="assets/images/header/user.png" class="image-fit" alt="img" />
+                </div>
+                <div class="user_text">
+                  <h6 class="name mb-0">
+                    <%= user.username %>
+                  </h6>
+                  <p class="mb-0">New York, USA</p>
+                </div>
+              </div>
+              <!-- User Details -->
+              <div class="user_details">
+                <form id="address-form" enctype="application/x-www-form-urlencoded">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label><strong>First Name</strong></label>
+                        <input type="text" name="firstName" class="form-control form-control-custom"
+                          placeholder="First Name" autocomplete="off" required />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label><strong>Last Name</strong></label>
+                        <input type="text" name="lastName" class="form-control form-control-custom"
+                          placeholder="Last Name" autocomplete="off" required />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label><strong>Title</strong></label>
+                        <input type="text" name="addressTitle" class="form-control form-control-custom"
+                          placeholder="Home or Work" autocomplete="off" required />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label><strong>Address Line 1</strong></label>
+                        <input type="text" name="addressLine1" class="form-control form-control-custom"
+                          placeholder="House No., Street" autocomplete="off" required />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label><strong>Address Line 2</strong></label>
+                        <input type="text" name="addressLine2" class="form-control form-control-custom"
+                          placeholder="Landmark" autocomplete="off" required />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label><strong>City</strong></label>
+                        <input type="text" name="city" class="form-control form-control-custom" placeholder="City"
+                          autocomplete="off" required />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label><strong>State</strong></label>
+                        <input type="text" name="state" class="form-control form-control-custom" placeholder="State"
+                          autocomplete="off" required />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label><strong>Pin Code</strong></label>
+                        <input type="number" name="pinCode" class="form-control form-control-custom"
+                          placeholder="Pin Code" autocomplete="off" min="6" required />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label><strong>Phone No.</strong></label>
+                        <input type="number" name="phone" class="form-control form-control-custom"
+                          placeholder="Phone No." autocomplete="off" required min="10" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label><strong>Alternate No.</strong></label>
+                        <input type="number" name="alternateNumber" class="form-control form-control-custom"
+                          placeholder="Alternate No." autocomplete="off" required min="10" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="text-center">
+                    <button type="submit" class="thm-btn btn-rectangle thm-bg-color-one lh-normal btn-small">
+                      ADD ADDRESS
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <!-- Modal -->
+              <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Success</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Your Address has been Added Successfully!.</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" id="okButton">
+                        OK
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section End -->
+  <!-- Footer Start -->
+  <footer class="footer section-padding border-top">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-2 col-sm-4">
+          <div class="ft_widget border-sm-0 pl-sm-0">
+            <h6 class="ft_title">
+              Find a Store<br />
+              Shop Gift Cards
+            </h6>
+            <p class="mb-2">Follow Us:</p>
+            <ul class="ft_social">
+              <li>
+                <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xl-2 col-sm-4">
+          <div class="ft_widget">
+            <h6 class="ft_title">Help Center</h6>
+            <ul class="ft_menu">
+              <li>
+                <a href="#">Payments</a>
+              </li>
+              <li>
+                <a href="#">Shipping</a>
+              </li>
+              <li>
+                <a href="#">Product Returns</a>
+              </li>
+              <li>
+                <a href="#">FAQ's</a>
+              </li>
+              <li>
+                <a href="#">Checkout</a>
+              </li>
+              <li>
+                <a href="#">Blog</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xl-2 col-sm-4">
+          <div class="ft_widget">
+            <h6 class="ft_title">Useful Links</h6>
+            <ul class="ft_menu">
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#">Terms & Conditions</a>
+              </li>
+              <li>
+                <a href="#">Policy</a>
+              </li>
+              <li>
+                <a href="#">My Orders</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xl col-sm-8">
+          <div class="ft_widget">
+            <h6 class="ft_title">Contact Us</h6>
+            <p class="mb-3">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            </p>
+            <ul class="ft_contact">
+              <li>
+                <a href="#">
+                  <i class="fas fa-map-marker-alt"></i>
+                  14 Prospect Row, Bury St. Edmunds
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fas fa-phone"></i>
+                  000 2583 745 351
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fas fa-envelope"></i>
+                  example@example.com
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xl-2 col-sm-4">
+          <div class="ft_widget">
+            <h6 class="ft_title">Categories</h6>
+            <ul class="ft_menu">
+              <li>
+                <a href="#">Chair</a>
+              </li>
+              <li>
+                <a href="#">Sofa</a>
+              </li>
+              <li>
+                <a href="#">Dining Table</a>
+              </li>
+              <li>
+                <a href="#">Table Lamp</a>
+              </li>
+              <li>
+                <a href="#">Desk</a>
+              </li>
+              <li>
+                <a href="#">cabinets</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer End -->
+  <!-- Copyright Start -->
+  <div class="copyright">
+    <div class="container-fluid">
+      <p class="mb-0">
+        @Copyright 2022. <a href="#" class="thm-color-one">Website.com</a> All
+        Rights Reserved
+      </p>
+    </div>
+  </div>
+  <!-- Copyright End -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="assets/js/plugins/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/plugins/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/plugins/slick.min.js"></script>
+  <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
+  <script src="assets/js/plugins/jquery.counterup.min.js"></script>
+  <script src="assets/js/plugins/jquery.inview.min.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js"
+    integrity="sha512-WMEKGZ7L5LWgaPeJtw9MBM4i5w5OSBlSjTjCtSnvFJGSVD26gE5+Td12qN5pvWXhuWaWcVwF++F7aqu9cvqP0A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/additional-methods.min.js"
+    integrity="sha512-TiQST7x/0aMjgVTcep29gi+q5Lk5gVTUPE9XgN0g96rwtjEjLpod4mlBRKWHeBcvGBAEvJBmfDqh2hfMMmg+5A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    $(document).ready(function () {
+      $("#address-form").validate({
+        rules: {
+          firstName: {
+            required: true,
+            minlength: 5,
+            pattern: /^[a-zA-Z]+$/
+          },
+          lastName: {
+            required: true,
+            minlength: 1,
+            pattern: /^[a-zA-Z]+$/
+          },
+          addressTitle: {
+            required: true,
+            minlength: 4,
+          },
+          addressLine1: {
+            required: true,
+            minlength: 5,
+          },
+          addressLine2: {
+            required: true,
+            minlength: 5,
+          },
+          city: {
+            required: true,
+            minlength: 4,
+            pattern: /^[a-zA-Z]+(?: [a-zA-Z]+)*$/,
+          },
+          state: {
+            required: true,
+            minlength: 4,
+            pattern: /^[a-zA-Z]+(?: [a-zA-Z]+)*$/,
+          },
+          pinCode: {
+            required: true,
+            minlength: 6,
+            maxlength: 6,
+            digits: true
+          },
+          phone: {
+            required: true,
+            minlength: 10,
+            maxlength: 10,
+            digits: true
+          },
+          alternateNumber: {
+            required: true,
+            minlength: 10,
+            maxlength: 10,
+            digits: true
+          }
+        },
+        messages: {
+          firstName: {
+            required: "Please enter your first name",
+            pattern: "Enter Only Caracters",
+            minlength: "First name must be at least 4 characters"
+          },
+          lastName: {
+            required: "Please enter your last name",
+            pattern: "Enter Only Caracters",
+            minlength: "Last name must be at least 1 characters"
+          },
+          addressTitle: {
+            required: "Please enter a title for your address",
+            minlength: "Title must be at least 4 characters",
+            pattern: "Enter Only Caracters",
+          },
+          addressLine1: {
+            required: "Please enter your address line 1",
+            minlength: "Address line 1 must be at least 5 characters",
+          },
+          addressLine2: {
+            required: "Please enter your address line 2",
+            minlength: "Address line 2 must be at least 5 characters",
+          },
+          city: {
+            required: "Please enter your city",
+            pattern: "Enter Only Caracters and Spaces",
+            minlength: "City must be at least 4 characters"
+          },
+          state: {
+            required: "Please enter your state",
+            pattern: "Enter Only Caracters and Spaces",
+            minlength: "State must be at least 4 characters"
+          },
+          pinCode: {
+            required: "Please enter your pin code",
+            minlength: "Pin code must be 6 digits",
+            maxlength: "Pin code must be 6 digits",
+            digits: "Pin code must be numeric"
+          },
+          phone: {
+            required: "Please enter your phone number",
+            minlength: "Phone number must be 10 digits",
+            maxlength: "Phone number must be 10 digits",
+            digits: "Phone number must be numeric"
+          },
+          alternateNumber: {
+            required: "Please enter your alternate phone number",
+            minlength: "Alternate phone number must be 10 digits",
+            maxlength: "Alternate phone number must be 10 digits",
+            digits: "Alternate phone number must be numeric"
+          }
+        },
+        submitHandler: function (form) {
+          // Call the JavaScript function to submit the form
+          form.addEventListener("submit", () => {
+            event.preventDefault();
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            const urlEncodedData = new URLSearchParams(data);
+            fetch("/addAddress", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+              },
+              body: urlEncodedData,
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                if (data.success) {
+                  // Show the success message
+                  const successModal = new bootstrap.Modal(
+                    document.getElementById("successModal")
+                  );
+                  successModal.show();
+                  document
+                    .getElementById("okButton")
+                    .addEventListener("click", () => {
+                      window.location.href = "/addressPage";
+                    });
+                } else {
+                  // Handle the error
+                  console.error(data.error);
+                }
+              })
+              .catch((error) => {
+                // Handle the error
+                console.error(error);
+              });
+          });
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
